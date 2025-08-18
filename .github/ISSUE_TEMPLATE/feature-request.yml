@@ -1,0 +1,16 @@
+name: Feature Request
+description: File a feature request.
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature description
+      description: Tell me what you would like to see.
+    validations:
+      required: true

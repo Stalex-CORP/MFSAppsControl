@@ -1,0 +1,39 @@
+﻿name: Bug Report
+description: File a bug report.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: Also tell us, what did you expect to happen?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      placeholder: "1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: What system are you seeing the problem on?
+      multiple: false
+      options:
+        - Windows 11
+        - Windows 10
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log file
+      description: Please copy/paste your latest log file content linked to your issue accessible on tray icon menu by clicking on **Log** for better analysis of your issue.

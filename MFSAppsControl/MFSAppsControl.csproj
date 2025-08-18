@@ -1,0 +1,119 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows10.0.22621.0</TargetFramework>
+		<ApplicationIcon>../mfsappscontrol.ico</ApplicationIcon>
+		<UseWPF>true</UseWPF>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Authors>Stalex</Authors>
+		<Company>Stalex CORP</Company>
+		<Title>MFS Apps Control</Title>
+		<Copyright>$(Authors)</Copyright>
+		<PackageIcon>../mfsappscontrol.ico</PackageIcon>
+		<Description>Windows tool to start/stop apps following Microsoft Flight Simulator status.</Description>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<NeutralLanguage>en-001</NeutralLanguage>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<SignAssembly>False</SignAssembly>
+		<PlatformTarget>x64</PlatformTarget>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<StartupObject>MFSAppsControl.App</StartupObject>
+		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+		<AssemblyVersion>1.0</AssemblyVersion>
+		<FileVersion>1.1.0.0</FileVersion>
+		<Version>1.1.0-rc</Version>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<ShouldCreateLogs>True</ShouldCreateLogs>
+		<AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+		<UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+		<UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+		<UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
+		<UpdatePackageVersion>True</UpdatePackageVersion>
+		<AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+		<InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+		<AssemblyInfoVersionSettings>None.None.None.None</AssemblyInfoVersionSettings>
+		<PackageVersionSettings>AssemblyFileVersion.None.ReleaseCandidate</PackageVersionSettings>
+		<AssemblyFileVersionSettings>IncrementOnDemand.IncrementOnDemandWithResetOnIncrease.NoneWithAutoReset.NoneWithAutoReset</AssemblyFileVersionSettings>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<ShouldCreateLogs>True</ShouldCreateLogs>
+		<AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+		<UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+		<UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+		<UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
+		<UpdatePackageVersion>True</UpdatePackageVersion>
+		<AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+		<InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+		<AssemblyInfoVersionSettings>None.None.None.None</AssemblyInfoVersionSettings>
+		<AssemblyVersionSettings>IncrementOnDemand.IncrementOnDemandWithResetOnIncrease.None.None</AssemblyVersionSettings>
+		<PackageVersionSettings>AssemblyVersion.None.None</PackageVersionSettings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="log4net" Version="3.1.0" />
+		<PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+		<PackageReference Include="System.Drawing.Common" Version="9.0.8" />
+		<PackageReference Include="System.Management" Version="9.0.8" />
+		<PackageReference Include="WPF-UI" Version="4.0.3" />
+		<PackageReference Include="WPF-UI.DependencyInjection" Version="4.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0 " />
+		<PackageReference Include="WPF-UI.Tray" Version="4.0.3" />
+		<Content Include="Assets\open.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Assets\snooze.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<EmbeddedResource Include="ExcludedVendors.json" />
+		<Resource Include="../mfsappscontrol.ico" />
+		<Content Include="../LICENSE.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="log4net.config">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../preview-en.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../preview-fr.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../docs/README-en.md">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../docs/MFSAppsControl_UserManual.pdf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../docs/README-fr.md">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../README.md">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="../CHANGELOG.md">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<Target Name="CleanOutputContents" BeforeTargets="PrepareForPublish">
+		<ItemGroup>
+			<OutputFilesToDelete Include="$(SolutionDir)Output\**\*.*" />
+			<OutputDirsToDelete Include="$(SolutionDir)Output\*" Exclude="$(SolutionDir)Output\*.*" />
+		</ItemGroup>
+		<Delete Files="@(OutputFilesToDelete)" />
+		<RemoveDir Directories="@(OutputDirsToDelete)" />
+	</Target>
+</Project>
