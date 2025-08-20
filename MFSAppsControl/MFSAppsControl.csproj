@@ -24,8 +24,8 @@
 		<StartupObject>MFSAppsControl.App</StartupObject>
 		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
 		<AssemblyVersion>1.0</AssemblyVersion>
-		<FileVersion>1.1.0.0</FileVersion>
-		<Version>1.1.0-rc</Version>
+		<FileVersion>1.0.0.0</FileVersion>
+		<Version>1.0.0</Version>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 	</PropertyGroup>
 

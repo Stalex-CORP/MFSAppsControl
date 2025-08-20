@@ -2,12 +2,15 @@ name: Build and Prepare Release
 
 on:
   pull_request:
+    types:
+      - closed
     branches:
       - main
   workflow_dispatch:
 
 jobs:
   build:
+    if: github.event.pull_request.merged == true
     runs-on: windows-latest
     outputs:
       version: ${{ steps.get_version.outputs.version }}

@@ -17,6 +17,7 @@ on:
       - '**/*.manifest'
   pull_request:
     branches:
+      - main
       - development
     paths:
       - '**/*.sln'
@@ -29,11 +30,16 @@ on:
       - '**/*.json'
       - '**/*.config'
       - '**/*.manifest'
+    types:
+      - opened
+      - reopened
+      - synchronize
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
+    if: ${{ (github.event_name == 'push' && github.actor == 'stevealexandre') || (github.event_name == 'pull_request' && github.actor != 'stevealexandre') }}
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
