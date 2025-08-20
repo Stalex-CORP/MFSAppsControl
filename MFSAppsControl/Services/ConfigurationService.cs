@@ -31,6 +31,13 @@ namespace MFSAppsControl.Services
         {
             var fileContent = await File.ReadAllTextAsync(configFilePath);
             var configuration = JsonSerializer.Deserialize<ConfigurationModel>(fileContent, options);
+
+            if (configuration != null)
+            {
+                configuration.Language ??= "en";
+                configuration.Apps ??= [];
+            }
+
             return configuration ?? new ConfigurationModel { Apps = [], Language = "en" };
         }
 

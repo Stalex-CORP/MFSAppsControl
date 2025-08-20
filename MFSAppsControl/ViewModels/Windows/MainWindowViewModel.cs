@@ -19,10 +19,10 @@ namespace MFSAppsControl.ViewModels.Windows
         private bool updateNotificationShown = false;
 
         [ObservableProperty]
-        private string _currentLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
+        private string currentLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
 
         [ObservableProperty]
-        private string _applicationTitle = "MFS Apps Control";
+        private string applicationTitle = "MFS Apps Control";
 
         [ObservableProperty]
         private string applicationVersionCopyright = "v{0} By Stalex";

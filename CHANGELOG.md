@@ -1,5 +1,6 @@
 # Changelog
-## [1.0] - 2025-08-12
+
+## [1.0] - 2025-08-20
 
 ### Added
 - Initial application with WPF and WPF UI.
@@ -28,5 +29,8 @@
 ### Changed
 
 ### Fixed
+- Add configuration values null checking initialisation after test detection on null language
+- Fix version number
+- Fix wrong variables naming
 
 ### Removed
