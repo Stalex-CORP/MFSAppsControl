@@ -395,7 +395,6 @@ Output/
 # Custom exclusions
 *.png
 *.psd
-!preview-en.png
-!preview-fr.png
 !MFSAppsControl/Assets/*.png
+!Docs/images/*.png
 .github/copilot-instructions.md
