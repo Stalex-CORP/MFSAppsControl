@@ -1,4 +1,5 @@
 ﻿using MFSAppsControl.Models;
+using System.Globalization;
 using System.IO;
 using System.Text.Json;
 
@@ -8,6 +9,8 @@ namespace MFSAppsControl.Services
     {
         private readonly string configFilePath;
         private static readonly JsonSerializerOptions options = new() { WriteIndented = true };
+        private static readonly string systemLanguage = CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
+        private static readonly ConfigurationModel defaultConfig = new() { Apps = [], Language = systemLanguage };
 
         public ConfigurationService(string? customPath = null)
         {
@@ -21,7 +24,6 @@ namespace MFSAppsControl.Services
 
             if (!File.Exists(configFilePath))
             {
-                var defaultConfig = new ConfigurationModel { Apps = [], Language = "en" };
                 var json = JsonSerializer.Serialize(defaultConfig, options);
                 File.WriteAllText(configFilePath, json);
             }
@@ -34,13 +36,14 @@ namespace MFSAppsControl.Services
 
             if (configuration != null)
             {
-                configuration.Language ??= "en";
+                configuration.Language ??= systemLanguage;
                 configuration.Apps ??= [];
                 await SaveConfigurationAsync(configuration);
                 return configuration;
             }
 
-            return new ConfigurationModel { Apps = [], Language = "en" };
+            await SaveConfigurationAsync(defaultConfig);
+            return defaultConfig;
         }
 
         public async Task SaveConfigurationAsync(ConfigurationModel configuration)

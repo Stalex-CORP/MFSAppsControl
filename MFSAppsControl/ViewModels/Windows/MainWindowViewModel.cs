@@ -19,7 +19,7 @@ namespace MFSAppsControl.ViewModels.Windows
         private bool updateNotificationShown = false;
 
         [ObservableProperty]
-        private string currentLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
+        private string currentLanguage = CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
 
         [ObservableProperty]
         private string applicationTitle = "MFS Apps Control";

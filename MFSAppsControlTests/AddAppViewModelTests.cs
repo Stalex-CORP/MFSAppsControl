@@ -85,9 +85,9 @@ namespace MFSAppsControlTests
         public void TestOnLanguageChanged()
         {
             languageService!.SetCulture("en");
-            Assert.AreEqual("en", languageService._currentCulture.Name, "The current culture should be set to English.");
+            Assert.AreEqual("en", languageService.currentCulture.Name, "The current culture should be set to English.");
             languageService!.SetCulture("fr");
-            Assert.AreEqual("fr", languageService._currentCulture.Name, "The current culture should be set to French.");
+            Assert.AreEqual("fr", languageService.currentCulture.Name, "The current culture should be set to French.");
             Assert.AreEqual(languageService!.GetMessage("Button_Browse"), addAppViewModel!.ButtonBrowseText, "The message of browse button should be set to the key Button_Browse of translation file.");
             Assert.AreEqual(languageService!.GetMessage("Button_Add"), addAppViewModel!.ButtonAddText, "The message of add button should be set to the key Button_Add of translation file.");
             Assert.AreEqual(languageService!.GetMessage("Notification_AppAlreadyAdded"), addAppViewModel!.NotificationAppAlreadyAddedText, "The message of App Already Added notificationo should be set to the key Notification_AppAlreadyAdded of the translation file.");
