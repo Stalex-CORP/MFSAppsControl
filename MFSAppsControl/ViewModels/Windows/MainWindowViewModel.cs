@@ -116,7 +116,7 @@ namespace MFSAppsControl.ViewModels.Windows
                 if (!string.IsNullOrWhiteSpace(latestVersionTag))
                 {
                     var latestVersionStr = latestVersionTag.TrimStart('v', 'V');
-                    var currentVersionStr = ApplicationVersionCopyright[..3];
+                    var currentVersionStr = ApplicationVersionCopyright.TrimStart('v', 'V')[..3];
 
                     if (Version.TryParse(latestVersionStr, out var latestVersion) &&
                         Version.TryParse(currentVersionStr, out var currentVer))
