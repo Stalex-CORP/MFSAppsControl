@@ -28,6 +28,7 @@ namespace MFSAppsControl.Services
 
         /// <summary>
         /// Initializes the logger service, configuring log4net with the specified settings for release and debug.
+        /// </summary>
         public LoggerService()
         {
             logDir = Path.Combine(
@@ -42,28 +43,23 @@ namespace MFSAppsControl.Services
             var logRepository = LogManager.GetRepository(entryAssembly);
             XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
 
-            var appender = logRepository.GetAppenders().OfType<log4net.Appender.RollingFileAppender>().Single(a => a.Name.Equals("RollingFileAppender"));
-            var debugAppender = logRepository.GetAppenders().OfType<log4net.Appender.RollingFileAppender>().Single(a => a.Name.Equals("RollingFileAppenderDebug"));
-            var deboggerAppender = logRepository.GetAppenders().OfType<log4net.Appender.DebugAppender>().FirstOrDefault();
+            var appender = logRepository.GetAppenders().OfType<log4net.Appender.RollingFileAppender>().SingleOrDefault(a => a.Name.Equals("RollingFileAppender"));
+            // if (appender != null)
+            // {
+            //     appender.File = Path.Combine(logDir, "app.log");
+            //     appender.ActivateOptions();
+            // }
 
-            if (appender != null)
+
+            if (Debugger.IsAttached)
             {
-                appender.File = Path.Combine(logDir, "app.log");
-                appender.ActivateOptions();
-                
-            }
-
-            if (Debugger.IsAttached) {
-                if (debugAppender != null)
-                {
-                    debugAppender.File = Path.Combine(logDir, "app-debug.log");
-                    debugAppender.ActivateOptions();
-                }
-            }
-            else
-            {
-                deboggerAppender?.Close();
-
+                var deboggerAppender = logRepository.GetAppenders().OfType<log4net.Appender.DebugAppender>().FirstOrDefault();
+                var debugAppender = logRepository.GetAppenders().OfType<log4net.Appender.RollingFileAppender>().SingleOrDefault(a => a.Name.Equals("RollingFileAppenderDebug"));
+                // if (debugAppender != null)
+                // {
+                //     debugAppender.File = Path.Combine(logDir, "app-debug.log");
+                //     debugAppender.ActivateOptions();
+                // }
             }
         }
 
