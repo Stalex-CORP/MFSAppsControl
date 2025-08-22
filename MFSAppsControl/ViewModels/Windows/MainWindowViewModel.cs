@@ -206,7 +206,7 @@ namespace MFSAppsControl.ViewModels.Windows
         {
             if (e.Argument == "viewRelease")
             {
-                var releaseUrl = "https://github.com/Stalex-CORP/MFSAppsControl/release/latest";
+                var releaseUrl = "https://flightsim.to/file/96593/mfs-apps-control";
                 try
                 {
                     Process.Start(new ProcessStartInfo(releaseUrl) { UseShellExecute = true });
