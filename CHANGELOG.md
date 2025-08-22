@@ -1,8 +1,24 @@
 # Changelog
 
+## [1.1] - 25-08-22
+
+### Changed
+
+- Update target update link from github release page to flightsimto page.
+- Update target framework to the right framework used.
+- Update readme documentations
+
+### Fixed
+
+- Fix language initialisation which break app starting when system is not in English/French to fallback to English default. (Tested and validated by @Tobias-1)
+- Add missing trim on current version to string to match github pattern which was causing an issue to check latest update.
+- Fix initialisation log dev debug generated everytime in app dir even on release.
+- Fix log4net config path for default user log to target localappdata app dir.
+
 ## [1.0] - 2025-08-20
 
 ### Added
+
 - Initial application with WPF and WPF UI.
 - Application model for defining app objects.
 - Views and ViewModels (MVVM) for UI:
@@ -26,11 +42,8 @@
 - GitHub templates for issues and pull requests.
 - All required files and assets: README (EN/FR), log4net config, icons, etc.
 
-### Changed
-
 ### Fixed
+
 - Add configuration values null checking initialisation after test detection on null language
 - Fix version number
 - Fix wrong variables naming
-
-### Removed

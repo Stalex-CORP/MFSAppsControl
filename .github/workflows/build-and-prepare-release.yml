@@ -30,8 +30,8 @@ jobs:
 
       - name: Build and publish self-contained app
         run: |
-          cd "${{ github.workspace }}"
-          dotnet publish mfsappscontrol.sln -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
+          cd "${{ github.workspace }}\MFSAppsControl"
+          dotnet publish MFSAppsControl.csproj
 
       - name: Get Release version
         id: get_version
@@ -61,7 +61,7 @@ jobs:
           $iss = "${{ github.workspace }}\MFSAppsControl\mfsappscontrol.iss"
           & "$iscc" "$iss"
 
-      - name: Zip installer
+      - name: Copy additional files to output folder
         run: |
           cd "${{ github.workspace }}"
           ls

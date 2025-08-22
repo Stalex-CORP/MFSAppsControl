@@ -1,7 +1,7 @@
-﻿[Setup]
+[Setup]
 AppName=MFS Apps Control
-AppVersion=1.0
-VersionInfoVersion=1.0
+AppVersion=
+VersionInfoVersion=
 AppPublisher=Stalex
 VersionInfoCompany=Stalex CORP
 VersionInfoCopyright=Stalex
@@ -24,7 +24,7 @@ Name: "{autoprograms}\Stalex\MFS Apps Control"; Filename: "{app}\MFSAppsControl.
 Name: "{autodesktop}\MFS Apps Control"; Filename: "{app}\MFSAppsControl.exe"; Tasks: desktopicon
 
 [Tasks]
-Name: "desktopicon"; Description: "Créer un raccourci sur le bureau"; GroupDescription: "Raccourcis :"
+Name: "desktopicon"; Description: "Ajouter un raccourci sur le bureau"; GroupDescription: "Raccourcis :"
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{userappdata}\Stalex\MFSAppsControl"

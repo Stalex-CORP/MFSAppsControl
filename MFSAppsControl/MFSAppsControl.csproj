@@ -23,9 +23,9 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<StartupObject>MFSAppsControl.App</StartupObject>
 		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-		<AssemblyVersion>1.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
-		<Version>1.0.0</Version>
+		<AssemblyVersion>1.1</AssemblyVersion>
+		<FileVersion>1.1.0.0</FileVersion>
+		<Version>1.1.0-rc</Version>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 	</PropertyGroup>
 
