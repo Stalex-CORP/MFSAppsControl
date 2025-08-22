@@ -49,32 +49,17 @@ jobs:
         with:
           dotnet-version: '9.0.x'
 
-      - name: Restore packages
-        run: |
-          cd "${{ github.workspace }}"
-          dotnet restore mfsappscontrol.sln
-
       - name: Build and publish self-contained app
         run: |
-          cd "${{ github.workspace }}"
-          dotnet publish mfsappscontrol.sln -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
+          cd "${{ github.workspace }}\MFSAppsControl"
+          dotnet publish "MFSAppsControl.csproj" -p:PublishProfile=win-x64
 
-      - name: Zip build output
+      - name: Compress build
         run: |
-          Compress-Archive -Path "${{ github.workspace }}\MFSAppsControl\bin\Release\net9.0-windows10.0.22621.0\win-x64\publish\*" -DestinationPath MFSAppsControl.zip
+          Compress-Archive -Path "${{ github.workspace }}\MFSAppsControl\bin\Publish\*" -DestinationPath MFSAppsControl.zip
 
       - name: Upload zip artifact
         uses: actions/upload-artifact@v4
         with:
           name: mfsappscontrol-zip
           path: "${{ github.workspace }}\\MFSAppsControl.zip"
-
-      - name: Generate release note
-        run: |
-          cd "${{ github.workspace }}"
-          $lines = Get-Content CHANGELOG.md
-          $startIndex = ($lines | Select-String -Pattern '^## \[' | Select-Object -First 1).LineNumber - 1
-          $nextIndex = ($lines | Select-String -Pattern '^## \[' | Select-Object -Skip 1 -First 1).LineNumber - 1
-          $releaseNote = $lines[$startIndex..$nextIndex] -join "`n" 
-          $releaseNote | Out-File -FilePath RELEASENOTE.md
-
