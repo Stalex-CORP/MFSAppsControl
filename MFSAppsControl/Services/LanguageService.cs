@@ -5,8 +5,8 @@ namespace MFSAppsControl.Services
 {
     public class LanguageService
     {
-        private readonly ResourceManager _resourceManager;
-        public CultureInfo _currentCulture;
+        private readonly ResourceManager resourceManager;
+        public CultureInfo currentCulture = new("en");
         public event Action? LanguageChanged;
 
         /// <summary>
@@ -14,8 +14,7 @@ namespace MFSAppsControl.Services
         /// </summary>
         public LanguageService()
         {
-            _resourceManager = new ResourceManager("MFSAppsControl.Resources.messages", typeof(LanguageService).Assembly);
-            _currentCulture = CultureInfo.CurrentCulture;
+            resourceManager = new ResourceManager("MFSAppsControl.Resources.messages", typeof(LanguageService).Assembly);
         }
 
         /// <summary>
@@ -24,7 +23,7 @@ namespace MFSAppsControl.Services
         /// <param name="key"> The key for the localized message.</param>
         public string GetMessage(string key)
         {
-            return _resourceManager.GetString(key, _currentCulture)!;
+            return resourceManager.GetString(key, currentCulture)!;
         }
 
 
@@ -34,9 +33,9 @@ namespace MFSAppsControl.Services
         /// <param name="cultureCode">The culture code ("en" or "fr").</param>
         public void SetCulture(string cultureCode)
         {
-            _currentCulture = new CultureInfo(cultureCode);
-            Thread.CurrentThread.CurrentUICulture = _currentCulture;
-            Thread.CurrentThread.CurrentCulture = _currentCulture;
+            currentCulture = new CultureInfo(cultureCode);
+            Thread.CurrentThread.CurrentUICulture = currentCulture;
+            Thread.CurrentThread.CurrentCulture = currentCulture;
             LanguageChanged?.Invoke();
         }
     }

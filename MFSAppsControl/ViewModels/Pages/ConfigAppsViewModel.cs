@@ -180,7 +180,7 @@ namespace MFSAppsControl.ViewModels.Pages
                await configurationService.SaveConfigurationAsync(new ConfigurationModel
                 {
                     Apps = Apps,
-                    Language = languageService._currentCulture.TwoLetterISOLanguageName
+                    Language = languageService.currentCulture.TwoLetterISOLanguageName
                });
 
                 logger.Info("Applications saved successfully.");
@@ -209,7 +209,7 @@ namespace MFSAppsControl.ViewModels.Pages
                 await configurationService.SaveConfigurationAsync(new ConfigurationModel
                 {
                     Apps = Apps,
-                    Language = languageService._currentCulture.TwoLetterISOLanguageName
+                    Language = languageService.currentCulture.TwoLetterISOLanguageName
                 });
                 SortAppsAdded();
 
@@ -257,7 +257,7 @@ namespace MFSAppsControl.ViewModels.Pages
                 await configurationService.SaveConfigurationAsync(new ConfigurationModel
                 {
                     Apps = Apps,
-                    Language = languageService._currentCulture.TwoLetterISOLanguageName
+                    Language = languageService.currentCulture.TwoLetterISOLanguageName
                 });
 
                 snackbarService.Show(
@@ -356,7 +356,7 @@ namespace MFSAppsControl.ViewModels.Pages
                 await configurationService.SaveConfigurationAsync(new ConfigurationModel
                 {
                     Apps = Apps,
-                    Language = languageService._currentCulture.TwoLetterISOLanguageName
+                    Language = languageService.currentCulture.TwoLetterISOLanguageName
                 });
                 logger.Info("Configuration saved after application property change.");
             }
