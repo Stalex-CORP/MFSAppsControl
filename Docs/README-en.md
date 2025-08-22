@@ -11,7 +11,7 @@
 </p>
 <p align="center">
   <img alt="GitHub Tag" src="https://img.shields.io/github/v/tag/Stalex-CORP/MFSAppsControl">
-  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/Stalex-CORP/MFSAppsControl/release.yml">
+  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/Stalex-CORP/MFSAppsControl/build-and-prepare-release.yml">
   <img src="https://img.shields.io/badge/Pull%20Requests-open-green" alt="PRs Welcome" />
 </p>
 
