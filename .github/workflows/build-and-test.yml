@@ -68,13 +68,3 @@ jobs:
         with:
           name: mfsappscontrol-zip
           path: "${{ github.workspace }}\\MFSAppsControl.zip"
-
-      - name: Generate release note
-        run: |
-          cd "${{ github.workspace }}"
-          $lines = Get-Content CHANGELOG.md
-          $startIndex = ($lines | Select-String -Pattern '^## \[' | Select-Object -First 1).LineNumber - 1
-          $nextIndex = ($lines | Select-String -Pattern '^## \[' | Select-Object -Skip 1 -First 1).LineNumber - 1
-          $releaseNote = $lines[$startIndex..$nextIndex] -join "`n" 
-          $releaseNote | Out-File -FilePath RELEASENOTE.md
-
