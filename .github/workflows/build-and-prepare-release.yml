@@ -23,15 +23,10 @@ jobs:
         with:
           dotnet-version: '9.0.x'
 
-      - name: Restore packages
-        run: |
-          cd "${{ github.workspace }}"
-          dotnet restore mfsappscontrol.sln
-
       - name: Build and publish self-contained app
         run: |
-          cd "${{ github.workspace }}"
-          dotnet publish mfsappscontrol.sln -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
+          cd "${{ github.workspace }}\MFSAppsControl"
+          dotnet publish "MFSAppsControl.csproj" -p:PublishProfile=win-x64
 
       - name: Get Release version
         id: get_version
@@ -43,12 +38,31 @@ jobs:
           Write-Host "Version: $version"
           echo "version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
 
+      - name: Generate release note files
+        run: |
+          cd "${{ github.workspace }}"
+          $lines = Get-Content "CHANGELOG.md"
+          $startIndex = ($lines | Select-String -Pattern '^## ' | Select-Object -First 1).LineNumber - 1
+          $nextIndex = ($lines | Select-String -Pattern '^## ' | Select-Object -Skip 1 -First 1).LineNumber - 2
+          $releaseNote = $lines[$startIndex..$nextIndex] -join "`n"
+          $releaseNote | Out-File -FilePath "RELEASENOTE.md"
+          $releaseNote = ($releaseNote -split "`r?`n" | ForEach-Object { if ($_ -match '^### (.+)$') { "[$($matches[1])]" } else { $_ }}) -join "`r`n"
+          $releaseNote = $releaseNote -replace '## ',''
+          New-Item -ItemType Directory -Path "MFSAppsControl\Output" -Force
+          $releaseNote | Out-File -FilePath "MFSAppsControl\Output\RELEASENOTE.txt"
+
+      - name: Copy license and pdf files
+        run: |
+          cd "${{ github.workspace }}\MFSAppsCcontrol\bin\Publish"
+          Copy-Item -Path "LICENSE.txt" -Destination "MFSAppsControl\Output\LICENSE.txt"
+          Copy-Item -Path "MFSAppsControl\Output\*.pdf" -Destination "MFSAppsControl\Output"
+
       - name: Update version setup script
         run: |
           cd "${{ github.workspace }}\MFSAppsControl"
           $iss = "mfsappscontrol.iss"
           $version = "${{ steps.get_version.outputs.version }}"
-          (Get-Content $iss) -replace 'AppVersion=.*', "AppVersion=$version" -replace 'VersionInfoVersion=.*', "VersionInfoVersion=$version" | Set-Content $iss
+          (Get-Content $iss) -replace 'appVersion .*', "appVersion ""$version""" | Set-Content $iss
 
       - name: Download Inno Setup
         run: |
@@ -61,13 +75,9 @@ jobs:
           $iss = "${{ github.workspace }}\MFSAppsControl\mfsappscontrol.iss"
           & "$iscc" "$iss"
 
-      - name: Zip installer
+      - name: Compress files
         run: |
           cd "${{ github.workspace }}"
-          ls
-          Copy-Item -Path "LICENSE.txt" -Destination "MFSAppsControl\Output\LICENSE.txt"
-          Copy-Item -Path "CHANGELOG.md" -Destination "MFSAppsControl\Output\CHANGELOG.txt"
-          Copy-Item -Path "Docs\MFSAppsControl_UserManual.pdf" -Destination "MFSAppsControl\Output\MFSAppsControl_UserManual.pdf"
           Compress-Archive -Path "MFSAppsControl\Output\*" -DestinationPath MFSAppsControl.zip
 
       - name: Upload installer artifact
@@ -75,15 +85,6 @@ jobs:
         with:
           name: mfsappscontrol-installer
           path: "${{ github.workspace }}\\MFSAppsControl.zip"
-
-      - name: Generate release note
-        run: |
-          cd "${{ github.workspace }}"
-          $lines = Get-Content CHANGELOG.md
-          $startIndex = ($lines | Select-String -Pattern '^## \[' | Select-Object -First 1).LineNumber - 1
-          $nextIndex = ($lines | Select-String -Pattern '^## \[' | Select-Object -Skip 1 -First 1).LineNumber - 2
-          $releaseNote = $lines[$startIndex..$nextIndex] -join "`n" 
-          $releaseNote | Out-File -FilePath RELEASENOTE.md
 
       - name: Upload release notes
         uses: actions/upload-artifact@v4
