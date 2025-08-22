@@ -19,7 +19,7 @@ namespace MFSAppsControl.ViewModels.Windows
         private bool updateNotificationShown = false;
 
         [ObservableProperty]
-        private string currentLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
+        private string currentLanguage = CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
 
         [ObservableProperty]
         private string applicationTitle = "MFS Apps Control";
@@ -116,7 +116,7 @@ namespace MFSAppsControl.ViewModels.Windows
                 if (!string.IsNullOrWhiteSpace(latestVersionTag))
                 {
                     var latestVersionStr = latestVersionTag.TrimStart('v', 'V');
-                    var currentVersionStr = ApplicationVersionCopyright[..3];
+                    var currentVersionStr = ApplicationVersionCopyright.TrimStart('v', 'V')[..3];
 
                     if (Version.TryParse(latestVersionStr, out var latestVersion) &&
                         Version.TryParse(currentVersionStr, out var currentVer))
@@ -206,7 +206,7 @@ namespace MFSAppsControl.ViewModels.Windows
         {
             if (e.Argument == "viewRelease")
             {
-                var releaseUrl = "https://github.com/Stalex-CORP/MFSAppsControl/release/latest";
+                var releaseUrl = "https://flightsim.to/file/96593/mfs-apps-control";
                 try
                 {
                     Process.Start(new ProcessStartInfo(releaseUrl) { UseShellExecute = true });

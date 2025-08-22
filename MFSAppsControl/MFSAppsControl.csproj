@@ -23,9 +23,9 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<StartupObject>MFSAppsControl.App</StartupObject>
 		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-		<AssemblyVersion>1.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
-		<Version>1.0.0</Version>
+		<AssemblyVersion>1.1</AssemblyVersion>
+		<FileVersion>1.1.0.0</FileVersion>
+		<Version>1.1.0</Version>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 	</PropertyGroup>
 
@@ -81,25 +81,7 @@
 		<Content Include="log4net.config">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
-		<Content Include="../preview-en.png">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-		<Content Include="../preview-fr.png">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-		<Content Include="../docs/README-en.md">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
 		<Content Include="../docs/MFSAppsControl_UserManual.pdf">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-		<Content Include="../docs/README-fr.md">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-		<Content Include="../README.md">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
-		<Content Include="../CHANGELOG.md">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
