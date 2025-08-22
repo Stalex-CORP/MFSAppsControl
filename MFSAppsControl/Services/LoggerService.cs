@@ -1,5 +1,6 @@
 ﻿using log4net;
 using log4net.Config;
+using log4net.Repository.Hierarchy;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -28,6 +29,7 @@ namespace MFSAppsControl.Services
 
         /// <summary>
         /// Initializes the logger service, configuring log4net with the specified settings for release and debug.
+        /// </summary>
         public LoggerService()
         {
             logDir = Path.Combine(
@@ -42,28 +44,41 @@ namespace MFSAppsControl.Services
             var logRepository = LogManager.GetRepository(entryAssembly);
             XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
 
-            var appender = logRepository.GetAppenders().OfType<log4net.Appender.RollingFileAppender>().Single(a => a.Name.Equals("RollingFileAppender"));
-            var debugAppender = logRepository.GetAppenders().OfType<log4net.Appender.RollingFileAppender>().Single(a => a.Name.Equals("RollingFileAppenderDebug"));
-            var deboggerAppender = logRepository.GetAppenders().OfType<log4net.Appender.DebugAppender>().FirstOrDefault();
+            var appender = logRepository.GetAppenders().OfType<log4net.Appender.RollingFileAppender>().SingleOrDefault(a => a.Name.Equals("RollingFileAppender"));
 
-            if (appender != null)
+
+            if (Debugger.IsAttached)
             {
-                appender.File = Path.Combine(logDir, "app.log");
-                appender.ActivateOptions();
-                
-            }
+                //var deboggerAppender = logRepository.GetAppenders().OfType<log4net.Appender.DebugAppender>().FirstOrDefault();
+                //var debugAppender = logRepository.GetAppenders().OfType<log4net.Appender.RollingFileAppender>().SingleOrDefault(a => a.Name.Equals("RollingFileAppenderDebug"));
 
-            if (Debugger.IsAttached) {
-                if (debugAppender != null)
+                var patternLayout = new log4net.Layout.PatternLayout
                 {
-                    debugAppender.File = Path.Combine(logDir, "app-debug.log");
-                    debugAppender.ActivateOptions();
-                }
-            }
-            else
-            {
-                deboggerAppender?.Close();
+                    ConversionPattern = "%date %-5level - %message%newline"
+                };
+                patternLayout.ActivateOptions();
 
+                var debugFileAppender = new log4net.Appender.FileAppender
+                {
+                    File = "app-debug.log",
+                    Layout = patternLayout,
+                    AppendToFile = true,
+                    Threshold = log4net.Core.Level.All,
+                };
+                debugFileAppender.ActivateOptions();
+
+                var hierarchy = (Hierarchy)LogManager.GetRepository();
+                hierarchy.Root.AddAppender(debugFileAppender);
+
+                var deboggerConsoleAppender = new log4net.Appender.DebugAppender
+                {
+                    Layout = patternLayout,
+                    Threshold = log4net.Core.Level.Info,
+                };
+                deboggerConsoleAppender.ActivateOptions();
+                hierarchy.Root.AddAppender(deboggerConsoleAppender);
+
+                BasicConfigurator.Configure(hierarchy);
             }
         }
 
