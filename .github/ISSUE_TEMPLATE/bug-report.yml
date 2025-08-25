@@ -2,6 +2,8 @@
 description: File a bug report.
 title: "[Bug]: "
 labels: ["bug"]
+tags: ["bug"]
+assignees: ["stevealexandre"]
 body:
   - type: markdown
     attributes:
