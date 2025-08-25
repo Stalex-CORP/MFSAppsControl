@@ -85,13 +85,24 @@ namespace MFSAppsControlTests
         public void TestOnLanguageChanged()
         {
             languageService!.SetCulture("en");
-            Assert.AreEqual("en", languageService.currentCulture.Name, "The current culture should be set to English.");
+            addAppViewModel!.CurrentLanguage = "en";
+            Assert.AreEqual("Add", addAppViewModel?.ButtonAddText, "ButtonAddText must be 'Add'.");
+
+            languageService!.SetCulture("de");
+            addAppViewModel!.CurrentLanguage = "de";
+            Assert.AreEqual("Hinzufügen", addAppViewModel?.ButtonAddText, "ButtonAddText must be 'Hinzufügen'.");
+
+            languageService!.SetCulture("es");
+            addAppViewModel!.CurrentLanguage = "es";
+            Assert.AreEqual("Agregar", addAppViewModel?.ButtonAddText, "ButtonAddText must be 'Agregar'.");
+
             languageService!.SetCulture("fr");
-            Assert.AreEqual("fr", languageService.currentCulture.Name, "The current culture should be set to French.");
-            Assert.AreEqual(languageService!.GetMessage("Button_Browse"), addAppViewModel!.ButtonBrowseText, "The message of browse button should be set to the key Button_Browse of translation file.");
-            Assert.AreEqual(languageService!.GetMessage("Button_Add"), addAppViewModel!.ButtonAddText, "The message of add button should be set to the key Button_Add of translation file.");
-            Assert.AreEqual(languageService!.GetMessage("Notification_AppAlreadyAdded"), addAppViewModel!.NotificationAppAlreadyAddedText, "The message of App Already Added notificationo should be set to the key Notification_AppAlreadyAdded of the translation file.");
-            Assert.AreEqual(languageService!.GetMessage("Notification_LoadInstalledAppError"), addAppViewModel!.NotificationLoadInstalledAppErrorText, "The message of Load Installed App Error notificationo should be set to the key Notification_LoadInstalledAppError of the translation file.");
+            addAppViewModel!.CurrentLanguage = "fr";
+            Assert.AreEqual("Ajouter", addAppViewModel?.ButtonAddText, "ButtonAddText must be 'Ajouter'.");
+
+            languageService!.SetCulture("it");
+            addAppViewModel!.CurrentLanguage = "it";
+            Assert.AreEqual("Aggiungi", addAppViewModel?.ButtonAddText, "ButtonAddText must be 'Aggiungi'.");
         }
     }
 }

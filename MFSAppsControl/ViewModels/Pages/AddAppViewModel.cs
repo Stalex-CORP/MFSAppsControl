@@ -21,6 +21,9 @@ namespace MFSAppsControl.ViewModels.Pages
         private readonly ConfigAppsViewModel configAppsViewModel;
 
         [ObservableProperty]
+        private string currentLanguage;
+
+        [ObservableProperty]
         private ObservableCollection<ApplicationModel> appsAvailable = [];
 
         [ObservableProperty]
@@ -53,6 +56,9 @@ namespace MFSAppsControl.ViewModels.Pages
         [ObservableProperty]
         private string notificationLoadInstalledAppErrorText;
 
+        [ObservableProperty]
+        private string datagridArgumentsPlaceHolderText;
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AddAppViewModel"/> class.
@@ -72,12 +78,14 @@ namespace MFSAppsControl.ViewModels.Pages
             ButtonAddText = LanguageService.GetMessage("Button_Add");
             NotificationAppAlreadyAddedText = LanguageService.GetMessage("Notification_AppAlreadyAdded");
             NotificationLoadInstalledAppErrorText = LanguageService.GetMessage("Notification_LoadInstalledAppError");
+            DatagridArgumentsPlaceHolderText = LanguageService.GetMessage("Datagrid_Placeholder_Arguments");
+            currentLanguage = languageService.currentCulture.TwoLetterISOLanguageName;
+            languageService.LanguageChanged += () => CurrentLanguage = languageService.currentCulture.TwoLetterISOLanguageName;
 
             try
             {
                 logger.Info("Initializing AddAppViewModel");
                 RefreshAppsAvailable();
-                LanguageService.LanguageChanged += OnLanguageChanged;
                 logger.Info("AddAppViewModel initialized successfully");
             }
             catch (Exception ex)
@@ -418,6 +426,7 @@ namespace MFSAppsControl.ViewModels.Pages
         /// <summary>
         /// Empty argument field when the selected application changed.
         /// </summary>
+        /// <param name="value">The new selected application.</param>
         partial void OnSelectedAppChanged(ApplicationModel? value)
         {
             logger.Info("Selected application changed, clearing arguments field");
@@ -433,14 +442,16 @@ namespace MFSAppsControl.ViewModels.Pages
 
 
         /// <summary>
-        /// Change texts according to the current language.
+        /// Update texts when current language change.
         /// </summary>
-        internal void OnLanguageChanged()
+        /// <param name="value">value of current language.</param>
+        partial void OnCurrentLanguageChanged(string value)
         {
             ButtonBrowseText = LanguageService.GetMessage("Button_Browse");
             ButtonAddText = LanguageService.GetMessage("Button_Add");
             NotificationAppAlreadyAddedText = LanguageService.GetMessage("Notification_AppAlreadyAdded");
             NotificationLoadInstalledAppErrorText = LanguageService.GetMessage("Notification_LoadInstalledAppError");
+            DatagridArgumentsPlaceHolderText = LanguageService.GetMessage("Datagrid_Placeholder_Arguments");
         }
     }
 }

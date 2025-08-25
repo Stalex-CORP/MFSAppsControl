@@ -396,5 +396,7 @@ Output/
 *.png
 *.psd
 !MFSAppsControl/Assets/*.png
+!MFSAppsControl/Resources/**/*.png
+!MFSAppsControl_banner.png
 !Docs/images/*.png
 .github/copilot-instructions.md

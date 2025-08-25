@@ -15,7 +15,10 @@ namespace MFSAppsControl.ViewModels.Pages
         private readonly ILoggerService<ConfigAppsViewModel> logger;
         private readonly ISnackbarService snackbarService;
         private readonly LanguageService languageService;
-        private readonly ConfigurationService configurationService;        
+        private readonly ConfigurationService configurationService;
+
+        [ObservableProperty]
+        private string currentLanguage;
 
         [ObservableProperty]
         public ObservableCollection<ApplicationModel> _apps = [];
@@ -74,6 +77,18 @@ namespace MFSAppsControl.ViewModels.Pages
         [ObservableProperty]
         private string notificationUpdateAppErrorText;
 
+        [ObservableProperty]
+        private string datagridColumnHeaderApplicationText;
+
+        [ObservableProperty]
+        private string datagridColumnHeaderArgumentsText;
+
+        [ObservableProperty]
+        private string datagridColumnHeaderAutoStartText;
+
+        [ObservableProperty]
+        private string datagridColumnHeaderAutoCloseText;
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigAppsViewModel"/> class.
@@ -92,7 +107,6 @@ namespace MFSAppsControl.ViewModels.Pages
             this.snackbarService = snackbarService;
             this.languageService = languageService;
             this.configurationService = configurationService;
-
             LoadingTextTemplate = languageService.GetMessage("Loading_ManagementEventWatcher");
             ManagementEventWatcherErrorText = languageService.GetMessage("Loading_ManagementEventWatcherError");
             OpenIssueButtonText = languageService.GetMessage("Button_OpenIssue");
@@ -103,6 +117,12 @@ namespace MFSAppsControl.ViewModels.Pages
             NotificationRemoveAppSuccessText = languageService.GetMessage("Notification_RemoveAppSuccess");
             NotificationRemoveAppErrorText = languageService.GetMessage("Notification_RemoveAppError");
             NotificationUpdateAppErrorText = languageService.GetMessage("Notification_UpdateAppError");
+            DatagridColumnHeaderApplicationText = languageService.GetMessage("DataGrid_ColumnHeader_Application");
+            DatagridColumnHeaderArgumentsText = languageService.GetMessage("DataGrid_ColumnHeader_Arguments");
+            DatagridColumnHeaderAutoStartText = languageService.GetMessage("DataGrid_ColumnHeader_AutoStart");
+            DatagridColumnHeaderAutoCloseText = languageService.GetMessage("DataGrid_ColumnHeader_AutoClose");
+            currentLanguage = languageService.currentCulture.TwoLetterISOLanguageName;
+            languageService.LanguageChanged += () => CurrentLanguage = languageService.currentCulture.TwoLetterISOLanguageName;
             logger.Info("Initializing ConfigAppsViewModel...");
         }
 
@@ -115,7 +135,6 @@ namespace MFSAppsControl.ViewModels.Pages
             try
             {
                 await LoadConfigurationAsync();
-                languageService.LanguageChanged += OnLanguageChanged;
 
                 logger.Info("ConfigAppsViewModel initialized successfully.");
             }
@@ -347,41 +366,57 @@ namespace MFSAppsControl.ViewModels.Pages
         /// </summary>
         /// <param name="e">The property change event arguments.</param>
         /// <param name="sender">The sender of the event, typically the application model that changed.</param>
-        private async void OnAppPropertyChanged(object? sender, PropertyChangedEventArgs e)
-        {
-            try
-            {
-                logger.Info($"Property changed in application model.");
-                logger.Debug("property", e.PropertyName ?? "null");
-                await configurationService.SaveConfigurationAsync(new ConfigurationModel
-                {
-                    Apps = Apps,
-                    Language = languageService.currentCulture.TwoLetterISOLanguageName
-                });
-                logger.Info("Configuration saved after application property change.");
-            }
-            catch (Exception ex)
-            {
-                snackbarService.Show(
-                    NotificationUpdateAppErrorText,
-                    "",
-                    ControlAppearance.Danger,
-                    new SymbolIcon(SymbolRegular.ErrorCircle24),
-                    TimeSpan.FromSeconds(5)
-                );
+        private System.Timers.Timer? debounceSaveTimer;
 
-                logger.Error("Failed to save applications after property change", ex);
-                await LoadConfigurationAsync();
+        private void OnAppPropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            logger.Info($"Property changed in application model.");
+            logger.Debug("property", e.PropertyName ?? "null");
+
+            if (debounceSaveTimer != null)
+            {
+                debounceSaveTimer.Stop();
+                debounceSaveTimer.Dispose();
             }
+
+            debounceSaveTimer = new System.Timers.Timer(300);
+            debounceSaveTimer.AutoReset = false;
+            debounceSaveTimer.Elapsed += async (s, args) =>
+            {
+                debounceSaveTimer.Dispose();
+                debounceSaveTimer = null;
+                try
+                {
+                    await configurationService.SaveConfigurationAsync(new ConfigurationModel
+                    {
+                        Apps = Apps,
+                        Language = languageService.currentCulture.TwoLetterISOLanguageName
+                    });
+                    logger.Info("Configuration saved after application property change.");
+                }
+                catch (Exception ex)
+                {
+                    snackbarService.Show(
+                        NotificationUpdateAppErrorText,
+                        "",
+                        ControlAppearance.Danger,
+                        new SymbolIcon(SymbolRegular.ErrorCircle24),
+                        TimeSpan.FromSeconds(5)
+                    );
+                    logger.Error("Failed to save applications after property change", ex);
+                    await LoadConfigurationAsync();
+                }
+            };
+            debounceSaveTimer.Start();
         }
 
 
         /// <summary>
-        /// Change texts according to the current language.
+        /// Update texts when the current language changes.
         /// </summary>
-        private void OnLanguageChanged()
+        /// <param name="value">value of Current Language</param>
+        partial void OnCurrentLanguageChanged(string value)
         {
-            logger.Info("Changing texts according to the current language.");
             LoadingTextTemplate = languageService.GetMessage("Loading_ManagementEventWatcher");
             ManagementEventWatcherErrorText = languageService.GetMessage("Loading_ManagementEventWatcherError");
             OpenIssueButtonText = languageService.GetMessage("Button_OpenIssue");
@@ -392,7 +427,10 @@ namespace MFSAppsControl.ViewModels.Pages
             NotificationRemoveAppSuccessText = languageService.GetMessage("Notification_RemoveAppSuccess");
             NotificationRemoveAppErrorText = languageService.GetMessage("Notification_RemoveAppError");
             NotificationUpdateAppErrorText = languageService.GetMessage("Notification_UpdateAppError");
-            logger.Info("Texts changed successfully.");
+            DatagridColumnHeaderApplicationText = languageService.GetMessage("DataGrid_ColumnHeader_Application");
+            DatagridColumnHeaderArgumentsText = languageService.GetMessage("DataGrid_ColumnHeader_Arguments");
+            DatagridColumnHeaderAutoStartText = languageService.GetMessage("DataGrid_ColumnHeader_AutoStart");
+            DatagridColumnHeaderAutoCloseText = languageService.GetMessage("DataGrid_ColumnHeader_AutoClose");
         }
 
 

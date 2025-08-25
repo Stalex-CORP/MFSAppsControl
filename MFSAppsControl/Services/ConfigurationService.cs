@@ -1,4 +1,5 @@
 ﻿using MFSAppsControl.Models;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Text.Json;
@@ -18,6 +19,10 @@ namespace MFSAppsControl.Services
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "Stalex", "MFSAppsControl", "config.json"
             );
+
+            if (Debugger.IsAttached)
+                configFilePath = Path.Combine(Directory.GetCurrentDirectory(), "config.json");
+
             var dir = Path.GetDirectoryName(configFilePath);
             if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
                 Directory.CreateDirectory(dir);

@@ -1,6 +1,25 @@
 # Changelog
 
-## v1.1 - 25-08-22
+## v1.2 - 2025-08-24
+
+### Added
+- Add option in installer to start app at Windows Startup (icon put in the directory Startup of the startup menu) (issue feature #12).
+- Add support new UI language translated with AI for spanish, dutch, italian (issue feature #12) with flag. (Please, submit a feature request on Github for any other language you want or wording fix since AI & Translator may be not accurate)
+- Add unit tests of the MFS Event Watcher methods used to start and stop apps to ensure no regression.
+
+### Changed
+- Update MFS Event Watcher to handle multiple instances of an app like Moza Cockpit (issue bug #13) which was causing app not to be closed when MFS was closed.
+- Keep user configuration on uninstallation instead of being deleted.
+- Set config file to build directory in Debugger to avoid original file modification.
+- Improve language change hot reload performances.
+- Change language icon to dropdown with country flag display now.
+- Update unit test of language to check on some strings to ensure no regression and loaded as expected.
+- Modify update property to add a delay when user click quickly on checkbox and avoid losing save.
+
+### To fix
+- Due to language logic modified, Arguments field in configuration view needs 2x a double clic to be edited, need to be fixed to 1x double clic when a fix is found.
+
+## v1.1 - 2025-08-22
 
 ###  ! IMPORTANT TO READ ! 
 This setup will not detect your previous installation.

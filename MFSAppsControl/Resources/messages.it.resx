@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,83 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Button_Add" xml:space="preserve">
-    <value>Ajouter</value>
+    <value>Aggiungi</value>
   </data>
   <data name="Button_Browse" xml:space="preserve">
-    <value>Parcourir</value>
+    <value>Sfoglia</value>
   </data>
   <data name="Button_OpenIssue" xml:space="preserve">
-    <value>Ouvrir un ticket de bug</value>
+    <value>Apri una segnalazione bug</value>
   </data>
   <data name="Loading_ManagementEventWatcher" xml:space="preserve">
-    <value>Attente de la disponibilité du watcher ... (Contrainte Windows)
-Nouvel essai dans {0} secondes... ({1}/{2})</value>
+    <value>In attesa della disponibilità del monitor... (vincolo di Windows)
+Riprova tra {0} secondi... ({1}/{2})</value>
   </data>
   <data name="Loading_ManagementEventWatcherError" xml:space="preserve">
-    <value>Echec de l'initialisation du watcher.
-Merci de redémarrer l'application et si cela continue d'ouvrir une ticket de bug.</value>
+    <value>Impossibile inizializzare il monitor.
+Riavvia l'applicazione e se il problema persiste apri un ticket di supporto.</value>
   </data>
   <data name="Notification_AddAppError" xml:space="preserve">
-    <value>Echec d'ajout de l'application !</value>
+    <value>Errore nell'aggiunta dell'app!</value>
   </data>
   <data name="Notification_AddAppSuccess" xml:space="preserve">
-    <value>Application ajoutée !</value>
+    <value>App aggiunta!</value>
   </data>
   <data name="Notification_AppAlreadyAdded" xml:space="preserve">
-    <value>L'application est déjà ajoutée !</value>
+    <value>L'app è già stata aggiunta!</value>
   </data>
   <data name="Notification_LoadConfigError" xml:space="preserve">
-    <value>Echec du chargement de la configuration !</value>
+    <value>Errore nel caricamento della configurazione!</value>
   </data>
   <data name="Notification_LoadInstalledAppError" xml:space="preserve">
-    <value>Echec du chargement des applications installées !</value>
+    <value>Errore nel caricamento dell'app installata!</value>
   </data>
   <data name="SystemNotification_NewUpdateTitle" xml:space="preserve">
-    <value>Nouvelle mise à jour de MFS Apps Control !</value>
+    <value>Nuovo aggiornamento di MFS Apps Control!</value>
   </data>
   <data name="Notification_RemoveAppError" xml:space="preserve">
-    <value>Echec du retrait de l'application !</value>
+    <value>Errore nella rimozione dell'app!</value>
   </data>
   <data name="Notification_RemoveAppSuccess" xml:space="preserve">
-    <value>Application retirée !</value>
+    <value>App rimossa!</value>
   </data>
   <data name="Notification_UpdateAppError" xml:space="preserve">
-    <value>Echec de la mise à jour de l'application !</value>
+    <value>Errore nell'aggiornamento dell'app!</value>
   </data>
   <data name="Switch_TestMode" xml:space="preserve">
-    <value>Mode Test</value>
+    <value>Modalità test</value>
   </data>
   <data name="Text_UpdateAvailable" xml:space="preserve">
-    <value>Nouvelle mise à jour</value>
+    <value>Nuovo aggiornamento</value>
   </data>
   <data name="SystemNotification_NewUpdateDescription" xml:space="preserve">
-    <value>Regarde le changelog pour les détails de la mise à jour.</value>
+    <value>Consulta il changelog per i dettagli dell'aggiornamento.</value>
   </data>
   <data name="SystemNotification_MinimizeBackgroundTitle" xml:space="preserve">
-    <value>MFS Apps Control fonctionne en arrière-plan !</value>
+    <value>MFS Apps Control è in esecuzione in background!</value>
   </data>
   <data name="SystemNotification_MinimizeBackgroundDescription" xml:space="preserve">
-    <value>L'application continuera ses tâches start/stop jusqu'à la fermeture.</value>
+    <value>L'app continuerà a gestire avvio/arresto fino alla chiusura.</value>
   </data>
   <data name="SystemNotification_OpenReleaseButton" xml:space="preserve">
-    <value>Voir</value>
+    <value>Visualizza</value>
   </data>
   <data name="SystemNotification_UpdateAvailableRemindButton" xml:space="preserve">
-    <value>Rappel</value>
+    <value>Ricorda</value>
   </data>
   <data name="DataGrid_ColumnHeader_Application" xml:space="preserve">
-    <value>Nom</value>
+    <value>Nome applicazione</value>
   </data>
   <data name="DataGrid_ColumnHeader_Arguments" xml:space="preserve">
-    <value>Arguments</value>
+    <value>Argomenti</value>
   </data>
   <data name="DataGrid_ColumnHeader_AutoStart" xml:space="preserve">
-    <value>Démarrage Auto</value>
+    <value>Avvio automatico</value>
   </data>
   <data name="DataGrid_ColumnHeader_AutoClose" xml:space="preserve">
-    <value>Arrêt Auto</value>
+    <value>Chiusura automatica</value>
   </data>
   <data name="Datagrid_Placeholder_Arguments" xml:space="preserve">
-    <value>Arguments...</value>
+    <value>Argomenti...</value>
   </data>
 </root>

@@ -41,7 +41,35 @@
                 <ui:ImageIcon Source="pack://application:,,,/mfsappscontrol.ico" />
             </ui:TitleBar.Icon>
             <ui:TitleBar.TrailingContent>
-                <ui:Button Content="{Binding ViewModel.CurrentLanguage}" d:Content="EN" Command="{Binding ViewModel.ChangeLanguageCommand}" Appearance="Transparent" BorderThickness="0" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <ui:DropDownButton Appearance="Transparent" BorderThickness="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <ui:DropDownButton.Icon>
+                        <ui:ImageIcon Width="24" Height="24" Source="{Binding ViewModel.CurrentIconLanguage}" d:Source="pack://application:,,,/MFSAppsControl;component/Resources/Flags/en.png" />
+                    </ui:DropDownButton.Icon>
+                    <ui:DropDownButton.Flyout>
+                        <ContextMenu>
+                            <MenuItem Command="{Binding ViewModel.ChangeLanguageCommand}" CommandParameter="EN">
+                                <MenuItem.Icon>
+                                    <Image Width="24" Height="24" Source="pack://application:,,,/MFSAppsControl;component/Resources/Flags/en.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Command="{Binding ViewModel.ChangeLanguageCommand}" CommandParameter="FR">
+                                <MenuItem.Icon>
+                                    <ui:Image Width="24" Height="24" Source="pack://application:,,,/MFSAppsControl;component/Resources/Flags/fr.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Command="{Binding ViewModel.ChangeLanguageCommand}" CommandParameter="ES">
+                                <MenuItem.Icon>
+                                    <ui:Image Width="24" Height="24" Source="pack://application:,,,/MFSAppsControl;component/Resources/Flags/es.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Command="{Binding ViewModel.ChangeLanguageCommand}" CommandParameter="DE">
+                                <MenuItem.Icon>
+                                    <ui:Image Width="24" Height="24" Source="pack://application:,,,/MFSAppsControl;component/Resources/Flags/de.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </ContextMenu>
+                    </ui:DropDownButton.Flyout>
+                </ui:DropDownButton>
             </ui:TitleBar.TrailingContent>
         </ui:TitleBar>
         <ui:NavigationView
