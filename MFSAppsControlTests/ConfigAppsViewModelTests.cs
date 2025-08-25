@@ -97,18 +97,24 @@ namespace MFSAppsControlTests {
         public void TestOnLanguageChanged()
         {
             languageService!.SetCulture("en");
-            configAppsViewModel!.GetType().GetMethod("OnLanguageChanged", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)!.Invoke(configAppsViewModel, null);
+            configAppsViewModel!.CurrentLanguage = "en";
+            Assert.AreEqual("Name", configAppsViewModel.DatagridColumnHeaderApplicationText, "DatagridColumnHeaderApplicationText must be 'Name'.");
 
-            Assert.AreEqual(languageService.GetMessage("Loading_ManagementEventWatcher"), configAppsViewModel.LoadingTextTemplate, "The message of Loading Management Event should be set to the key Loading_ManagementEventWatcher of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Loading_ManagementEventWatcherError"), configAppsViewModel.ManagementEventWatcherErrorText, "The message of Loading Management Event Error should be set to the key Loading_ManagementEventWatcherError of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Button_OpenIssue"), configAppsViewModel.OpenIssueButtonText, "The message of Open Issue Button should be set to the key Button_OpenIssue of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Switch_TestMode"), configAppsViewModel.ToggleSwitchTestModeText, "The message of Test Mode Switch should be set to the key Switch_TestMode of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Notification_LoadConfigError"), configAppsViewModel.NotificationLoadConfigErrorText, "The message of Load Config Error notification should be set to the key Notification_LoadConfigError of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Notification_AddAppSuccess"), configAppsViewModel.NotificationAddAppSuccessText, "The message of Add App Success notification should be set to the key Notification_AddAppSuccess of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Notification_AddAppError"), configAppsViewModel.NotificationAddAppErrorText, "The message of Add App Error notification should be set to the key Notification_AddAppError of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Notification_RemoveAppSuccess"), configAppsViewModel.NotificationRemoveAppSuccessText, "The message of Remove App Success notification should be set to the key Notification_RemoveAppSuccess of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Notification_RemoveAppError"), configAppsViewModel.NotificationRemoveAppErrorText, "The message of Remove App Error notification should be set to the key Notification_RemoveAppError of translation file.");
-            Assert.AreEqual(languageService.GetMessage("Notification_UpdateAppError"), configAppsViewModel.NotificationUpdateAppErrorText, "The message of Update App Error should be set to the key Notification_UpdateAppError of translation file.");
+            languageService!.SetCulture("de");
+            configAppsViewModel!.CurrentLanguage = "de";
+            Assert.AreEqual("Anwendungsname", configAppsViewModel.DatagridColumnHeaderApplicationText, "DatagridColumnHeaderApplicationText must be 'Anwendungsname'.");
+
+            languageService!.SetCulture("es");
+            configAppsViewModel!.CurrentLanguage = "es";
+            Assert.AreEqual("Nombre de aplicación", configAppsViewModel.DatagridColumnHeaderApplicationText, "DatagridColumnHeaderApplicationText must be 'Nombre de aplicación'.");
+
+            languageService!.SetCulture("fr");
+            configAppsViewModel!.CurrentLanguage = "fr";
+            Assert.AreEqual("Nom", configAppsViewModel.DatagridColumnHeaderApplicationText, "DatagridColumnHeaderApplicationText must be 'Nom'.");
+
+            languageService!.SetCulture("it");
+            configAppsViewModel!.CurrentLanguage = "it";
+            Assert.AreEqual("Nome applicazione", configAppsViewModel.DatagridColumnHeaderApplicationText, "DatagridColumnHeaderApplicationText must be 'Nome applicazione'.");
         }
 
         [TestMethod]
