@@ -74,6 +74,11 @@
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 		<EmbeddedResource Include="ExcludedVendors.json" />
+		<Resource Include="Resources\Flags\en.png" />
+		<Resource Include="Resources\Flags\es.png" />
+		<Resource Include="Resources\Flags\fr.png" />
+		<Resource Include="Resources\Flags\de.png" />
+		<Resource Include="Resources\Flags\it.png" />
 		<Resource Include="../mfsappscontrol.ico" />
 		<Content Include="../LICENSE.txt">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>

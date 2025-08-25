@@ -84,7 +84,8 @@
                 Grid.Column="4"
                 Click="TestModeSwitch_Toggled"/>
         </Grid>
-        <ui:DataGrid 
+        <ui:DataGrid
+            x:Name="AppsDataGrid"
             ItemsSource="{Binding ViewModel.Apps, Mode=TwoWay}"
             SelectedItem="{Binding ViewModel.SelectedApp, Mode=TwoWay}"
             Visibility="{Binding ViewModel.DatagridVisibility}"
@@ -104,15 +105,63 @@
                 <DataGridTemplateColumn HeaderStyle="{StaticResource NonInteractiveHeaderStyle}" Width="Auto" CanUserSort="False" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding IconPath, Converter={StaticResource ExeIconToImageSourceConverter}}" Width="32" Height="32" Margin="0,0,12,0"/>
+                            <Image Source="{Binding IconPath, Converter={StaticResource ExeIconToImageSourceConverter}}" Width="24" Height="24" Margin="0,0,12,0"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Application" Binding="{Binding Name}" Width="*" CanUserSort="True" IsReadOnly="True" />
-                <DataGridTextColumn Header="Path" Binding="{Binding ExecutablePath}" Visibility="Collapsed" Width="*" CanUserSort="False" IsReadOnly="True" />
-                <DataGridTextColumn Header="Arguments" Binding="{Binding Arguments, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" Width="*" CanUserSort="False" />
-                <DataGridCheckBoxColumn Header="Auto Start" Binding="{Binding AutoStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="Auto" CanUserSort="True" />
-                <DataGridCheckBoxColumn Header="Auto Close" Binding="{Binding AutoClose, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="Auto" CanUserSort="True" />
+                <DataGridTemplateColumn Width="*" CanUserSort="True" IsReadOnly="True">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <ui:TextBlock Text="{Binding ViewModel.DatagridColumnHeaderApplicationText, ElementName=AppsPageRoot}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ui:TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*" CanUserSort="False" IsReadOnly="False">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <ui:TextBlock Text="{Binding ViewModel.DatagridColumnHeaderArgumentsText, ElementName=AppsPageRoot}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ui:TextBlock Text="{Binding Arguments}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ui:TextBox Text="{Binding Arguments, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="Auto" CanUserSort="True">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <ui:TextBlock Text="{Binding ViewModel.DatagridColumnHeaderAutoStartText, ElementName=AppsPageRoot}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding AutoStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="Auto" CanUserSort="True">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <ui:TextBlock Text="{Binding ViewModel.DatagridColumnHeaderAutoCloseText, ElementName=AppsPageRoot}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding AutoClose, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="32">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

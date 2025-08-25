@@ -21,6 +21,11 @@ namespace MFSAppsControl.ViewModels.Windows
         [ObservableProperty]
         private string currentLanguage = CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
 
+        public string CurrentIconLanguage
+        {
+            get => $"pack://application:,,,/MFSAppsControl;component/Resources/Flags/{CurrentLanguage.ToLower()}.png";
+        }
+
         [ObservableProperty]
         private string applicationTitle = "MFS Apps Control";
 
@@ -71,8 +76,6 @@ namespace MFSAppsControl.ViewModels.Windows
             updateTimer.AutoReset = true;
             updateTimer.Start();
 
-            languageService.LanguageChanged += OnLanguageChanged;
-            
             ToastNotificationManagerCompat.OnActivated += OnToastAction;
         }
 
@@ -88,6 +91,7 @@ namespace MFSAppsControl.ViewModels.Windows
                 var configuration = await configurationService.LoadConfigurationAsync();
                 CurrentLanguage = configuration.Language!;
                 languageService.SetCulture(CurrentLanguage);
+                OnPropertyChanged(nameof(CurrentIconLanguage));
             }
             catch (Exception ex)
             {
@@ -156,24 +160,17 @@ namespace MFSAppsControl.ViewModels.Windows
         }
 
 
-        public ICommand ChangeLanguageCommand => new RelayCommand(ChangeLanguage);
+        public ICommand ChangeLanguageCommand => new RelayCommand<string>(ChangeLanguage);
         /// <summary>
         /// Change the application language between French and English and save it to configuration file.
         /// </summary>
-        private async void ChangeLanguage()
+        private async void ChangeLanguage(string? languageCode)
         {
             try
             {
-                if (CurrentLanguage == "fr")
-                {
-                    languageService.SetCulture("en");
-                    CurrentLanguage = "en";
-                }
-                else
-                {
-                    languageService.SetCulture("fr");
-                    CurrentLanguage = "fr";
-                }
+                var code = string.IsNullOrWhiteSpace(languageCode) ? "EN" : languageCode;
+                languageService.SetCulture(code);
+                CurrentLanguage = code;
                 var configuration = await configurationService.LoadConfigurationAsync();
                 configuration.Language = CurrentLanguage;
                 await configurationService.SaveConfigurationAsync(configuration);
@@ -186,13 +183,15 @@ namespace MFSAppsControl.ViewModels.Windows
 
 
         /// <summary>
-        /// Change texts according to the current language.
+        /// Update the translations and language icon when the current language change.
         /// </summary>
-        private void OnLanguageChanged()
+        /// <param name="value">value of Current Language</param>
+        partial void OnCurrentLanguageChanged(string value)
         {
             UpdateMessage = languageService.GetMessage("Text_UpdateAvailable");
             SystemNotificationNewUpdateTitle = languageService.GetMessage("SystemNotification_NewUpdateTitle");
             SystemNotificationNewUpdateDescription = languageService.GetMessage("SystemNotification_NewUpdateDescription");
+            OnPropertyChanged(nameof(CurrentIconLanguage));
         }
 
 

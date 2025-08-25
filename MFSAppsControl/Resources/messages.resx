@@ -182,4 +182,19 @@ Please restart the application and if continue open an issue ticket.</value>
   <data name="SystemNotification_UpdateAvailableRemindButton" xml:space="preserve">
     <value>Remind</value>
   </data>
+  <data name="DataGrid_ColumnHeader_Application" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DataGrid_ColumnHeader_Arguments" xml:space="preserve">
+    <value>Arguments</value>
+  </data>
+  <data name="DataGrid_ColumnHeader_AutoStart" xml:space="preserve">
+    <value>Auto Start</value>
+  </data>
+  <data name="DataGrid_ColumnHeader_AutoClose" xml:space="preserve">
+    <value>Auto Stop</value>
+  </data>
+  <data name="Datagrid_Placeholder_Arguments" xml:space="preserve">
+    <value>Arguments...</value>
+  </data>
 </root>
