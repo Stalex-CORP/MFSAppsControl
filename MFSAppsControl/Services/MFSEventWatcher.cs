@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.IO;
 using System.Management;
 using MFSAppsControl.ViewModels.Pages;
 
@@ -10,7 +9,7 @@ namespace MFSAppsControl.Services
         private readonly ConfigAppsViewModel configViewModel;
         private ManagementEventWatcher? startWatcher;
         private ManagementEventWatcher? stopWatcher;
-        private readonly Dictionary<string, Process> startedApps = [];
+        internal Dictionary<string, List<int>> appsProcesses = [];
         private readonly ILoggerService<MFSEventWatcher> logger;
         private bool isInitialized = false;
 
@@ -26,6 +25,7 @@ namespace MFSAppsControl.Services
         {
             this.logger = logger;
             this.configViewModel = configAppsViewModel;
+            _ = InitializeAsync();
         }
 
 
@@ -57,6 +57,10 @@ namespace MFSAppsControl.Services
                     stopWatcher.Start();
                     logger.Info("MFSEventWatcher initialized successfully.");
                     isInitialized = true;
+
+                    logger.Info("Checking for running apps to add to appsProcesses...");
+                    appsProcesses = GetProcessRunning();
+
                     return;
                 }
                 catch (ManagementException mex) when (mex.Message.Contains("quota", StringComparison.OrdinalIgnoreCase))
@@ -84,7 +88,7 @@ namespace MFSAppsControl.Services
         }
 
         /// <summary>
-        /// Start apps with To Start config when Microsoft Flight Simulator starts.
+        /// Start apps with To Start config when Microsoft Flight Simulator starts or with simulation.
         /// </summary>
         /// <param name="e">Event arguments containing the event data.</param>
         /// <param name="sender">Sender of the event, typically the watcher itself.</param>
@@ -92,34 +96,33 @@ namespace MFSAppsControl.Services
         {
             try
             {
+                appsProcesses = GetProcessRunning();
                 logger.Info("Microsoft Flight Simulator started, checking for apps to start...");
+
                 foreach (var app in configViewModel.Apps.Where(a => a.AutoStart))
                 {
-                    logger.Debug("Checking app...", app.Name);
-                    if (app.ExecutablePath.Equals("powershell.exe") || app.ExecutablePath.Equals("python.exe") || app.ExecutablePath.Equals("cmd.exe") || !IsProcessRunning(app.ExecutablePath))
+                    logger.Debug("Checking app", app.Name.ToLower());
+                    if (!appsProcesses.ContainsKey(app.Name.ToLower()))
                     {
                         try
                         {
-                            logger.Info("Starting app");
-                            var proc = Process.Start(new ProcessStartInfo
-                            {
-                                FileName = app.ExecutablePath,
-                                Arguments = app.Arguments ?? "",
-                                UseShellExecute = true,
-                                CreateNoWindow = true
-                            });
-                            if (proc != null)
-                                startedApps[app.ExecutablePath] = proc;
-
-                            logger.Debug("Started app", app.ToString());
-                            logger.Info("App started successfully");
+                            StartProcessByObject(app.ExecutablePath, app.Arguments ?? "");
                         }
                         catch (Exception ex)
                         {
                             logger.Error("Failed to start app", ex);
                         }
                     }
+                    else
+                    {
+                        logger.Info("App is already running, skipping...");
+                    }
                 }
+
+                // Mandatory delay to ensure process is fully started
+                Task.Delay(1000).Wait();
+
+                appsProcesses = GetProcessRunning();
             }
             catch (Exception ex)
             {
@@ -128,7 +131,7 @@ namespace MFSAppsControl.Services
         }
 
         /// <summary>
-        /// Stop apps with To Close config when Microsoft Flight Simulator stops.
+        /// Stop apps with To Close config when Microsoft Flight Simulator stops or with simulation.
         /// </summary>
         /// <param name="sender"> Sender of the event, typically the watcher itself.</param>
         /// <param name="e">Event arguments containing the event data.</param>
@@ -136,39 +139,40 @@ namespace MFSAppsControl.Services
         {
             try
             {
+                // Mandatory delay to ensure process is fully loaded
+                Task.Delay(1000).Wait();
+                appsProcesses = GetProcessRunning();
+
                 logger.Info("Microsoft Flight Simulator stopped, checking for apps to close...");
                 foreach (var app in configViewModel.Apps.Where(a => a.AutoClose))
                 {
                     logger.Debug("Checking app", app.Name);
-                    if (IsProcessRunning(app.ExecutablePath))
+
+                    if (appsProcesses.TryGetValue(app.Name, out List<int>? pids))
                     {
-                        try
+                        logger.Info("App found in appsProcesses, attempting to close...");
+                        foreach (var pid in pids)
                         {
-                            logger.Debug("Stopping app...", app.Name);
-                            if (startedApps.TryGetValue(app.ExecutablePath, out var proc) && !proc.HasExited)
+                            try
                             {
-                                proc.Kill();
-                                startedApps.Remove(app.ExecutablePath);
-                                logger.Debug("Stopped app from startedApps", app.ToString());
-                                logger.Info("App stopped successfully");
+                                KillProcessById(pid);
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                var exeName = Path.GetFileNameWithoutExtension(app.ExecutablePath);
-                                foreach (var p in Process.GetProcessesByName(exeName))
-                                {
-                                    try { p.Kill(); } catch { }
-                                }
-                                logger.Debug("Stopped app from Process.GetProcessesByName", app.ToString());
-                                logger.Info("App stopped successfully from Process.GetProcessesByName");
+                                logger.Error("Failed to close process", ex);
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            logger.Error("Failed to stop app", ex);
                         }
                     }
+                    else
+                    {
+                        logger.Info("App not found in appsProcesses, skipping...");
+                    }
                 }
+
+                // Mandatory delay to ensure process is fully terminated
+                Task.Delay(1000).Wait();
+
+                appsProcesses = GetProcessRunning();
             }
             catch (Exception ex)
             {
@@ -176,28 +180,144 @@ namespace MFSAppsControl.Services
             }
         }
 
+
         /// <summary>
-        /// Check if a process is currently running based on its executable path.
+        /// Get a dictionary of currently running processes that are marked for auto-start or auto-close in the configuration.
         /// </summary>
-        /// <param name="exePath">The full path of the executable to check.</param>
-        private bool IsProcessRunning(string exePath)
+        /// <returns>A dictionary where the key is the process name and the value is a list of process IDs.</returns>
+        internal Dictionary<string, List<int>> GetProcessRunning()
+        {
+            Dictionary<string, List<int>> runningProcesses = [];
+
+            logger.Info("Getting currently running processes for auto-start and auto-close apps...");
+            foreach (var app in configViewModel.Apps.Where(a => a.AutoStart || a.AutoClose))
+            {
+                logger.Debug("Checking app", app.Name);
+
+                List<int> ids = [];
+
+                string console = "";
+                switch (app.Name.ToLower())
+                {
+                    case var powershell when app.Name.EndsWith("ps1"):
+                        console = "powershell";
+                        break;
+                    case var batch when app.Name.EndsWith("bat") || app.Name.EndsWith("cmd"):
+                        console = "cmd";
+                        break;
+                    case var python when app.Name.EndsWith("py"):
+                        console = "python";
+                        break;
+                }
+
+                if (!string.IsNullOrEmpty(console))
+                {
+                    logger.Info("App is a script, checking for running script processes...");
+                    try
+                    {
+                        Process[] consoleProcesses = Process.GetProcessesByName(console);
+                        if (consoleProcesses.Length != 0)
+                        {
+                            foreach (var p in consoleProcesses)
+                            {
+                                ManagementObjectSearcher processSearch = new($"SELECT CommandLine FROM Win32_Process WHERE ProcessId = {p.Id}");
+                                using ManagementObjectCollection processObject = processSearch.Get();
+                                string? commandLine = processObject.Cast<ManagementBaseObject>().SingleOrDefault()?["CommandLine"].ToString();
+
+                                if (!string.IsNullOrEmpty(commandLine) && commandLine.Contains(app.Name, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    logger.Info("Adding running script process to appsProcesses");
+                                    ids.Add(p.Id);
+                                    logger.Debug("Added process ID", p.Id.ToString());
+                                    logger.Info("Running script process added successfully");
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.Error("Failed to get running script process to appsProcesses", ex);
+                    }
+                }
+                else
+                {
+                    foreach (var p in Process.GetProcessesByName(app.Name))
+                    {
+                        try
+                        {
+                            logger.Info("Adding running process to appsProcesses");
+                            ids.Add(p.Id);
+                            logger.Debug("Added process ID", p.Id.ToString());
+                            logger.Info("Running process added successfully");
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.Error("Failed to add running process to appsProcesses", ex);
+                        }
+                    }
+                }
+                if (ids.Count > 0)
+                {
+                    logger.Info("Found running processes for app");
+                    runningProcesses.Add(app.Name, ids);
+                    logger.Debug("Added to runningProcesses", $"{app.Name}: [{string.Join(", ", ids)}]");
+                    logger.Info("App running processes added successfully");
+                }
+                else
+                {
+                    logger.Info("No running processes found for app");
+                }
+            }
+            logger.Info("Retrieved running processes successfully.");
+
+            return runningProcesses;
+        }
+
+
+        /// <summary>
+        /// Start a process with the specified executable path and arguments.
+        /// </summary>
+        /// <param name="exePath">The path to the executable to start.</param>
+        /// <param name="args">The arguments to pass to the executable.</param>
+        internal void StartProcessByObject(string exePath, string? args)
         {
             try
             {
-                logger.Info("Checking if process is running");
-                logger.Debug("Checking if process is running", exePath);
-                var exeName = Path.GetFileNameWithoutExtension(exePath);
-                logger.Debug("Extracted exeName", exeName);
-                logger.Debug("Process.GetProcessesByName", Process.GetProcessesByName(exeName).Length.ToString());
-                return Process.GetProcessesByName(exeName).Length != 0;
+                logger.Info("Starting process");
+                var proc = Process.Start(new ProcessStartInfo
+                {
+                    FileName = exePath,
+                    Arguments = args ?? "",
+                    UseShellExecute = true,
+                    CreateNoWindow = true
+                });
+                logger.Debug("Started process", proc?.ToString() ?? "null");
+                logger.Info("Process started successfully");
             }
             catch (Exception ex)
             {
-                logger.Error("Failed to check if process is running", ex);
-                return false;
+                logger.Error("Failed to start process", ex);
             }
         }
 
+
+        /// <summary>
+        /// Kill a process by its process ID.
+        /// </summary>
+        /// <param name="pid">The process ID of the process to kill.</param>
+        internal void KillProcessById(int pid)
+        {
+            var proc = Process.GetProcessById(pid);
+            if (!proc.HasExited)
+            {
+                logger.Info("Closing process");
+                logger.Debug("Process details", $"ID: {proc.Id}, Name: {proc.ProcessName}");
+                proc.Kill();
+                logger.Info("Process closed");
+            }
+        }
+        
+        
         /// <summary>
         /// Safely dispose of the watchers and release resources.
         /// </summary>

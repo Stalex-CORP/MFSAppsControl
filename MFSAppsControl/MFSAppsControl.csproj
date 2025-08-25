@@ -23,9 +23,9 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<StartupObject>MFSAppsControl.App</StartupObject>
 		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-		<AssemblyVersion>1.1</AssemblyVersion>
-		<FileVersion>1.1.0.0</FileVersion>
-		<Version>1.1.0</Version>
+		<AssemblyVersion>1.2</AssemblyVersion>
+		<FileVersion>1.2.0.0</FileVersion>
+		<Version>1.2.0</Version>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 	</PropertyGroup>
 
@@ -74,6 +74,11 @@
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 		<EmbeddedResource Include="ExcludedVendors.json" />
+		<Resource Include="Resources\Flags\en.png" />
+		<Resource Include="Resources\Flags\es.png" />
+		<Resource Include="Resources\Flags\fr.png" />
+		<Resource Include="Resources\Flags\de.png" />
+		<Resource Include="Resources\Flags\it.png" />
 		<Resource Include="../mfsappscontrol.ico" />
 		<Content Include="../LICENSE.txt">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>

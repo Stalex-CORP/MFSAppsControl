@@ -1,5 +1,5 @@
 #define appName "MFS Apps Control"
-#define appVersion "1.0"
+#define appVersion "1.2"
 #define appPublisher "Stalex"
 #define appCompany "Stalex CORP"
 #define appLink "https://github.com/stalex-CORP/"
@@ -37,19 +37,15 @@ WizardStyle=modern
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
-Name: "arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
-Name: "armenian"; MessagesFile: "compiler:Languages\Armenian.isl"
 Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "bulgarian"; MessagesFile: "compiler:Languages\Bulgarian.isl"
 Name: "catalan"; MessagesFile: "compiler:Languages\Catalan.isl"
-Name: "corsican"; MessagesFile: "compiler:Languages\Corsican.isl"
 Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
 Name: "danish"; MessagesFile: "compiler:Languages\Danish.isl"
 Name: "dutch"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "finnish"; MessagesFile: "compiler:Languages\Finnish.isl"
 Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "german"; MessagesFile: "compiler:Languages\German.isl"
-Name: "hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl"
 Name: "hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl"
@@ -62,12 +58,38 @@ Name: "slovak"; MessagesFile: "compiler:Languages\Slovak.isl"
 Name: "slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "swedish"; MessagesFile: "compiler:Languages\Swedish.isl"
-Name: "tamil"; MessagesFile: "compiler:Languages\Tamil.isl"
 Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
+[CustomMessages]
+english.AutoStartWithWindows=Start %1 with Windows
+brazilianportuguese.AutoStartWithWindows=Iniciar %1 com o Windows
+bulgarian.AutoStartWithWindows=Стартиране на %1 с Windows
+catalan.AutoStartWithWindows=Iniciar %1 amb Windows
+czech.AutoStartWithWindows=Spustit %1 s Windows
+danish.AutoStartWithWindows=Start %1 med Windows
+dutch.AutoStartWithWindows=%1 starten met Windows
+finnish.AutoStartWithWindows=Käynnistä %1 Windowsin kanssa
+french.AutoStartWithWindows=Démarrer %1 avec Windows
+german.AutoStartWithWindows=%1 mit Windows starten
+hungarian.AutoStartWithWindows=Indítsa el a(z) %1-t Windows-szal
+italian.AutoStartWithWindows=Avvia %1 con Windows
+japanese.AutoStartWithWindows=Windowsで%1を起動する
+korean.AutoStartWithWindows=Windows와 함께 %1 시작
+norwegian.AutoStartWithWindows=Start %1 med Windows
+polish.AutoStartWithWindows=Uruchom %1 z systemem Windows
+portuguese.AutoStartWithWindows=Iniciar %1 com o Windows
+russian.AutoStartWithWindows=Запустить %1 с Windows
+slovak.AutoStartWithWindows=Spustiť %1 s Windows
+slovenian.AutoStartWithWindows=Zaženi %1 z Windows
+spanish.AutoStartWithWindows=Iniciar %1 con Windows
+swedish.AutoStartWithWindows=Starta %1 med Windows
+turkish.AutoStartWithWindows=%1'i Windows ile başlat
+ukrainian.AutoStartWithWindows=Запустить %1 вместе с Windows
+
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkedonce
+Name: "startwithwindows"; Description: "{cm:AutoStartWithWindows,{#appName}}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
 Source: "bin\Publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
@@ -80,11 +102,10 @@ Name: "{group}\Open a Bug Request"; Filename: "{#appSourceLink}/issues/new?templ
 Name: "{group}\Open a Feature Request"; Filename: "{#appSourceLink}/issues/new?template=feature-request.yml"
 Name: "{group}\{cm:UninstallProgram,{#appName}}"; Filename: "{uninstallexe}"
 Name: "{autodesktop}\{#appName}"; Filename: "{app}\{#appExeName}"; Tasks: desktopicon
+Name: "{autostartup}\{#appName}"; Filename: "{app}\{#appExeName}"; Tasks: startwithwindows
 
 [Run]
 Filename: "{app}\{#appExeName}"; Description: "{cm:LaunchProgram,{#StringChange(appName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
 [UninstallDelete]
-Type: filesandordirs; Name: "{userappdata}\Stalex\MFSAppsControl"
-Type: filesandordirs; Name: "{localappdata}\Stalex\MFSAppsControl"
 Type: filesandordirs; Name: "{app}"

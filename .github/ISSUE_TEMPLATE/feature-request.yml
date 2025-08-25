@@ -2,6 +2,8 @@ name: Feature Request
 description: File a feature request.
 title: "[Feature]: "
 labels: ["feature"]
+tags: ["feature"]
+assignees: ["stevealexandre"]
 body:
   - type: markdown
     attributes:

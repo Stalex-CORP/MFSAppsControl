@@ -50,7 +50,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <ui:Button Icon="{ui:SymbolIcon FolderAdd24}" Content="{Binding ViewModel.ButtonBrowseText}" d:Content="Browse"  Grid.Column="0" Appearance="Secondary" Command="{Binding ViewModel.BrowseCommand}" />
-            <ui:TextBox PlaceholderText="Arguments..." Grid.Column="1" Margin="12,0" Text="{Binding ViewModel.Arguments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <ui:TextBox PlaceholderText="{Binding ViewModel.DatagridArgumentsPlaceHolderText}" Grid.Column="1" Margin="12,0" Text="{Binding ViewModel.Arguments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <ui:Button Icon="{ui:SymbolIcon Add24}" Content="{Binding ViewModel.ButtonAddText}" d:Content="Add"  Grid.Column="2" Appearance="Primary" Command="{Binding ViewModel.AddSelectedAppCommand}" />
         </Grid>
     </Grid>
