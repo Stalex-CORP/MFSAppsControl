@@ -1,0 +1,161 @@
+site_name: MFSAppsControl
+site_description: >-
+  Automatically launch and stop your simulation applications with Microsoft Flight
+  Simulator — user documentation.
+site_url: https://stalex-corp.github.io/MFSAppsControl/
+repo_url: https://github.com/Stalex-CORP/MFSAppsControl
+repo_name: Stalex-CORP/MFSAppsControl
+copyright: © 2026 Stalex CORP
+docs_dir: docs
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - en
+        - fr
+        - de
+        - es
+        - it
+        - pt
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: fr
+          name: Français
+          build: true
+          nav_translations:
+            Home: Accueil
+            Installation: Installation
+            Getting started: Prise en main
+            Profiles: Profils
+            Applications & sequence: Applications & séquence
+            Options: Options
+            Troubleshooting (FAQ): Dépannage (FAQ)
+            Support: Support
+        - locale: de
+          name: Deutsch
+          build: true
+          nav_translations:
+            Home: Startseite
+            Installation: Installation
+            Getting started: Erste Schritte
+            Profiles: Profile
+            Applications & sequence: Anwendungen & Sequenz
+            Options: Optionen
+            Troubleshooting (FAQ): Fehlerbehebung (FAQ)
+            Support: Support
+        - locale: es
+          name: Español
+          build: true
+          nav_translations:
+            Home: Inicio
+            Installation: Instalación
+            Getting started: Primeros pasos
+            Profiles: Perfiles
+            Applications & sequence: Aplicaciones y secuencia
+            Options: Opciones
+            Troubleshooting (FAQ): Solución de problemas (FAQ)
+            Support: Soporte
+        - locale: it
+          name: Italiano
+          build: true
+          nav_translations:
+            Home: Home
+            Installation: Installazione
+            Getting started: Per iniziare
+            Profiles: Profili
+            Applications & sequence: Applicazioni e sequenza
+            Options: Opzioni
+            Troubleshooting (FAQ): Risoluzione dei problemi (FAQ)
+            Support: Supporto
+        - locale: pt
+          name: Português
+          build: true
+          nav_translations:
+            Home: Início
+            Installation: Instalação
+            Getting started: Introdução
+            Profiles: Perfis
+            Applications & sequence: Aplicações e sequência
+            Options: Opções
+            Troubleshooting (FAQ): Resolução de problemas (FAQ)
+            Support: Suporte
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Getting started: getting-started.md
+  - Applications & sequence: applications.md
+  - Profiles: profiles.md
+  - Options: options.md
+  - Troubleshooting (FAQ): faq.md
+  - Support: support.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/peNzhxVPj3
+      name: Discord
+    - icon: fontawesome/brands/github
+      link: https://github.com/Stalex-CORP/MFSAppsControl
+      name: GitHub
+    - icon: material/download
+      link: https://fr.flightsim.to/addon/96593/mfs-apps-control
+      name: Flightsim.to
+
+extra_css:
+  - assets/css/neoteroi-mkdocs.css
+
+extra_javascript:
+  - assets/js/i18n-redirect.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - neoteroi.timeline
+  - neoteroi.spantable
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
