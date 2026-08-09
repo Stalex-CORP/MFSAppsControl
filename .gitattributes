@@ -1,8 +1,8 @@
-# Normalisation des fins de ligne : LF dans le dépôt et le working tree.
-# Évite le bruit CRLF/LF sous Windows.
+# Line endings: LF in the repository and in the working tree, so Windows does
+# not turn every file into a CRLF diff.
 * text=auto eol=lf
 
-# Fichiers binaires : jamais de normalisation de fins de ligne.
+# Binary files: never normalised.
 *.png  binary
 *.gif  binary
 *.jpg  binary

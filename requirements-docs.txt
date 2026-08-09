@@ -1,7 +1,7 @@
-# Dépendances de la documentation utilisateur (MkDocs).
-# Build local : pip install -r requirements-docs.txt puis `mkdocs serve`.
+# User documentation (MkDocs).
+# Local build: pip install -r requirements-docs.txt, then `mkdocs serve`.
 mkdocs-material>=9.5
 mkdocs-static-i18n>=1.2
-# Cartes, frises, tableaux à cellules fusionnées, diagrammes de projet.
-# Le paquet ne livre pas son CSS : il est vendorisé dans docs/assets/css/.
+# Cards, timelines, merged-cell tables, project diagrams.
+# The package ships no CSS of its own: it is vendored in docs/assets/css/.
 neoteroi-mkdocs>=1.2

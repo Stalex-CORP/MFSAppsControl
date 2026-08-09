@@ -1,14 +1,14 @@
-# Site généré par MkDocs
+# Site built by MkDocs
 /site/
 
-# Environnements Python locaux
+# Local Python environments
 .venv/
 __pycache__/
 
-# Outillage local hors dépôt (génération des captures, etc.)
+# Local tooling, kept out of the repository (screenshot generation, etc.)
 /tools/
 
-# Système
+# OS
 Thumbs.db
 desktop.ini
 .DS_Store

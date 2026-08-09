@@ -15,7 +15,7 @@ permissions:
   pages: write
   id-token: write
 
-# Un seul déploiement à la fois.
+# One deployment at a time.
 concurrency:
   group: pages
   cancel-in-progress: false
