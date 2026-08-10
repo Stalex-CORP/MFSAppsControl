@@ -37,5 +37,4 @@ Passa da<br>
 
 
 !!! tip "Pulizia completa"
-    La tua configurazione **non viene eliminata** automaticamente: i tuoi profili restano quindi al loro posto se reinstalli.<br>
-    Puoi cancellare manualmente la cartella `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl` se non vuoi lasciare nulla.
+    La tua configurazione **non viene eliminata** se non selezioni l'opzione di eliminazione dei dati: i tuoi profili restano quindi al loro posto se reinstalli.

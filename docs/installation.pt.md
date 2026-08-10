@@ -37,5 +37,4 @@ Vá a<br>
 
 
 !!! tip "Limpeza completa"
-    A sua configuração **não é eliminada** automaticamente: os seus perfis são mantidos se voltar a instalar.<br>
-    Pode apagar manualmente a pasta `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl` se preferir não deixar nada.
+    A sua configuração **não é eliminada** se não assinalar a opção de eliminação dos dados: os seus perfis são mantidos se voltar a instalar.

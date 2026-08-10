@@ -37,5 +37,4 @@ Go to<br>
 
 
 !!! tip "Complete cleanup"
-    Your configuration **is not deleted** automatically: your profiles are kept if you reinstall.<br>
-    You can manually delete the `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl` folder if you want to leave nothing behind.
+    Your configuration **is not deleted** unless you tick the data removal option: your profiles are therefore kept if you reinstall.

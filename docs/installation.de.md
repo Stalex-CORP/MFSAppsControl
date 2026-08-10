@@ -37,5 +37,4 @@ Gehen Sie über<br>
 
 
 !!! tip "Vollständige Bereinigung"
-    Ihre Konfiguration wird **nicht** automatisch gelöscht: Ihre Profile bleiben also erhalten, wenn Sie neu installieren.<br>
-    Sie können den Ordner `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl` manuell löschen, wenn Sie keine Spuren hinterlassen möchten.
+    Ihre Konfiguration wird **nicht gelöscht**, wenn Sie die Option zum Entfernen der Daten nicht aktivieren: Ihre Profile bleiben also erhalten, wenn Sie neu installieren.

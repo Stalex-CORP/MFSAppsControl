@@ -37,5 +37,4 @@ Ve a<br>
 
 
 !!! tip "Limpieza completa"
-    Tu configuración **no se borra** automáticamente: tus perfiles se conservan si vuelves a instalar la aplicación.<br>
-    Puedes eliminar manualmente la carpeta `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl` si no quieres dejar nada.
+    Tu configuración **no se borra** si no marcas la opción de eliminación de los datos: tus perfiles se conservan si vuelves a instalar la aplicación.

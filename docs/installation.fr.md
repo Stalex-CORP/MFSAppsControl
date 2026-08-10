@@ -37,5 +37,4 @@ Passez par<br>
 
 
 !!! tip "Nettoyage complet"
-    Votre configuration **n'est pas supprimée** automatiquement : vos profils sont donc conservés si vous réinstallez.<br>
-    Vous pouvez effacer manuellement le dossier `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl` si vous souhaitez ne rien laisser.
+    Votre configuration **n'est pas supprimée** si vous ne cochez pas l'option de suppression des données : vos profils sont donc conservés si vous réinstallez.
