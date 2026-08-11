@@ -2,7 +2,7 @@ site_name: MFSAppsControl
 site_description: >-
   Automatically launch and stop your simulation applications with Microsoft Flight
   Simulator — user documentation.
-site_url: https://stalex-corp.github.io/MFSAppsControl/
+site_url: https://mfsappscontrol.stalexcorp.fr/
 repo_url: https://github.com/Stalex-CORP/MFSAppsControl
 repo_name: Stalex-CORP/MFSAppsControl
 copyright: © 2026 Stalex CORP

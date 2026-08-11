@@ -3,7 +3,7 @@
 Source of the user documentation for **MFSAppsControl**, a Windows application that
 watches Microsoft Flight Simulator 2024/2020 and starts or stops your add-ons for you.
 
-📖 **[Read the documentation](https://stalex-corp.github.io/MFSAppsControl/)**
+📖 **[Read the documentation](https://mfsappscontrol.stalexcorp.fr/)**
 
 The application itself lives in a separate, private repository. This one holds only
 the documentation and the releases.
