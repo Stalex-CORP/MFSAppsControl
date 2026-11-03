@@ -26,6 +26,7 @@ Quando existe uma nova versão disponível, aparece um **emblema** junto à vers
 ### 2. O painel de estado e sequência
 
 É a apresentação visual de:
+
 - o estado do simulador e da ligação SimConnect, e a aeronave carregada,
 - a sequência de arranque das aplicações,
 - o interruptor da sequência automática e o botão de teste da sequência.

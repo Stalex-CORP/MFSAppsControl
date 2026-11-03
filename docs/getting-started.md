@@ -26,6 +26,7 @@ When a new version is available, a **badge** appears next to the version. Clicki
 ### 2. The status & sequence banner
 
 This is the visual display of:
+
 - the simulator state, the SimConnect connection and the aircraft loaded,
 - the application launch sequence,
 - the automatic sequence switch and the sequence test button.

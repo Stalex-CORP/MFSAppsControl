@@ -26,6 +26,7 @@ Cuando hay una nueva versión disponible, aparece una **insignia** junto a la ve
 ### 2. El panel de estado y secuencia
 
 Es la representación visual de:
+
 - el estado del simulador y de la conexión SimConnect, y el avión cargado,
 - la secuencia de inicio de las aplicaciones,
 - el interruptor de la secuencia automática y el botón de prueba de la secuencia.
