@@ -73,6 +73,8 @@ They are set up once, launch with whichever profile is active, and appear on the
 
 MFSAppsControl offers to move into Shared the applications that several profiles have in common. It **never does so on its own**: a window lists them, all ticked, and only what you leave ticked moves.
 
+![The grouping window](assets/shared-grouping.png)
+
 The offer comes:
 
 - **once, after the update to 2.1**, for the applications that all your profiles hold;
@@ -90,6 +92,8 @@ A profile can be **linked to one or more aircraft**: when a flight loads with on
 
 - **From the banner**: once the simulator reports the loaded aircraft, click its name and choose the profile.
 - **From the profile menu → Linked aircraft…**: the list of your installed aircraft (Community and Marketplace), with a search field, usable with the simulator running or not. The aircraft already linked to the profile come first; one linked elsewhere shows which profile holds it, and ticking it moves it here.
+
+![The linked-aircraft list](assets/aircraft-link.png)
 
 A linked profile shows a :material-link-variant: icon on its badge; hover it to see its aircraft.
 

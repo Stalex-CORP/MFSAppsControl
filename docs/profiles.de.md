@@ -73,6 +73,8 @@ Sie werden einmal eingerichtet, starten mit jedem aktiven Profil und erscheinen 
 
 MFSAppsControl bietet an, die Anwendungen, die mehrere Profile gemeinsam haben, nach Gemeinsam zu verschieben. Es **tut das nie von selbst**: Ein Fenster listet sie auf, alle angehakt, und nur was angehakt bleibt, wird verschoben.
 
+![Das Zusammenführen-Fenster](assets/shared-grouping.png)
+
 Das Angebot erscheint:
 
 - **einmal, nach dem Update auf 2.1**, für die Anwendungen, die in allen Ihren Profilen vorhanden sind;
@@ -90,6 +92,8 @@ Ein Profil kann mit **einem oder mehreren Flugzeugen verknüpft** werden: Wird e
 
 - **Im Band**: Sobald der Simulator das geladene Flugzeug meldet, klicken Sie auf seinen Namen und wählen das Profil.
 - **Im Profilmenü → Verknüpfte Flugzeuge…**: die Liste Ihrer installierten Flugzeuge (Community und Marketplace) mit Suchfeld, nutzbar mit oder ohne laufenden Simulator. Die bereits mit dem Profil verknüpften Flugzeuge stehen oben; ein anderswo verknüpftes Flugzeug zeigt, welches Profil es hat, und das Anhaken verschiebt es hierher.
+
+![Die Liste der verknüpften Flugzeuge](assets/aircraft-link.png)
 
 Ein verknüpftes Profil zeigt ein Symbol :material-link-variant: auf seinem Badge; fahren Sie darüber, um seine Flugzeuge zu sehen.
 

@@ -73,6 +73,8 @@ Elles se règlent une seule fois, se lancent avec n'importe quel profil actif et
 
 MFSAppsControl propose de déplacer dans Partagé les applications que plusieurs profils ont en commun. Il **ne le fait jamais de lui-même** : une fenêtre les liste, toutes cochées, et seul ce que vous laissez coché est déplacé.
 
+![La fenêtre de regroupement](assets/shared-grouping.png)
+
 La proposition arrive :
 
 - **une fois, après la mise à jour vers la 2.1**, pour les applications présentes dans tous vos profils ;
@@ -90,6 +92,8 @@ Un profil peut être **lié à un ou plusieurs avions** : quand un vol se charge
 
 - **Depuis le bandeau** : dès que le simulateur annonce l'avion chargé, cliquez sur son nom et choisissez le profil.
 - **Depuis le menu du profil → Avions liés…** : la liste de vos avions installés (Community et Marketplace), avec un champ de recherche, utilisable simulateur lancé ou non. Les avions déjà liés au profil viennent en premier ; un avion lié ailleurs indique le profil qui le détient, et le cocher le déplace ici.
+
+![La liste des avions liés](assets/aircraft-link.png)
 
 Un profil lié affiche une icône :material-link-variant: sur son badge ; survolez-la pour voir ses avions.
 

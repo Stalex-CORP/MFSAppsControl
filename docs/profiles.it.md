@@ -73,6 +73,8 @@ Si configurano una sola volta, si avviano con qualsiasi profilo attivo e compaio
 
 MFSAppsControl propone di spostare in Condiviso le applicazioni che più profili hanno in comune. **Non lo fa mai da solo**: una finestra le elenca, tutte spuntate, e si sposta solo ciò che lasci spuntato.
 
+![La finestra di raggruppamento](assets/shared-grouping.png)
+
 La proposta arriva:
 
 - **una volta, dopo l'aggiornamento alla 2.1**, per le applicazioni presenti in tutti i tuoi profili;
@@ -90,6 +92,8 @@ Un profilo può essere **collegato a uno o più aerei**: quando si carica un vol
 
 - **Dal banner**: appena il simulatore annuncia l'aereo caricato, fai clic sul suo nome e scegli il profilo.
 - **Dal menu del profilo → Aerei collegati…**: l'elenco dei tuoi aerei installati (Community e Marketplace), con un campo di ricerca, utilizzabile con il simulatore avviato o no. Gli aerei già collegati al profilo vengono per primi; un aereo collegato altrove indica quale profilo lo ha, e spuntarlo lo sposta qui.
+
+![L'elenco degli aerei collegati](assets/aircraft-link.png)
 
 Un profilo collegato mostra un'icona :material-link-variant: sul suo badge; passaci sopra per vedere i suoi aerei.
 
