@@ -21,6 +21,9 @@ Every setting is **saved immediately** — there is no
     If **Closing minimizes to system tray** is enabled, the cross no longer closes the application.<br>
     Use **Quit** in the menu on the notification area icon (right-click).
 
+!!! tip "Automatic sequence"
+    The switch that turns the automatic sequence on or off is not in the options: it is in the main window, above **Test**, and in the menu of the notification area icon. → [Getting started](getting-started.md)
+
 ## Appearance
 
 ### Application theme
@@ -65,6 +68,9 @@ Sets how much detail is written to the log files. The change applies **immediate
 | **Trace**             | + internal values in detail. Very heavy.                     | When support asks.   |
 
 A new file is created **every day**, and logs older than **7 days** are deleted automatically.
+
+!!! info "Session journal"
+    Whatever the level, a short journal of each session is always written: the simulator starting and closing, flights loading, the aircraft, and every application launched or stopped. It is often enough for support, even at the **Error** level.
 
 !!! tip
     Remember to **set the level back to Error** once you have reported your problem: the Debug and Trace levels are very heavy.

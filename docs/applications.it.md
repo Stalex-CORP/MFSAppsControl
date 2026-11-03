@@ -34,6 +34,10 @@ Fai clic su **Aggiungi un'applicazione** nella griglia. Due modalità:
 
 La finestra di aggiunta contiene poi gli **argomenti di avvio**, l'**attivazione**, il **ritardo** e l'opzione **Avvia ridotta**, tutti modificabili dopo l'aggiunta.
 
+!!! info "Condiviso e raggruppamento"
+    Un'applicazione già in [Condiviso](profiles.md#il-profilo-condiviso) non può essere aggiunta a un profilo: la finestra spiega il perché.<br>
+    Aggiungere un'applicazione che un altro profilo ha già propone di [raggrupparla in Condiviso](profiles.md#raggruppare-in-condiviso).
+
 ---
 
 ## Anatomia di una scheda
@@ -122,7 +126,7 @@ Il **ritardo** è il tempo di attesa prima dell'avvio dell'applicazione, **a par
 - Regolabile da **0 a 600 secondi** (10 minuti)
 - I pulsanti **−** / **+** procedono a passi di **5 s**; puoi anche **digitare** direttamente il valore
 - Il ritardo è **in grigio** se non è scelto alcun avvio automatico
-- Durante un volo mostra un **lucchetto** :material-lock: — la configurazione è bloccata
+- Durante il suo conto alla rovescia, mostra un **lucchetto** :material-lock:: annulla il conto alla rovescia (**✕**) per modificarlo
 
 !!! tip "I due attivatori hanno la propria sequenza"
     Un ritardo di 30 s su un'applicazione «avvio sim» = 30 s dopo l'avvio di MSFS.<br>
@@ -143,6 +147,8 @@ Il centro del banner mostra la **sequenza di avvio**: quale applicazione parte i
 Compare non appena almeno un'applicazione ha un avvio automatico.
 
 ![La timeline della sequenza di avvio](assets/timeline-dual.png)
+
+Riunisce le applicazioni del profilo **Condiviso** e quelle del profilo attivo.
 
 Ogni blocco rappresenta un istante di partenza, con le icone delle applicazioni interessate.<br>
 Passa il mouse su un blocco per vederne i nomi e lo stato.
@@ -198,6 +204,7 @@ Apri il menu **:material-dots-horizontal:** della scheda, oppure fai **clic dest
 | :material-square-edit-outline: **Modifica** | Riapre la finestra delle impostazioni, precompilata.           |
 | :material-play: **Avvia ora**               | Avvia l'applicazione immediatamente, senza ritardo.            |
 | :material-stop-circle: **Arresta**          | Arresta il processo in corso (sostituisce «Avvia ora»).        |
+| :material-layers: **Sposta in Condiviso**    | Propone di spostare l'applicazione in Condiviso, tramite la finestra di raggruppamento.<br>*Assente nella scheda Condiviso.* |
 | :material-delete: **Rimuovi dalla lista**   | Elimina l'applicazione dal profilo.                            |
 
 ![Modificare un'applicazione](assets/app-editmenu.png)
@@ -215,18 +222,24 @@ Queste impostazioni cambiano **solo la visualizzazione** e non hanno effetto né
 
 ![Filtrare e ordinare](assets/app-filters.png)
 
-## Durante il volo, la configurazione è bloccata
+## Durante una sessione
 
-Non appena il simulatore viene rilevato, il profilo e le applicazioni sono **bloccati** (lucchetto :material-lock:{ style="color:#3ecf8e" }).<br>
+Nulla è bloccato: puoi aggiungere, modificare o rimuovere applicazioni e cambiare profilo in qualsiasi momento, anche in volo.<br>
+Solo una scheda il cui ritardo è **in conto alla rovescia** è bloccata (lucchetto :material-lock:), perché il suo avvio usa già le sue impostazioni: annulla il conto alla rovescia (**✕**) per modificarla.
 
-Puoi comunque **avviare** o **arrestare** un'applicazione a mano dal menu **:material-dots-horizontal:**.
+- **Aggiungere un'applicazione Avvio sim**: viene pianificata con ciò che resta del suo ritardo, contato dall'avvio del simulatore, e parte subito se quel tempo è trascorso — anche in volo.
+- **Aggiungere un'applicazione Pronto al volo**: parte alla prossima schermata Pronto al volo.
+- **Modificare un'applicazione avviata**: continua a funzionare; un nuovo attivatore o ritardo vale dal suo prossimo avvio.
+- **Rimuovere un'applicazione avviata**: non viene chiusa, ma non è più gestita.
+
+Il cambio di profilo segue regole proprie. → [Cambiare profilo durante una sessione](profiles.md#cambiare-profilo-durante-una-sessione)
 
 ## Applicazioni che richiedono l'amministratore
 
 Alcune applicazioni richiedono i **diritti di amministratore** (ad esempio Active Sky, REX Atmos).<br>
 Mostrano uno **scudo** <span style="color:red;">:material-shield-alert:</span> accanto al loro nome.
 
-Quando un'applicazione di questo tipo è presente nel profilo attivo, ti verrà chiesto di **riavviare come amministratore** all'avvio o al momento dell'aggiunta, tramite **una sola** richiesta UAC.
+Quando un'applicazione di questo tipo è in **Condiviso** o in **uno qualsiasi** dei tuoi profili, MFSAppsControl chiede di **riavviarsi come amministratore** all'avvio — o quando la aggiungi — con **un'unica** richiesta UAC. Così, cambiare profilo non richiede mai un riavvio nel mezzo di una sessione.
 
 !!! info "Solo le applicazioni che lo richiedono vengono elevate"
     Anche quando MFSAppsControl gira come amministratore, **non** trasmette quei diritti a tutto ciò che avvia.<br>

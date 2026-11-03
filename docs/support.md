@@ -32,6 +32,9 @@ The procedure to follow:
 4. **Attach that `.zip`** to your message on Discord.
 5. Once you are done, set the level back to **Error**.
 
+!!! tip "Even at the Error level"
+    A short journal of each session is always written — simulator, flights, aircraft, applications launched and stopped. If the problem has already happened, export the logs straight away: they may be enough.
+
 !!! info "What is in the export?"
     The `.zip` bundles **the generated logs** and your **configuration** file.<br>
     Nothing else is collected, and nothing is sent automatically: you alone decide to share it.

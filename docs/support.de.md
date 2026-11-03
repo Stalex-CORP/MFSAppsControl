@@ -33,6 +33,9 @@ So gehen Sie vor:
 4. **Hängen Sie diese `.zip`** an Ihre Nachricht im Discord an.
 5. Stellen Sie die Stufe anschließend wieder auf **Fehler**.
 
+!!! tip "Auch auf der Stufe Fehler"
+    Ein kurzes Protokoll jeder Sitzung wird immer geschrieben — Simulator, Flüge, Flugzeug, gestartete und beendete Anwendungen. Ist das Problem bereits aufgetreten, exportieren Sie die Logs sofort: Sie können ausreichen.
+
 !!! info "Was enthält der Export?"
     Die `.zip` bündelt **die erzeugten Protokolle** und Ihre **Konfigurationsdatei**.<br>
     Sonst wird nichts erfasst, und nichts wird automatisch versendet: Nur Sie entscheiden, ob Sie sie teilen.

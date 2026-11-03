@@ -26,14 +26,14 @@ Cuando hay una nueva versión disponible, aparece una **insignia** junto a la ve
 ### 2. El panel de estado y secuencia
 
 Es la representación visual de:
-- el estado del simulador y de la conexión SimConnect,
+- el estado del simulador y de la conexión SimConnect, y el avión cargado,
 - la secuencia de inicio de las aplicaciones,
-- el botón de prueba de la secuencia.
+- el interruptor de la secuencia automática y el botón de prueba de la secuencia.
 
 ![Secuencia de aplicaciones - Estados](assets/app-sequence-status.png)
 
 
-**A la izquierda, los estados** — MFS y SimConnect.<br>
+**A la izquierda, los estados** — MFS, SimConnect y el avión.<br>
 
 - Estado de MFS
 
@@ -51,14 +51,18 @@ Es la representación visual de:
   | :material-circle:{ style="color:#3ecf8e" } verde | **SimConnect conectado**     | Conexión establecida, sistema listo.                 |
   | :material-circle:{ style="color:#ff5c5c" } rojo  | **SimConnect no disponible** | SimConnect no responde (consulta la [FAQ](faq.md)). |
 
+- Avión
+
+  El avión cargado en el simulador, en cuanto SimConnect lo anuncia — también en el menú principal, mientras recorres los aviones. Un icono :material-link-variant:{ style="color:#3ecf8e" } indica que está vinculado a un perfil, un icono :material-link-variant-off: que no lo está: haz clic en su nombre para vincularlo o desvincularlo. Mientras no se anuncia ningún avión, la línea solo muestra el icono :material-airplane:. → [Perfiles vinculados a aviones](profiles.md#perfiles-vinculados-a-aviones)
+
 
 **En el centro, la secuencia de inicio**<br>
 La línea de tiempo de tus aplicaciones, representadas por sus iconos sobre sus retardos de inicio (visible solo si hay al menos una aplicación configurada). → [El detalle de la línea de tiempo](applications.md#la-linea-de-tiempo)
 
 
-**A la derecha, el botón Probar/Detener**<br>
-Permite simular el inicio y el cierre de MFS para probar las secuencias sin lanzar MFS.<br>
-Durante un vuelo o una prueba, pasa a ser **Detener**. → [Probar la secuencia](applications.md#probar-la-secuencia)
+**A la derecha, el interruptor Secuencia auto y el botón Probar/Detener**<br>
+**Secuencia auto**, arriba, activa o desactiva la secuencia automática. Desactivada, no se inicia ni se detiene nada con el simulador. El icono del área de notificación muestra el mismo estado con un punto verde o rojo, y su menú ofrece el mismo interruptor; la elección se conserva al reiniciar.<br>
+**Probar**, debajo, simula el inicio y el cierre de MSFS para probar tus secuencias sin iniciar MSFS. Durante un vuelo o una prueba, se convierte en **Detener**. → [Probar la secuencia](applications.md#probar-la-secuencia)
 
 ### 3. Los perfiles
 
@@ -69,6 +73,8 @@ Muestra todos tus perfiles disponibles, con el perfil activo resaltado.
 Un botón para **crear** un nuevo perfil.<br>
 Puedes reordenarlos arrastrando las pestañas.<br>
 El menú **:material-dots-horizontal:** permite renombrarlos, duplicarlos o eliminarlos. → [Perfiles](profiles.md)
+
+La pestaña **Compartido**, siempre la primera, contiene las aplicaciones que se inician con todos los perfiles; un icono :material-link-variant: señala un perfil vinculado a aviones.
 
 
 ### 4. Los filtros
@@ -137,6 +143,7 @@ Haz clic en **Detener** para terminar la prueba y cerrar las aplicaciones que te
 | El simulador carga                                  | El estado de MFS pasa a verde, el estado de SimConnect pasa a verde en cuanto está disponible y las aplicaciones de inicio del sim arrancan según su retardo. |
 | Llegas a la pantalla **Listo para volar** de un vuelo | La secuencia **Listo para volar** arranca a su vez, con sus propios retardos.                                                                                  |
 | Cambias de vuelo                                    | Las aplicaciones **no se reinician**, siguen activas.                                                                                                          |
+| Cambias de perfil — a mano, o mediante un [avión vinculado](profiles.md#perfiles-vinculados-a-aviones) | Nada en el momento. Al cargar el siguiente vuelo, las aplicaciones del perfil anterior se cierran y las de inicio del sim del nuevo perfil arrancan enseguida; sus aplicaciones listo para volar siguen en la pantalla Listo para volar. |
 | Sales de **MFS**                                    | Todas las aplicaciones configuradas en **Cierre auto** (incluidas las del modo «Listo para volar») se cierran correctamente.                                   |
 
 !!! info "Si MFS ya está iniciado antes que MFSAppsControl"

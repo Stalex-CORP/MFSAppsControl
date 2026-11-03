@@ -21,6 +21,9 @@ Todas as definições são **guardadas imediatamente** — não existe botão
     Se **Fechar minimiza para a bandeja do sistema** estiver ativado, a cruz deixa de fechar a aplicação.<br>
     Use **Sair** no menu do ícone da área de notificação (clique com o botão direito).
 
+!!! tip "Sequência automática"
+    O interruptor que ativa ou desativa a sequência automática não está nas opções: encontra-se na janela principal, por cima de **Testar**, e no menu do ícone da área de notificação. → [Introdução](getting-started.md)
+
 ## Aparência
 
 ### Tema da aplicação
@@ -65,6 +68,9 @@ Determina o detalhe escrito nos ficheiros de registo. A alteração aplica-se **
 | **Trace**                 | + o detalhe dos valores internos. Muito pesado.                | A pedido do suporte.       |
 
 É criado um novo ficheiro **todos os dias**, e os registos com mais de **7 dias** são eliminados automaticamente.
+
+!!! info "Diário de sessão"
+    Seja qual for o nível, é sempre escrito um breve diário de cada sessão: arranque e fecho do simulador, carregamento de voos, a aeronave, e cada aplicação iniciada ou parada. Muitas vezes basta para o suporte, mesmo no nível **Erro**.
 
 !!! tip
     Lembre-se de **repor o nível em Erro** assim que o seu problema estiver submetido: os níveis Debug e Trace são muito pesados.

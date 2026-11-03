@@ -33,6 +33,9 @@ La procédure à suivre :
 4. **Joignez ce `.zip`** à votre message sur le Discord.
 5. Une fois terminé, remettez le niveau sur **Erreur**.
 
+!!! tip "Même au niveau Erreur"
+    Un court journal de chaque session est toujours écrit — simulateur, vols, avion, applications lancées et arrêtées. Si le problème s'est déjà produit, exportez tout de suite les logs : ils peuvent suffire.
+
 !!! info "Que contient l'export ?"
     Le `.zip` regroupe **les journaux générés** et votre fichier de **configuration**.<br>
     Rien d'autre n'est collecté, et rien n'est envoyé automatiquement : vous seul décidez de le partager.

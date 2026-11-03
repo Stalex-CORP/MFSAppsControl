@@ -46,7 +46,7 @@
 
     1. O indicador **SimConnect ligado** está verde durante o voo?
     2. O botão :material-airplane: está mesmo ativo no cartão (e não o :material-play:)?
-    3. Já voou nesta sessão? As aplicações «pronto para voar» só iniciam **uma vez por sessão de simulador** — não voltam a arrancar entre dois voos.
+    3. Já voou nesta sessão? As aplicações «pronto para voar» só iniciam **uma vez por sessão de simulador** — não voltam a arrancar entre dois voos, a não ser que mude de perfil.
 
     Para revalidar tudo sem voar, use o botão **Testar**: simula o SimConnect ao fim de 10 segundos.
 
@@ -56,10 +56,11 @@
     Adicione um **atraso** no cartão para adiar o seu arranque esses segundos a contar desse momento.
 
 ??? question "A aplicação pede direitos de administrador (UAC)"
-    Algumas aplicações (Active Sky, REX Atmos…) exigem administrador. Para as
-    iniciar — e para as **parar** — o MFSAppsControl tem de estar elevado. Quando um
-    add-on deste tipo está presente no perfil ativo, a aplicação reinicia
-    automaticamente como administrador (**um único** pedido de UAC).
+    Algumas aplicações (Active Sky, REX Atmos…) exigem administrador. Para as iniciar —
+    e para as **parar** — o MFSAppsControl tem de estar elevado. Quando um destes
+    complementos está em Compartilhado ou em **qualquer** um dos seus perfis, a
+    aplicação reinicia como administrador no arranque (**um único** pedido UAC), para
+    que mudar de perfil nunca exija um reinício a meio de uma sessão.
 
     **As outras aplicações não herdam esses direitos**: cada uma arranca com
     os que o seu próprio executável exige. O vPilot ou o Navigraph correm como
@@ -94,16 +95,24 @@
 
     Passe o rato sobre o emblema para ver o **PID** do processo em questão.
 
+??? question "Já nada inicia nem para com o simulador"
+    A **sequência automática** está provavelmente desativada: o interruptor **Sequência auto** por cima de **Testar** está cinzento, e o ícone da área de notificação mostra um ponto **vermelho**.<br>
+    Volte a ativá-la no interruptor ou no menu do ícone. Desativada, nada é iniciado nem parado com o simulador, e nenhuma aeronave ativa um perfil.
+
+??? question "O meu perfil não muda com a aeronave"
+    - Verifique se a aeronave está **vinculada** ao perfil: o nome no painel mostra um ícone de ligação verde.
+    - A mudança acontece **ao carregar o voo**, não enquanto percorre as aeronaves no menu principal.
+    - A **sequência automática** tem de estar ativa.
+    - Por vezes o simulador carrega um voo **sem a aeronave**: volte a carregar o voo e a mudança acontece nesse carregamento.
+
 ## Interface
 
 ??? question "Porque é que o atraso está a cinzento?"
     Porque não foi escolhido nenhum **arranque automático** para esta aplicação. Ative :material-play: ou :material-airplane: e volta a ser ajustável.
 
-??? question "Porque é que aparece o cadeado e os botões estão a cinzento durante o voo?"
-    Assim que o simulador é detetado, a configuração dos cartões e os perfis ficam **bloqueados**: alterar uma sequência durante o seu decurso
-    (ou mudar de perfil a meio do voo) seria complexo de gerir.
-
-    O menu **⋯** continua disponível para iniciar ou parar uma aplicação manualmente.
+??? question "Porque é que um cartão está bloqueado com um cadeado?"
+    O seu atraso está **em contagem**: o arranque já usa as suas definições, por isso ficam bloqueadas até ele iniciar.<br>
+    Cancele a contagem com o **✕** junto ao emblema para editar o cartão. Fora deste caso nada fica bloqueado, nem mesmo em voo.
 
 ??? question "Porque é que não posso desativar a paragem auto numa aplicação «pronto para voar»?"
     Uma aplicação iniciada para o voo não tem qualquer razão para sobreviver ao simulador: por isso a paragem automática está **bloqueada na posição ativa** para este acionador.<br>
@@ -129,6 +138,9 @@
     Este ficheiro é **cifrado**: não é modificável diretamente. Para
     o guardar, copie-o tal como está.
     → [Perfis](profiles.md)
+
+    Quando uma atualização converte este ficheiro, é mantida ao lado uma cópia do anterior,
+    chamada `settings.v<version>.<date>.json`: é essa que deve repor se voltar a uma versão anterior.
 
 ??? question "Onde estão os registos (logs)?"
     Em `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Um ficheiro por dia, conservados **7 dias**).<br>

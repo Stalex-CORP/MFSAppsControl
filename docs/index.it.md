@@ -41,10 +41,16 @@ Sta a te scegliere ciò che si adatta meglio all'applicazione. → [Applicazioni
 <div class="grid cards" markdown>
 
 - <span style="color: var(--md-accent-fg-color)">:material-rocket-launch: **Sequenza automatica**</span><br>
-  Ogni applicazione parte secondo il proprio attivatore dopo il ritardo definito, visualizzato direttamente sulla timeline per l'ordine di avvio.
+  Ogni applicazione parte secondo il proprio attivatore dopo il ritardo definito, visualizzato direttamente sulla timeline per l'ordine di avvio. La sequenza si può disattivare in qualsiasi momento, dalla finestra principale o dall'area di notifica.
 
 - <span style="color: var(--md-accent-fg-color)">:material-folder-multiple: **Profili**</span><br>
   Raggruppa le tue applicazioni per uso (A320, VFR, cargo…) e cambia con un clic. Il profilo mostrato è il profilo attivo.
+
+- <span style="color: var(--md-accent-fg-color)">:material-layers: **Profilo Condiviso**</span><br>
+  Le applicazioni che usi con tutti i tuoi aerei si configurano una sola volta, in Condiviso, e si avviano con qualsiasi profilo.
+
+- <span style="color: var(--md-accent-fg-color)">:material-link-variant: **Profili collegati agli aerei**</span><br>
+  Collega un profilo ai tuoi aerei: caricando un volo con uno di essi, quel profilo si attiva da solo.
 
 - <span style="color: var(--md-accent-fg-color)">:material-tray-arrow-down: **Discreto**</span><br>
   Può essere ridotto nell'area di notifica e avviarsi con Windows, per essere pronto in ogni momento ai tuoi prossimi voli senza pensarci.
@@ -53,7 +59,7 @@ Sta a te scegliere ciò che si adatta meglio all'applicazione. → [Applicazioni
   Tradotta interamente in francese, inglese, tedesco, spagnolo, italiano e portoghese, con cambio in tempo reale e salvataggio nella configurazione.
 
 - <span style="color: var(--md-accent-fg-color)">:material-shield-check: **Applicazioni amministratore**</span><br>
-  Rilevate automaticamente al momento dell'aggiunta, con una richiesta di Windows. Solo le applicazioni che necessitano di privilegi amministrativi useranno la modalità amministratore.
+  Rilevate automaticamente al momento dell'aggiunta, con una richiesta di Windows. Solo le applicazioni che necessitano di privilegi amministrativi useranno la modalità amministratore. La richiesta arriva all'avvio non appena uno dei tuoi profili contiene un'applicazione di questo tipo.
 
 - <span style="color: var(--md-accent-fg-color)">:material-flask: **Modalità test**</span><br>
   Riproduci tutta la sequenza (attivatore «pronto al volo» incluso) senza avviare il simulatore, per verificare i tuoi profili.

@@ -46,7 +46,7 @@
 
     1. L'indicatore **SimConnect connesso** è verde durante il volo?
     2. Il pulsante :material-airplane: è effettivamente attivo sulla scheda (e non :material-play:)?
-    3. Hai già volato in questa sessione? Le applicazioni «pronto al volo» si avviano **una sola volta per sessione di simulatore** — non vengono riavviate tra un volo e l'altro.
+    3. Hai già volato in questa sessione? Le applicazioni «pronto al volo» si avviano **una sola volta per sessione di simulatore** — non vengono riavviate tra un volo e l'altro, salvo un cambio di profilo.
 
     Per verificare tutto senza volare, usa il pulsante **Prova**: simula SimConnect dopo 10 secondi.
 
@@ -55,11 +55,12 @@
 
     Aggiungi un **ritardo** sulla scheda per posticiparne l'avvio di altrettanti secondi dopo quel momento.
 
-??? question "L'applicazione richiede i diritti di amministratore (UAC)"
+??? question "L'applicazione chiede i diritti di amministratore (UAC)"
     Alcune applicazioni (Active Sky, REX Atmos…) richiedono l'amministratore. Per
     avviarle — e per **arrestarle** — MFSAppsControl deve essere elevato. Quando un
-    add-on di questo tipo è presente nel profilo attivo, l'applicazione si riavvia
-    automaticamente come amministratore (**una sola** richiesta UAC).
+    componente di questo tipo è in Condiviso o in **uno qualsiasi** dei tuoi profili,
+    l'applicazione si riavvia come amministratore all'avvio (**un'unica** richiesta
+    UAC), così cambiare profilo non richiede mai un riavvio a metà sessione.
 
     **Le altre applicazioni non ereditano quei diritti**: ognuna parte con
     quelli che richiede il suo stesso eseguibile. vPilot o Navigraph girano da
@@ -94,16 +95,24 @@
 
     Passa il mouse sul badge per vedere il **PID** del processo interessato.
 
+??? question "Con il simulatore non si avvia né si arresta più nulla"
+    La **sequenza automatica** è probabilmente disattivata: l'interruttore **Sequenza auto** sopra **Prova** è grigio, e l'icona dell'area di notifica mostra un pallino **rosso**.<br>
+    Riattivala dall'interruttore o dal menu dell'icona. Quando è disattivata, nulla viene avviato o arrestato con il simulatore, e nessun profilo viene attivato da un aereo.
+
+??? question "Il mio profilo non cambia con l'aereo"
+    - Verifica che l'aereo sia **collegato** al profilo: il suo nome nel banner mostra un'icona di collegamento verde.
+    - Il cambio avviene **al caricamento del volo**, non mentre sfogli gli aerei nel menu principale.
+    - La **sequenza automatica** deve essere attiva.
+    - A volte il simulatore carica un volo **senza l'aereo**: ricarica il volo, il cambio avverrà a quel caricamento.
+
 ## Interfaccia
 
 ??? question "Perché il ritardo è in grigio?"
     Perché per questa applicazione non è scelto alcun **avvio automatico**. Attiva :material-play: o :material-airplane: e torna regolabile.
 
-??? question "Perché durante il volo compaiono il lucchetto e i pulsanti in grigio?"
-    Non appena il simulatore viene rilevato, la configurazione delle schede e i profili sono **bloccati**: modificare una sequenza mentre è in corso
-    (o cambiare profilo in pieno volo) sarebbe complesso da gestire.
-
-    Il menu **⋯** resta disponibile per avviare o arrestare un'applicazione manualmente.
+??? question "Perché una scheda è bloccata con un lucchetto?"
+    Il suo ritardo è **in conto alla rovescia**: l'avvio usa già le sue impostazioni, quindi restano bloccate finché non parte.<br>
+    Annulla il conto alla rovescia con la **✕** accanto al badge per modificare la scheda. Al di fuori di questo caso nulla è bloccato, nemmeno in volo.
 
 ??? question "Perché non posso disattivare l'arresto auto su un'applicazione «pronto al volo»?"
     Un'applicazione avviata per il volo non ha alcun motivo di sopravvivere al simulatore: per questo attivatore l'arresto automatico è quindi **bloccato in posizione attiva**.<br>
@@ -129,6 +138,9 @@
     Questo file è **cifrato**: non è modificabile direttamente. Per
     salvarlo, copialo così com'è.
     → [Profili](profiles.md)
+
+    Quando un aggiornamento converte questo file, accanto ne viene conservata una copia del precedente,
+    chiamata `settings.v<version>.<date>.json`: è quella da ripristinare se torni a una versione precedente.
 
 ??? question "Dove sono i log?"
     In `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Un file al giorno, conservati **7 giorni**).<br>

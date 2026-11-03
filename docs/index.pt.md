@@ -41,10 +41,16 @@ Deve escolher o que melhor corresponde a cada aplicação. → [Aplicações e s
 <div class="grid cards" markdown>
 
 - <span style="color: var(--md-accent-fg-color)">:material-rocket-launch: **Sequência automática**</span><br>
-  Cada aplicação arranca conforme o seu acionador, depois do atraso definido, visualizado diretamente na linha temporal para perceber a ordem de arranque.
+  Cada aplicação arranca conforme o seu acionador, depois do atraso definido, visualizado diretamente na linha temporal para perceber a ordem de arranque. A sequência pode ser desativada a qualquer momento, na janela principal ou na área de notificação.
 
 - <span style="color: var(--md-accent-fg-color)">:material-folder-multiple: **Perfis**</span><br>
   Agrupe as suas aplicações por utilização (A320, VFR, carga…) e alterne com um clique. O perfil apresentado é o perfil ativo.
+
+- <span style="color: var(--md-accent-fg-color)">:material-layers: **Perfil Compartilhado**</span><br>
+  As aplicações que utiliza com todas as suas aeronaves configuram-se uma única vez, em Compartilhado, e iniciam com qualquer perfil.
+
+- <span style="color: var(--md-accent-fg-color)">:material-link-variant: **Perfis vinculados a aeronaves**</span><br>
+  Vincule um perfil às suas aeronaves: ao carregar um voo com uma delas, esse perfil fica ativo sozinho.
 
 - <span style="color: var(--md-accent-fg-color)">:material-tray-arrow-down: **Discreto**</span><br>
   Pode ser minimizado na área de notificação e arrancar com o Windows, para estar pronto a qualquer momento nos seus próximos voos sem pensar nisso.
@@ -53,7 +59,7 @@ Deve escolher o que melhor corresponde a cada aplicação. → [Aplicações e s
   Totalmente traduzida para francês, inglês, alemão, espanhol, italiano e português, com mudança em direto e persistência na configuração.
 
 - <span style="color: var(--md-accent-fg-color)">:material-shield-check: **Aplicações de administrador**</span><br>
-  Detetadas automaticamente ao adicionar, com um pedido do Windows. Só as aplicações que precisam de privilégios de administrador usarão o modo de administrador.
+  Detetadas automaticamente ao adicionar, com um pedido do Windows. Só as aplicações que precisam de privilégios de administrador usarão o modo de administrador. O pedido surge no arranque assim que um dos seus perfis contém uma aplicação deste tipo.
 
 - <span style="color: var(--md-accent-fg-color)">:material-flask: **Modo de teste**</span><br>
   Reproduza toda a sequência (incluindo o acionador «pronto para voar») sem iniciar o simulador, para verificar os seus perfis.

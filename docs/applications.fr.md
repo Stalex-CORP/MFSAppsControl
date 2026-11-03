@@ -34,6 +34,10 @@ Cliquez sur **Ajouter une application** dans la grille. Deux modes :
 
 La fenêtre d'ajout contient ensuite les **arguments de lancement**, le **déclencheur**, le **délai** et l'option **Démarrer réduit**, tous modifiables après l'ajout.
 
+!!! info "Partagé et regroupement"
+    Une application déjà dans [Partagé](profiles.md#le-profil-partage) ne peut pas être ajoutée à un profil : la fenêtre explique pourquoi.<br>
+    Ajouter une application qu'un autre profil contient déjà propose de la [regrouper dans Partagé](profiles.md#regrouper-dans-partage).
+
 ---
 
 ## Anatomie d'une carte
@@ -122,7 +126,7 @@ Le **délai** est le temps d'attente avant le lancement de l'application, **à p
 - Réglable de **0 à 600 secondes** (10 minutes)
 - Les boutons **−** / **+** change par tranche de **5 s**, vous pouvez aussi **saisir** directement la valeur
 - Le délai est **grisé** si aucun démarrage automatique n'est choisi
-- Pendant un vol, il affiche un **cadenas** :material-lock: — la configuration est verrouillée
+- Pendant son propre décompte, il affiche un **cadenas** :material-lock: : annulez le décompte (**✕**) pour le modifier
 
 !!! tip "Les deux déclencheurs ont leur propre séquence"
     Un délai de 30 s sur une application « démarrage sim » = 30 s après le lancement de MFS. <br>
@@ -143,6 +147,8 @@ Le centre du bandeau affiche la **séquence de lancement** : quelle application 
 Elle apparaît dès qu'au moins une application est en démarrage automatique.
 
 ![La timeline de la séquence de lancement](assets/timeline-dual.png)
+
+Elle réunit les applications du profil **Partagé** et celles du profil actif.
 
 Chaque bloc représente un instant de départ, avec les icônes des applications concernées.<br>
 Survolez un bloc pour voir les noms et leur statut.
@@ -198,6 +204,7 @@ Ouvrez le menu **:material-dots-horizontal:** de la carte, ou faites un **clic d
 | :material-square-edit-outline: **Modifier** | Rouvre la fenêtre de réglages, pré-remplie.                    |
 | :material-play: **Lancer maintenant**       | Démarre l'application immédiatement sans délai.                |
 | :material-stop-circle: **Arrêter**          | Arrête le processus en cours (remplace « Lancer maintenant »). |
+| :material-layers: **Déplacer vers Partagé** | Propose de déplacer l'application dans Partagé, par la fenêtre de regroupement.<br>*Absent de l'onglet Partagé.* |
 | :material-delete: **Retirer de la liste**   | Supprime l'application du profil.                              |
 
 ![Modifier une application](assets/app-editmenu.png)
@@ -215,18 +222,24 @@ Ces réglages ne changent **que l'affichage** et n'impacte pas la séquence de l
 
 ![Filtrer et trier](assets/app-filters.png)
 
-## Pendant le vol, la configuration est verrouillée
+## Pendant une session
 
-Dès que le simulateur est détecté, le profil et les applications sont **verrouillés** (cadenas :material-lock:{ style="color:#3ecf8e" }).<br>
+Rien n'est verrouillé : vous pouvez ajouter, modifier ou retirer des applications et changer de profil à tout moment, en vol compris.<br>
+Seule une carte dont le délai est **en décompte** est verrouillée (cadenas :material-lock:), car son lancement utilise déjà ses réglages : annulez le décompte (**✕**) pour la modifier.
 
-Vous pouvez toujours **lancer** ou **arrêter** une application à la main via le menu **:material-dots-horizontal:**.
+- **Ajouter une application Démarrage sim** : elle est planifiée avec ce qui reste de son délai, compté depuis le lancement du simulateur, et part tout de suite si ce temps est écoulé — en vol compris.
+- **Ajouter une application Prêt à voler** : elle part au prochain écran Prêt à voler.
+- **Modifier une application lancée** : elle continue de tourner ; un nouveau déclencheur ou délai vaut à partir de son prochain lancement.
+- **Retirer une application lancée** : elle n'est pas fermée, mais n'est plus gérée.
+
+Changer de profil suit ses propres règles. → [Changer de profil pendant une session](profiles.md#changer-de-profil-pendant-une-session)
 
 ## Applications nécessitant l'administrateur
 
 Certains applications exigent les **droits administrateur** (par exemple Active Sky,REX Atmos).<br>
 Elles affichent un **bouclier** <span style="color:red;">:material-shield-alert:</span> à côté de leur nom.
 
-Lorsqu'une application de ce type est présent dans le profil actif, il vous sera demandé de **redémarrer en administrateur** au lancement ou lors de l'ajout via **une seule** invite UAC.
+Quand une telle application figure dans **Partagé** ou dans **n'importe lequel** de vos profils, MFSAppsControl demande à **redémarrer en administrateur** au démarrage — ou à son ajout — par **une seule** invite UAC. Ainsi, changer de profil ne demande jamais de redémarrage en pleine session.
 
 !!! info "Seules les applications qui l'exigent sont élevées"
     Même quand MFSAppsControl tourne en administrateur, il ne transmet **pas** ces droits à tout ce qu'il lance.<br>

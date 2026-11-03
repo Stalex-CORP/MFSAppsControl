@@ -46,7 +46,7 @@
 
     1. La pastille **SimConnect connecté** est-elle verte pendant le vol ?
     2. Le bouton :material-airplane: est-il bien actif sur la carte (et pas :material-play:) ?
-    3. Avez-vous déjà volé dans cette session ? Les applications « prêt à voler » ne se lancent **qu'une fois par session de simulateur** — elles ne se relancent pas entre deux vols.
+    3. Avez-vous déjà volé dans cette session ? Les applications « prêt à voler » ne se lancent **qu'une fois par session de simulateur** — elles ne se relancent pas entre deux vols, sauf changement de profil.
 
     Pour tout revalider sans voler, utilisez le bouton **Tester** : il simule simconnect après 10 secondes.
 
@@ -56,10 +56,11 @@
     Ajoutez un **délai** sur la carte pour repousser son lancement d'autant de secondes après ce moment.
 
 ??? question "L'application demande les droits administrateur (UAC)"
-    Certains applications (Active Sky, REX Atmos…) exigent l'administrateur. Pour les
-    lancer — et pour les **arrêter** — MFSAppsControl doit être élevé. Quand un
-    tel addon est présent dans le profil actif, l'application redémarre
-    automatiquement en administrateur (**une seule** invite UAC).
+    Certaines applications (Active Sky, REX Atmos…) exigent l'administrateur. Pour les
+    lancer — et pour les **arrêter** — MFSAppsControl doit être élevé. Quand un tel
+    addon figure dans Partagé ou dans **n'importe lequel** de vos profils, l'application
+    redémarre en administrateur dès son démarrage (**une seule** invite UAC), pour qu'un
+    changement de profil ne demande jamais de redémarrage en pleine session.
 
     **Les autres applications n'héritent pas de ces droits** : chacune démarre avec
     ceux que son propre exécutable réclame. vPilot ou Navigraph tournent en
@@ -94,16 +95,24 @@
 
     Survolez le badge pour voir le **PID** du processus concerné.
 
+??? question "Plus rien ne se lance ni ne s'arrête avec le simulateur"
+    La **séquence automatique** est sans doute désactivée : l'interrupteur **Séquence auto** au-dessus de **Tester** est gris, et l'icône de la zone de notification porte une pastille **rouge**.<br>
+    Réactivez-la depuis l'interrupteur ou le menu de l'icône. Désactivée, rien n'est lancé ni arrêté avec le simulateur, et aucun profil n'est activé par un avion.
+
+??? question "Mon profil ne bascule pas avec l'avion"
+    - Vérifiez que l'avion est **lié** au profil : son nom dans le bandeau affiche une icône de lien verte.
+    - La bascule se fait **au chargement du vol**, pas pendant que vous parcourez les avions au menu principal.
+    - La **séquence automatique** doit être activée.
+    - Le simulateur charge parfois un vol **sans l'avion** : rechargez le vol, la bascule se fera à ce chargement.
+
 ## Interface
 
 ??? question "Pourquoi le délai est-il grisé ?"
     Parce qu'aucun **démarrage automatique** n'est choisi pour cette application. Activez :material-play: ou :material-airplane: et il redevient réglable.
 
-??? question "Pourquoi le cadenas et les boutons grisés pendant le vol ?"
-    Dès que le simulateur est détecté, la configuration des cartes et les profils sont **verrouillées** : modifier une séquence pendant son déroulement
-    (ou changer de profil en plein vol) seraient complexe à gérer.
-
-    Le menu **⋯** reste disponible pour lancer ou arrêter une application manuellement.
+??? question "Pourquoi une carte est-elle verrouillée par un cadenas ?"
+    Son délai est **en cours de décompte** : le lancement utilise déjà ses réglages, ils sont donc verrouillés jusqu'à son départ.<br>
+    Annulez le décompte avec la **✕** à côté du badge pour modifier la carte. En dehors de ce cas, rien n'est verrouillé, en vol compris.
 
 ??? question "Pourquoi je ne peux pas désactiver l'arrêt auto sur une application « prêt à voler » ?"
     Une application lancée pour le vol n'a aucune raison de survivre au simulateur : l'arrêt automatique est donc **verrouillé en position active** pour ce déclencheur.<br>
@@ -127,6 +136,9 @@
     (soit `C:\Users\<vous>\AppData\Local\Stalex CORP\MFSAppsControl\`).
 
     Ce fichier est **chiffré** : il n'est pas modifiable directement.
+
+    Quand une mise à jour convertit ce fichier, une copie du précédent est conservée à côté,
+    nommée `settings.v<version>.<date>.json` : c'est elle qu'il faut remettre en place si vous revenez à une version antérieure.
 
 ??? question "Où sont les journaux (logs) ?"
     Dans `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Un fichier par jour, conservés **7 jours**).<br>

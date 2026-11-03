@@ -46,7 +46,7 @@
 
     1. ¿El punto **SimConnect conectado** está en verde durante el vuelo?
     2. ¿El botón :material-airplane: está realmente activo en la tarjeta (y no :material-play:)?
-    3. ¿Ya has volado en esta sesión? Las aplicaciones «listo para volar» solo se inician **una vez por sesión de simulador**: no se relanzan entre dos vuelos.
+    3. ¿Ya has volado en esta sesión? Las aplicaciones «listo para volar» solo se inician **una vez por sesión de simulador**: no se relanzan entre dos vuelos, salvo si cambias de perfil.
 
     Para revalidarlo todo sin volar, usa el botón **Probar**: simula SimConnect y la pantalla «Listo para volar» al cabo de 10 segundos.
 
@@ -55,11 +55,12 @@
 
     Añade un **retardo** en la tarjeta para retrasar su inicio esos segundos a partir de ese momento.
 
-??? question "La aplicación pide permisos de administrador (UAC)"
-    Algunas aplicaciones (Active Sky, REX Atmos…) exigen administrador. Para
-    iniciarlas — y para **detenerlas** — MFSAppsControl debe estar elevado. Cuando
-    uno de estos addons está presente en el perfil activo, la aplicación se reinicia
-    automáticamente como administrador (**una sola** solicitud UAC).
+??? question "La aplicación pide derechos de administrador (UAC)"
+    Algunas aplicaciones (Active Sky, REX Atmos…) requieren administrador. Para
+    iniciarlas — y para **detenerlas** — MFSAppsControl tiene que estar elevado. Cuando
+    uno de esos complementos está en Compartido o en **cualquiera** de tus perfiles, la
+    aplicación se reinicia como administrador al iniciarse (**una sola** solicitud UAC),
+    para que cambiar de perfil nunca exija reiniciar en mitad de una sesión.
 
     **Las demás aplicaciones no heredan esos permisos**: cada una arranca con los
     que reclama su propio ejecutable. vPilot o Navigraph se ejecutan como
@@ -94,16 +95,24 @@
 
     Pasa el cursor por la insignia para ver el **PID** del proceso en cuestión.
 
+??? question "Ya no se inicia ni se detiene nada con el simulador"
+    La **secuencia automática** probablemente está desactivada: el interruptor **Secuencia auto** encima de **Probar** está gris, y el icono del área de notificación muestra un punto **rojo**.<br>
+    Vuelve a activarla desde el interruptor o desde el menú del icono. Desactivada, no se inicia ni se detiene nada con el simulador, y ningún avión activa un perfil.
+
+??? question "Mi perfil no cambia con el avión"
+    - Comprueba que el avión está **vinculado** al perfil: su nombre en el panel muestra un icono de vínculo verde.
+    - El cambio se produce **al cargar el vuelo**, no mientras recorres los aviones en el menú principal.
+    - La **secuencia automática** debe estar activada.
+    - A veces el simulador carga un vuelo **sin el avión**: vuelve a cargar el vuelo y el cambio se producirá en esa carga.
+
 ## Interfaz
 
 ??? question "¿Por qué el retardo aparece atenuado?"
     Porque no se ha elegido ningún **inicio automático** para esa aplicación. Activa :material-play: o :material-airplane: y volverá a ser ajustable.
 
-??? question "¿Por qué aparecen el candado y los botones atenuados durante el vuelo?"
-    En cuanto se detecta el simulador, la configuración de las tarjetas y los perfiles quedan **bloqueados**: modificar una secuencia mientras se desarrolla
-    (o cambiar de perfil en pleno vuelo) sería complicado de gestionar.
-
-    El menú **⋯** sigue disponible para iniciar o detener una aplicación manualmente.
+??? question "¿Por qué una tarjeta está bloqueada con un candado?"
+    Su retardo está **en cuenta atrás**: el inicio ya usa sus ajustes, así que quedan bloqueados hasta que arranca.<br>
+    Cancela la cuenta atrás con la **✕** junto a la insignia para modificar la tarjeta. Fuera de ese caso no se bloquea nada, tampoco en vuelo.
 
 ??? question "¿Por qué no puedo desactivar el cierre auto en una aplicación «listo para volar»?"
     Una aplicación lanzada para el vuelo no tiene ninguna razón para sobrevivir al simulador: por eso el cierre automático queda **bloqueado en posición activa** para ese disparador.<br>
@@ -129,6 +138,9 @@
     Este archivo está **cifrado**: no se puede modificar directamente. Para
     hacer una copia de seguridad, cópialo tal cual.
     → [Perfiles](profiles.md)
+
+    Cuando una actualización convierte este archivo, se conserva al lado una copia del anterior,
+    llamada `settings.v<version>.<date>.json`: es la que hay que restaurar si vuelves a una versión anterior.
 
 ??? question "¿Dónde están los registros (logs)?"
     En `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Un archivo por día, conservados **7 días**).<br>

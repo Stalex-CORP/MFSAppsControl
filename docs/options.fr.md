@@ -21,6 +21,9 @@ Tous les réglages sont **enregistrés immédiatement** — il n'y a pas de bout
     Si **La fermeture réduit dans la barre système** est activée, la croix ne ferme plus l'application.<br>
     Utilisez **Quitter** dans le menu de l'icône de la zone de notification (clic droit).
 
+!!! tip "Séquence automatique"
+    L'interrupteur qui active ou désactive la séquence automatique n'est pas dans les options : il se trouve dans la fenêtre principale, au-dessus de **Tester**, et dans le menu de l'icône de la zone de notification. → [Prise en main](getting-started.md)
+
 ## Apparence
 
 ### Thème de l'application
@@ -65,6 +68,9 @@ Détermine le détail écrit dans les fichiers journaux. Le changement s'appliqu
 | **Trace**             | + le détail des valeurs internes. Très lourd.                  | Sur demande du support. |
 
 Un nouveau fichier est créé **chaque jour**, et les journaux de plus de **7 jours** sont supprimés automatiquement.
+
+!!! info "Journal de session"
+    Quel que soit le niveau, un court journal de chaque session est toujours écrit : démarrage et fermeture du simulateur, chargements de vol, avion, et chaque application lancée ou arrêtée. Il suffit souvent au support, même au niveau **Erreur**.
 
 !!! tip
     Pensez à **remettre le niveau sur Erreur** une fois votre problème soumis : les niveaux Debug et Trace sont très lourds.

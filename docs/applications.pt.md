@@ -34,6 +34,10 @@ Clique em **Adicionar uma aplicação** na grelha. Dois modos:
 
 A janela de adição contém depois os **argumentos de arranque**, o **acionador**, o **atraso** e a opção **Iniciar minimizada**, todos modificáveis após a adição.
 
+!!! info "Compartilhado e agrupamento"
+    Uma aplicação que já está em [Compartilhado](profiles.md#o-perfil-compartilhado) não pode ser adicionada a um perfil: a janela explica porquê.<br>
+    Adicionar uma aplicação que outro perfil já tem propõe [agrupá-la em Compartilhado](profiles.md#agrupar-em-compartilhado).
+
 ---
 
 ## Anatomia de um cartão
@@ -122,7 +126,7 @@ O **atraso** é o tempo de espera antes do arranque da aplicação, **a partir d
 - Ajustável de **0 a 600 segundos** (10 minutos)
 - Os botões **−** / **+** alteram o valor em passos de **5 s**; também pode **escrever** diretamente o valor
 - O atraso fica **a cinzento** se não estiver escolhido nenhum arranque automático
-- Durante um voo, mostra um **cadeado** :material-lock: — a configuração está bloqueada
+- Durante a sua própria contagem, mostra um **cadeado** :material-lock:: cancele a contagem (**✕**) para o editar
 
 !!! tip "Os dois acionadores têm a sua própria sequência"
     Um atraso de 30 s numa aplicação «início do sim» = 30 s após o arranque do MSFS. <br>
@@ -143,6 +147,8 @@ O centro do painel mostra a **sequência de arranque**: que aplicação arranca 
 Aparece assim que pelo menos uma aplicação tiver arranque automático.
 
 ![A linha temporal da sequência de arranque](assets/timeline-dual.png)
+
+Reúne as aplicações do perfil **Compartilhado** e as do perfil ativo.
 
 Cada bloco representa um momento de arranque, com os ícones das aplicações em causa.<br>
 Passe o rato sobre um bloco para ver os nomes e o respetivo estado.
@@ -198,6 +204,7 @@ Abra o menu **:material-dots-horizontal:** do cartão, ou clique com o **botão 
 | :material-square-edit-outline: **Editar**   | Reabre a janela de definições, pré-preenchida.                |
 | :material-play: **Iniciar agora**           | Inicia a aplicação imediatamente, sem atraso.                 |
 | :material-stop-circle: **Parar**            | Para o processo em curso (substitui «Iniciar agora»).         |
+| :material-layers: **Mover para Compartilhado** | Propõe mover a aplicação para Compartilhado, através da janela de agrupamento.<br>*Ausente no separador Compartilhado.* |
 | :material-delete: **Remover da lista**      | Elimina a aplicação do perfil.                                |
 
 ![Modificar uma aplicação](assets/app-editmenu.png)
@@ -215,18 +222,24 @@ Estas definições alteram **apenas a visualização** e não afetam nem a sequ�
 
 ![Filtrar e ordenar](assets/app-filters.png)
 
-## Durante o voo, a configuração está bloqueada
+## Durante uma sessão
 
-Assim que o simulador é detetado, o perfil e as aplicações ficam **bloqueados** (cadeado :material-lock:{ style="color:#3ecf8e" }).<br>
+Nada fica bloqueado: pode adicionar, editar ou remover aplicações e mudar de perfil a qualquer momento, também em voo.<br>
+Só um cartão cujo atraso está **em contagem** fica bloqueado (cadeado :material-lock:), porque o seu arranque já usa as suas definições: cancele a contagem (**✕**) para o editar.
 
-Pode sempre **iniciar** ou **parar** uma aplicação à mão através do menu **:material-dots-horizontal:**.
+- **Adicionar uma aplicação Início do sim**: é planeada com o que resta do seu atraso, contado desde o arranque do simulador, e arranca de imediato se esse tempo já passou — também em voo.
+- **Adicionar uma aplicação Pronto para voar**: arranca no próximo ecrã Pronto para voar.
+- **Editar uma aplicação em execução**: continua a funcionar; um novo acionador ou atraso aplica-se a partir do seu próximo arranque.
+- **Remover uma aplicação em execução**: não é fechada, mas deixa de ser gerida.
+
+A mudança de perfil segue regras próprias. → [Mudar de perfil durante uma sessão](profiles.md#mudar-de-perfil-durante-uma-sessao)
 
 ## Aplicações que requerem administrador
 
 Algumas aplicações exigem **direitos de administrador** (por exemplo o Active Sky, o REX Atmos).<br>
 Mostram um **escudo** <span style="color:red;">:material-shield-alert:</span> ao lado do seu nome.
 
-Quando existe uma aplicação deste tipo no perfil ativo, ser-lhe-á pedido que **reinicie como administrador** no arranque ou ao adicioná-la, através de **um único** pedido de UAC.
+Quando uma aplicação deste tipo está em **Compartilhado** ou em **qualquer** um dos seus perfis, o MFSAppsControl pede para **reiniciar como administrador** no arranque — ou ao adicioná-la — através de **um único** pedido UAC. Assim, mudar de perfil nunca exige um reinício a meio de uma sessão.
 
 !!! info "Só as aplicações que o exigem são elevadas"
     Mesmo quando o MFSAppsControl corre como administrador, **não** transmite esses direitos a tudo o que inicia.<br>

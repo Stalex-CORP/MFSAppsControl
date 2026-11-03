@@ -45,7 +45,7 @@
 
     1. Is the **SimConnect connected** dot green during the flight?
     2. Is the :material-airplane: button active on the card (and not :material-play:)?
-    3. Have you already flown in this session? The "ready to fly" applications only launch **once per simulator session** — they don't relaunch between two flights.
+    3. Have you already flown in this session? The "ready to fly" applications only launch **once per simulator session** — they don't relaunch between two flights, unless you change profile.
 
     To check everything again without flying, use the **Test** button: it simulates SimConnect after 10 seconds.
 
@@ -57,8 +57,9 @@
 ??? question "The application asks for administrator rights (UAC)"
     Some applications (Active Sky, REX Atmos…) require administrator. To launch
     them — and to **stop** them — MFSAppsControl has to be elevated. When such an
-    add-on is in the active profile, the application automatically restarts as
-    administrator (**a single** UAC prompt).
+    add-on is in Shared or in **any** of your profiles, the application restarts as
+    administrator at startup (**a single** UAC prompt), so that changing profile never
+    needs a restart mid-session.
 
     **Other applications do not inherit those rights**: each one starts with what its
     own executable asks for. vPilot or Navigraph run as a normal user even when
@@ -92,16 +93,24 @@
 
     Hover the badge to see the **PID** of the process in question.
 
+??? question "Nothing launches or stops with the simulator any more"
+    The **automatic sequence** is probably switched off: the **Auto sequence** switch above **Test** is gray, and the notification area icon shows a **red** dot.<br>
+    Turn it back on from the switch or from the icon's menu. While it is off, nothing is launched or stopped with the simulator, and no profile is activated by an aircraft.
+
+??? question "My profile does not switch with the aircraft"
+    - Check that the aircraft is **linked** to the profile: its name in the banner shows a green link icon.
+    - The switch happens **when the flight loads**, not while you browse aircraft at the main menu.
+    - The **automatic sequence** must be on.
+    - The simulator sometimes loads a flight **without the aircraft**: reload the flight, and the switch happens at that load.
+
 ## Interface
 
 ??? question "Why is the delay grayed out?"
     Because no **auto start** is chosen for this application. Enable :material-play: or :material-airplane: and it becomes adjustable again.
 
-??? question "Why the padlock and the grayed-out buttons during a flight?"
-    As soon as the simulator is detected, the cards' configuration and the profiles are **locked**: changing a sequence while it is running
-    (or switching profiles mid-flight) would be complex to handle.
-
-    The **⋯** menu stays available to launch or stop an application by hand.
+??? question "Why is a card locked with a padlock?"
+    Its delay is **counting down**: the launch already uses its settings, so they are locked until it starts.<br>
+    Cancel the countdown with the **✕** next to the badge to edit the card. Apart from that, nothing is locked, during a flight included.
 
 ??? question "Why can't I turn off auto stop on a 'ready to fly' application?"
     An application launched for the flight has no reason to outlive the simulator: auto stop is therefore **locked in the active position** for this trigger.<br>
@@ -127,6 +136,9 @@
     This file is **encrypted**: it cannot be edited directly. To back it up,
     copy it as-is.
     → [Back up your profiles](profiles.md)
+
+    When an update converts this file, a copy of the previous one is kept next to it, named
+    `settings.v<version>.<date>.json`: it is the one to put back if you return to an older version.
 
 ??? question "Where are the logs?"
     In `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (One file per day, kept for **7 days**.)<br>

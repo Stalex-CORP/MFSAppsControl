@@ -41,10 +41,16 @@ Sie entscheiden, was am besten zur jeweiligen Anwendung passt. → [Anwendungen 
 <div class="grid cards" markdown>
 
 - <span style="color: var(--md-accent-fg-color)">:material-rocket-launch: **Automatische Sequenz**</span><br>
-  Jede Anwendung startet gemäß ihrem Auslöser nach der eingestellten Verzögerung – die Startreihenfolge sehen Sie direkt auf der Zeitleiste.
+  Jede Anwendung startet gemäß ihrem Auslöser nach der eingestellten Verzögerung – die Startreihenfolge sehen Sie direkt auf der Zeitleiste. Die Sequenz lässt sich jederzeit im Hauptfenster oder im Infobereich ausschalten.
 
 - <span style="color: var(--md-accent-fg-color)">:material-folder-multiple: **Profile**</span><br>
   Fassen Sie Ihre Anwendungen nach Einsatzzweck zusammen (A320, VFR, Cargo…) und wechseln Sie mit einem Klick. Das angezeigte Profil ist das aktive Profil.
+
+- <span style="color: var(--md-accent-fg-color)">:material-layers: **Profil Gemeinsam**</span><br>
+  Die Anwendungen, die Sie mit jedem Flugzeug nutzen, werden einmal in Gemeinsam eingerichtet und starten mit jedem Profil.
+
+- <span style="color: var(--md-accent-fg-color)">:material-link-variant: **Mit Flugzeugen verknüpfte Profile**</span><br>
+  Verknüpfen Sie ein Profil mit Ihren Flugzeugen: Wird ein Flug mit einem davon geladen, wird dieses Profil von selbst aktiv.
 
 - <span style="color: var(--md-accent-fg-color)">:material-tray-arrow-down: **Unauffällig**</span><br>
   Lässt sich in den Infobereich minimieren und mit Windows starten, damit für Ihre nächsten Flüge alles bereit ist, ohne dass Sie daran denken müssen.
@@ -53,7 +59,7 @@ Sie entscheiden, was am besten zur jeweiligen Anwendung passt. → [Anwendungen 
   Komplett übersetzt in Französisch, Englisch, Deutsch, Spanisch, Italienisch und Portugiesisch, mit sofortigem Wechsel und Speicherung in der Konfiguration.
 
 - <span style="color: var(--md-accent-fg-color)">:material-shield-check: **Anwendungen mit Administratorrechten**</span><br>
-  Werden beim Hinzufügen automatisch erkannt, mit einer Windows-Abfrage. Nur Anwendungen, die tatsächlich Administratorrechte benötigen, laufen im Administratormodus.
+  Werden beim Hinzufügen automatisch erkannt, mit einer Windows-Abfrage. Nur Anwendungen, die tatsächlich Administratorrechte benötigen, laufen im Administratormodus. Die Abfrage erscheint beim Start, sobald eines Ihrer Profile eine solche Anwendung enthält.
 
 - <span style="color: var(--md-accent-fg-color)">:material-flask: **Testmodus**</span><br>
   Spielen Sie die gesamte Sequenz ab (einschließlich des Auslösers „Startbereit“), ohne den Simulator zu starten, und prüfen Sie so Ihre Profile.

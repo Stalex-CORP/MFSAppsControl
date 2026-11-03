@@ -26,14 +26,14 @@ Quando existe uma nova versão disponível, aparece um **emblema** junto à vers
 ### 2. O painel de estado e sequência
 
 É a apresentação visual de:
-- o estado do simulador e da ligação SimConnect,
+- o estado do simulador e da ligação SimConnect, e a aeronave carregada,
 - a sequência de arranque das aplicações,
-- o botão de teste da sequência.
+- o interruptor da sequência automática e o botão de teste da sequência.
 
 ![App Sequence - Estados](assets/app-sequence-status.png)
 
 
-**À esquerda, os estados** — MSFS e SimConnect.<br>
+**À esquerda, os estados** — MSFS, SimConnect e a aeronave.<br>
 
 - Estado do MSFS
 
@@ -51,14 +51,18 @@ Quando existe uma nova versão disponível, aparece um **emblema** junto à vers
   | :material-circle:{ style="color:#3ecf8e" } verde    | **SimConnect ligado**       | Ligação estabelecida, sistema pronto.             |
   | :material-circle:{ style="color:#ff5c5c" } vermelho | **SimConnect indisponível** | O SimConnect não responde (ver a [FAQ](faq.md)). |
 
+- Aeronave
+
+  A aeronave carregada no simulador, assim que o SimConnect a anuncia — também no menu principal, enquanto percorre as aeronaves. Um ícone :material-link-variant:{ style="color:#3ecf8e" } indica que está vinculada a um perfil, um ícone :material-link-variant-off: que não está: clique no nome para a vincular ou desvincular. Enquanto nenhuma aeronave é anunciada, a linha só mostra o ícone :material-airplane:. → [Perfis vinculados a aeronaves](profiles.md#perfis-vinculados-a-aeronaves)
+
 
 **Ao centro, a sequência de arranque**<br>
 A linha temporal das suas aplicações, representadas pelos seus ícones, sobre os atrasos de arranque (visível apenas se pelo menos uma aplicação estiver configurada). → [O detalhe da linha temporal](applications.md#a-linha-temporal)
 
 
-**À direita, o botão Testar/Parar**<br>
-Permite simular o arranque/encerramento do MSFS para testar as sequências sem iniciar o MSFS.<br>
-Durante um voo ou um teste, passa a **Parar**. → [Testar a sequência](applications.md#testar-a-sequencia)
+**À direita, o interruptor Sequência auto e o botão Testar/Parar**<br>
+**Sequência auto**, em cima, ativa ou desativa a sequência automática. Desativada, nada é iniciado nem parado com o simulador. O ícone da área de notificação mostra o mesmo estado com um ponto verde ou vermelho, e o seu menu oferece o mesmo interruptor; a escolha mantém-se após reiniciar.<br>
+**Testar**, por baixo, simula o arranque e a paragem do MSFS para testar as suas sequências sem iniciar o MSFS. Durante um voo ou um teste, passa a **Parar**. → [Testar a sequência](applications.md#testar-a-sequencia)
 
 ### 3. Os perfis
 
@@ -69,6 +73,8 @@ Mostra todos os perfis disponíveis, com o perfil ativo em destaque.
 Um botão para **criar** um novo perfil.<br>
 Podem ser reorganizados arrastando os separadores.<br>
 O menu **:material-dots-horizontal:** permite mudar o nome/duplicar/eliminar. → [Perfis](profiles.md)
+
+O separador **Compartilhado**, sempre em primeiro lugar, contém as aplicações iniciadas com todos os perfis; um ícone :material-link-variant: assinala um perfil vinculado a aeronaves.
 
 
 ### 4. Os filtros
@@ -137,6 +143,7 @@ Clique em **Parar** para terminar o teste e fechar as aplicações configuradas 
 | O simulador carrega                                  | O estado do MSFS passa a verde, o estado do SimConnect passa a verde assim que estiver disponível e as aplicações de início do sim são iniciadas segundo o respetivo atraso.   |
 | Chega ao ecrã **Pronto para voar** de um voo         | A sequência **Pronto para voar** arranca por sua vez, com os seus próprios atrasos.                                                                                            |
 | Muda de voo                                          | As aplicações **não voltam a arrancar**, permanecem ativas.                                                                                                                    |
+| Muda de perfil — à mão, ou através de uma [aeronave vinculada](profiles.md#perfis-vinculados-a-aeronaves) | Nada no momento. Ao carregar o voo seguinte, as aplicações do perfil anterior fecham-se e as de início do sim do novo perfil arrancam de imediato; as suas aplicações pronto para voar seguem no ecrã Pronto para voar. |
 | Sai do **MSFS**                                      | Todas as aplicações configuradas em **Paragem auto** (incluindo as ligadas ao modo "Pronto para voar") são fechadas de forma limpa.                                            |
 
 !!! info "Se o MSFS já estiver iniciado antes do MFSAppsControl"

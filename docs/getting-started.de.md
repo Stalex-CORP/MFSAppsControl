@@ -27,14 +27,14 @@ Sobald eine neue Version verfügbar ist, erscheint neben der Version ein **Badge
 
 Hier sehen Sie auf einen Blick:
 
-- den Zustand des Simulators und der SimConnect-Verbindung,
+- den Zustand des Simulators und der SimConnect-Verbindung sowie das geladene Flugzeug,
 - die Startsequenz der Anwendungen,
-- die Schaltfläche zum Testen der Sequenz.
+- den Schalter der automatischen Sequenz und die Schaltfläche zum Testen der Sequenz.
 
 ![App Sequence – Status](assets/app-sequence-status.png)
 
 
-**Links die Statusanzeigen** — MSFS und SimConnect.<br>
+**Links die Statusanzeigen** — MSFS, SimConnect und das Flugzeug.<br>
 
 - MSFS-Status
 
@@ -52,14 +52,18 @@ Hier sehen Sie auf einen Blick:
   | :material-circle:{ style="color:#3ecf8e" } grün  | **SimConnect verbunden**        | Verbindung hergestellt, System bereit.            |
   | :material-circle:{ style="color:#ff5c5c" } rot   | **SimConnect nicht verfügbar**  | SimConnect antwortet nicht (siehe [FAQ](faq.md)). |
 
+- Flugzeug
+
+  Das im Simulator geladene Flugzeug, sobald SimConnect es meldet — auch im Hauptmenü, während Sie die Flugzeuge durchsehen. Ein Symbol :material-link-variant:{ style="color:#3ecf8e" } zeigt, dass es mit einem Profil verknüpft ist, ein Symbol :material-link-variant-off:, dass es das nicht ist: Klicken Sie auf seinen Namen, um es zu verknüpfen oder die Verknüpfung zu lösen. Solange kein Flugzeug gemeldet ist, zeigt die Zeile nur das Symbol :material-airplane:. → [Mit Flugzeugen verknüpfte Profile](profiles.md#mit-flugzeugen-verknupfte-profile)
+
 
 **In der Mitte die Startsequenz**<br>
 Die Zeitleiste Ihrer Anwendungen, dargestellt durch ihre Symbole, verteilt auf ihre Startverzögerungen (nur sichtbar, wenn mindestens eine Anwendung konfiguriert ist). → [Die Zeitleiste im Detail](applications.md#die-zeitleiste)
 
 
-**Rechts die Schaltfläche Testen/Stoppen**<br>
-Damit simulieren Sie den Start und das Beenden von MSFS, um die Sequenzen zu testen, ohne MSFS zu starten.<br>
-Während eines Fluges oder eines Tests wird sie zu **Stoppen**. → [Die Sequenz testen](applications.md#die-sequenz-testen)
+**Rechts der Schalter Auto-Sequenz und die Schaltfläche Testen/Stoppen**<br>
+**Auto-Sequenz**, oben, schaltet die automatische Sequenz ein oder aus. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet. Das Symbol im Infobereich zeigt denselben Zustand mit einem grünen oder roten Punkt, und sein Menü bietet denselben Schalter; die Wahl bleibt nach einem Neustart erhalten.<br>
+**Testen**, darunter, simuliert Start und Ende von MSFS, damit Sie Ihre Sequenzen ohne MSFS testen können. Während eines Flugs oder Tests wird daraus **Stoppen**. → [Die Sequenz testen](applications.md#die-sequenz-testen)
 
 ### 3. Die Profile
 
@@ -70,6 +74,8 @@ Zeigt alle Ihre verfügbaren Profile an, wobei das aktive Profil hervorgehoben i
 Eine Schaltfläche zum **Erstellen** eines neuen Profils.<br>
 Die Tabs lassen sich durch Ziehen neu anordnen.<br>
 Über das Menü **:material-dots-horizontal:** können Sie sie umbenennen, duplizieren oder löschen. → [Profile](profiles.md)
+
+Der Tab **Gemeinsam**, immer an erster Stelle, enthält die Anwendungen, die mit jedem Profil starten; ein Symbol :material-link-variant: kennzeichnet ein mit Flugzeugen verknüpftes Profil.
 
 
 ### 4. Die Filter
@@ -138,6 +144,7 @@ Klicken Sie auf **Stoppen**, um den Test zu beenden und die Anwendungen zu schli
 | Der Simulator lädt                                   | Der MSFS-Status wird grün, der SimConnect-Status wird grün, sobald die Verbindung verfügbar ist, und die Simstart-Anwendungen werden gemäß ihrer Verzögerung gestartet.  |
 | Sie erreichen den Bildschirm **Startbereit** eines Fluges | Nun läuft die Sequenz **Startbereit** an, mit ihren eigenen Verzögerungen.                                                                                            |
 | Sie wechseln den Flug                                | Die Anwendungen **starten nicht erneut**, sie bleiben aktiv.                                                                                                              |
+| Sie wechseln das Profil — von Hand oder über ein [verknüpftes Flugzeug](profiles.md#mit-flugzeugen-verknupfte-profile) | Im Moment nichts. Beim Laden des nächsten Flugs werden die Anwendungen des vorherigen Profils geschlossen, und die Simstart-Anwendungen des neuen Profils starten sofort; seine Startbereit-Anwendungen folgen beim Bildschirm Startbereit. |
 | Sie beenden **MSFS**                                 | Alle Anwendungen mit **Autostopp** (einschließlich der an den Modus „Startbereit“ gekoppelten) werden sauber geschlossen.                                                  |
 
 !!! info "Wenn MSFS schon läuft, bevor MFSAppsControl gestartet wird"

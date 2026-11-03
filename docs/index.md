@@ -41,10 +41,16 @@ You choose whichever suits the application best. → [Applications & sequence](a
 <div class="grid cards" markdown>
 
 - <span style="color: var(--md-accent-fg-color)">:material-rocket-launch: **Automatic sequence**</span><br>
-  Each application starts on its trigger after its defined delay, shown directly on the timeline so you can follow the launch order.
+  Each application starts on its trigger after its defined delay, shown directly on the timeline so you can follow the launch order. The sequence can be switched off at any time, from the main window or the notification area.
 
 - <span style="color: var(--md-accent-fg-color)">:material-folder-multiple: **Profiles**</span><br>
   Group your applications by use case (A320, VFR, cargo…) and switch with one click. The profile shown is the active one.
+
+- <span style="color: var(--md-accent-fg-color)">:material-layers: **Shared profile**</span><br>
+  The applications you use with every aircraft are set up once, in Shared, and launch with whichever profile is active.
+
+- <span style="color: var(--md-accent-fg-color)">:material-link-variant: **Profiles linked to aircraft**</span><br>
+  Link a profile to your aircraft: loading a flight with one of them activates that profile by itself.
 
 - <span style="color: var(--md-accent-fg-color)">:material-tray-arrow-down: **Unobtrusive**</span><br>
   Can be minimized to the notification area and launched with Windows, so it is ready at any time for your next flights without a second thought.
@@ -53,7 +59,7 @@ You choose whichever suits the application best. → [Applications & sequence](a
   Fully translated into French, English, German, Spanish, Italian and Portuguese, with live switching and persistence in the configuration.
 
 - <span style="color: var(--md-accent-fg-color)">:material-shield-check: **Administrator applications**</span><br>
-  Detected automatically when added, with a Windows prompt. Only the applications that require administrator privileges will use administrator mode.
+  Detected automatically when added, with a Windows prompt. Only the applications that require administrator privileges will use administrator mode. The prompt comes at startup as soon as one of your profiles holds such an application.
 
 - <span style="color: var(--md-accent-fg-color)">:material-flask: **Test mode**</span><br>
   Play the whole sequence (including the "ready to fly" trigger) without launching the simulator, to check your profiles.

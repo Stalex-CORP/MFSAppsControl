@@ -21,6 +21,9 @@ Tutte le impostazioni vengono **salvate immediatamente** — non c'è alcun puls
     Se **La chiusura riduce nell'area di notifica** è attiva, la croce non chiude più l'applicazione.<br>
     Usa **Esci** nel menu dell'icona dell'area di notifica (clic destro).
 
+!!! tip "Sequenza automatica"
+    L'interruttore che attiva o disattiva la sequenza automatica non è nelle opzioni: si trova nella finestra principale, sopra **Prova**, e nel menu dell'icona dell'area di notifica. → [Per iniziare](getting-started.md)
+
 ## Aspetto
 
 ### Tema dell'applicazione
@@ -65,6 +68,9 @@ Determina il dettaglio scritto nei file di log. La modifica si applica **immedia
 | **Trace**                | + il dettaglio dei valori interni. Molto pesante.                | Su richiesta del supporto.  |
 
 Ogni giorno viene creato un nuovo file, e i log più vecchi di **7 giorni** vengono eliminati automaticamente.
+
+!!! info "Diario di sessione"
+    Qualunque sia il livello, viene sempre scritto un breve diario di ogni sessione: avvio e chiusura del simulatore, caricamento dei voli, l'aereo, e ogni applicazione avviata o arrestata. Spesso basta per l'assistenza, anche al livello **Errore**.
 
 !!! tip
     Ricordati di **rimettere il livello su Errore** una volta segnalato il tuo problema: i livelli Debug e Trace sono molto pesanti.

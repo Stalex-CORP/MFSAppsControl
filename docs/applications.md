@@ -34,6 +34,10 @@ Click **Add an application** in the grid. Two modes:
 
 The add window then holds the **launch arguments**, the **trigger**, the **delay** and the **Start minimized** option, all of them editable after adding.
 
+!!! info "Shared and grouping"
+    An application already in [Shared](profiles.md#the-shared-profile) cannot be added to a profile: the window explains why.<br>
+    Adding an application that another profile already has offers to [group it into Shared](profiles.md#grouping-into-shared).
+
 ---
 
 ## Anatomy of a card
@@ -122,7 +126,7 @@ The **delay** is the wait time before the application launches, **counting from 
 - Adjustable from **0 to 600 seconds** (10 minutes)
 - The **−** / **+** buttons step by **5 s**, and you can also **type** the value directly
 - The delay is **grayed out** if no auto start is chosen
-- During a flight, it shows a **padlock** :material-lock: — the configuration is locked
+- While its own countdown runs, it shows a **padlock** :material-lock:: cancel the countdown (**✕**) to edit it
 
 !!! tip "Each trigger has its own sequence"
     A 30 s delay on a "sim start" application = 30 s after MSFS launches. <br>
@@ -143,6 +147,8 @@ The center of the banner shows the **launch sequence**: which application starts
 It appears as soon as at least one application has auto start.
 
 ![The launch sequence timeline](assets/timeline-dual.png)
+
+It shows the applications of the **Shared** profile and those of the active profile together.
 
 Each block represents a start moment, with the icons of the applications concerned.<br>
 Hover a block to see their names and statuses.
@@ -198,6 +204,7 @@ Open the card's **:material-dots-horizontal:** menu, or **right-click** it:
 | :material-square-edit-outline: **Edit**     | Reopens the settings window, pre-filled.                       |
 | :material-play: **Launch now**              | Starts the application immediately, with no delay.             |
 | :material-stop-circle: **Stop**             | Stops the running process (replaces "Launch now").             |
+| :material-layers: **Move to Shared**        | Offers to move the application into Shared, through the grouping window.<br>*Not shown on the Shared tab.* |
 | :material-delete: **Remove from list**      | Deletes the application from the profile.                      |
 
 ![Editing an application](assets/app-editmenu.png)
@@ -215,18 +222,24 @@ These settings change **the display only**; they affect neither the launch seque
 
 ![Filter and sort](assets/app-filters.png)
 
-## During a flight, the configuration is locked
+## During a session
 
-As soon as the simulator is detected, the profile and the applications are **locked** (padlock :material-lock:{ style="color:#3ecf8e" }).<br>
+Nothing is locked: you can add, edit or remove applications and change profile at any time, in flight too.<br>
+Only a card whose delay is **counting down** is locked (padlock :material-lock:), since its launch already uses its settings: cancel the countdown (**✕**) to edit it.
 
-You can still **launch** or **stop** an application by hand from the **:material-dots-horizontal:** menu.
+- **Adding a Sim start application**: it is planned with what is left of its delay, counting from the simulator's launch, and starts right away if that time has passed — in flight too.
+- **Adding a Ready to fly application**: it starts at the next Ready to fly screen.
+- **Editing a running application**: it keeps running; a new trigger or delay applies from its next launch.
+- **Removing a running application**: it is not closed, but it is no longer managed.
+
+Changing profile follows its own rules. → [Changing profile during a session](profiles.md#changing-profile-during-a-session)
 
 ## Applications requiring administrator
 
 Some applications require **administrator rights** (Active Sky or REX Atmos, for example).<br>
 They show a **shield** <span style="color:red;">:material-shield-alert:</span> next to their name.
 
-When such an application is in the active profile, you are asked to **restart as administrator** at launch or when adding it, through **a single** UAC prompt.
+When such an application is in **Shared** or in **any** of your profiles, MFSAppsControl asks to **restart as administrator** at startup — or when you add it — through **a single** UAC prompt. This way, changing profile never needs a restart in the middle of a session.
 
 !!! info "Only the applications that require it are elevated"
     Even when MFSAppsControl runs as administrator, it does **not** pass those rights on to everything it launches.<br>

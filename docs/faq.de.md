@@ -46,7 +46,7 @@
 
     1. Ist der Punkt **SimConnect verbunden** während des Fluges grün?
     2. Ist auf der Karte wirklich die Schaltfläche :material-airplane: aktiv (und nicht :material-play:)?
-    3. Sind Sie in dieser Sitzung bereits geflogen? Die „Startbereit“-Anwendungen starten **nur einmal pro Simulator-Sitzung** — sie werden zwischen zwei Flügen nicht erneut gestartet.
+    3. Sind Sie in dieser Sitzung bereits geflogen? Die „Startbereit“-Anwendungen starten **nur einmal pro Simulator-Sitzung** — sie werden zwischen zwei Flügen nicht erneut gestartet, außer nach einem Profilwechsel.
 
     Um alles ohne Flug zu überprüfen, verwenden Sie die Schaltfläche **Testen**: Sie simuliert SimConnect nach 10 Sekunden.
 
@@ -56,10 +56,11 @@
     Setzen Sie auf der Karte eine **Verzögerung**, um den Start um entsprechend viele Sekunden nach hinten zu schieben.
 
 ??? question "Die Anwendung verlangt Administratorrechte (UAC)"
-    Manche Anwendungen (Active Sky, REX Atmos…) verlangen Administratorrechte. Um sie
-    zu starten — und um sie zu **beenden** — muss MFSAppsControl erhöht laufen. Wenn ein
-    solches Addon im aktiven Profil enthalten ist, startet die Anwendung
-    automatisch als Administrator neu (**eine einzige** UAC-Abfrage).
+    Manche Anwendungen (Active Sky, REX Atmos…) erfordern Administratorrechte. Um sie
+    zu starten — und zu **beenden** — muss MFSAppsControl erhöht laufen. Ist ein solches
+    Add-on in Gemeinsam oder in **irgendeinem** Ihrer Profile, startet die Anwendung
+    beim Start als Administrator neu (**eine einzige** UAC-Abfrage), damit ein
+    Profilwechsel nie einen Neustart mitten in einer Sitzung erfordert.
 
     **Die übrigen Anwendungen erben diese Rechte nicht**: Jede startet mit den
     Rechten, die ihre eigene ausführbare Datei verlangt. vPilot oder Navigraph laufen
@@ -95,16 +96,24 @@
 
     Fahren Sie über den Badge, um die **PID** des betreffenden Prozesses zu sehen.
 
+??? question "Mit dem Simulator wird nichts mehr gestartet oder beendet"
+    Die **automatische Sequenz** ist vermutlich ausgeschaltet: Der Schalter **Auto-Sequenz** über **Testen** ist grau, und das Symbol im Infobereich zeigt einen **roten** Punkt.<br>
+    Schalten Sie sie über den Schalter oder das Menü des Symbols wieder ein. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet, und kein Profil wird durch ein Flugzeug aktiviert.
+
+??? question "Mein Profil wechselt nicht mit dem Flugzeug"
+    - Prüfen Sie, ob das Flugzeug mit dem Profil **verknüpft** ist: Sein Name im Band zeigt ein grünes Verknüpfungssymbol.
+    - Der Wechsel erfolgt **beim Laden des Flugs**, nicht während Sie im Hauptmenü Flugzeuge durchsehen.
+    - Die **automatische Sequenz** muss eingeschaltet sein.
+    - Der Simulator lädt einen Flug manchmal **ohne das Flugzeug**: Laden Sie den Flug neu, der Wechsel erfolgt bei diesem Laden.
+
 ## Oberfläche
 
 ??? question "Warum ist die Verzögerung ausgegraut?"
     Weil für diese Anwendung kein **automatischer Start** gewählt ist. Aktivieren Sie :material-play: oder :material-airplane:, und sie lässt sich wieder einstellen.
 
-??? question "Warum das Schloss und die ausgegrauten Schaltflächen während des Fluges?"
-    Sobald der Simulator erkannt wird, sind die Konfiguration der Karten und die Profile **gesperrt**: Eine Sequenz während ihres Ablaufs zu ändern
-    (oder mitten im Flug das Profil zu wechseln) wäre nur schwer beherrschbar.
-
-    Das Menü **⋯** bleibt verfügbar, um eine Anwendung von Hand zu starten oder zu stoppen.
+??? question "Warum ist eine Karte mit einem Schloss gesperrt?"
+    Ihre Verzögerung **zählt gerade herunter**: Der Start verwendet ihre Einstellungen bereits, daher sind sie bis zum Start gesperrt.<br>
+    Brechen Sie den Countdown mit dem **✕** neben dem Badge ab, um die Karte zu bearbeiten. Ansonsten ist nichts gesperrt, auch nicht im Flug.
 
 ??? question "Warum kann ich den Autostopp bei einer „Startbereit“-Anwendung nicht deaktivieren?"
     Eine Anwendung, die für den Flug gestartet wurde, hat keinen Grund, den Simulator zu überleben: Der automatische Stopp ist bei diesem Auslöser deshalb **in aktiver Stellung gesperrt**.<br>
@@ -130,6 +139,9 @@
     Diese Datei ist **verschlüsselt**: Sie lässt sich nicht direkt bearbeiten. Zum
     Sichern kopieren Sie sie einfach so, wie sie ist.
     → [Profile](profiles.md)
+
+    Wandelt ein Update diese Datei um, wird eine Kopie der vorherigen daneben aufbewahrt,
+    benannt `settings.v<version>.<date>.json`: Sie ist zurückzulegen, wenn Sie zu einer älteren Version zurückkehren.
 
 ??? question "Wo sind die Protokolle (Logs)?"
     In `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Eine Datei pro Tag, **7 Tage** lang aufbewahrt.)<br>

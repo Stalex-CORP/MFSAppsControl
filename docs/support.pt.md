@@ -33,6 +33,9 @@ O procedimento a seguir:
 4. **Anexe esse `.zip`** à sua mensagem no Discord.
 5. Quando terminar, volte a colocar o nível em **Erro**.
 
+!!! tip "Mesmo no nível Erro"
+    É sempre escrito um breve diário de cada sessão — simulador, voos, aeronave, aplicações iniciadas e paradas. Se o problema já aconteceu, exporte os registos de imediato: podem ser suficientes.
+
 !!! info "O que contém a exportação?"
     O `.zip` reúne **os registos gerados** e o seu ficheiro de **configuração**.<br>
     Mais nada é recolhido, e nada é enviado automaticamente: só você decide partilhá-lo.

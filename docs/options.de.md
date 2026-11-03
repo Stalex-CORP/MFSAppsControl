@@ -21,6 +21,9 @@ Alle Einstellungen werden **sofort gespeichert** — es gibt keine Schaltfläche
     Wenn **Beim Schließen in den Infobereich minimieren** aktiviert ist, beendet das Kreuz die Anwendung nicht mehr.<br>
     Verwenden Sie **Beenden** im Menü des Symbols im Infobereich (Rechtsklick).
 
+!!! tip "Automatische Sequenz"
+    Der Schalter, der die automatische Sequenz ein- oder ausschaltet, ist nicht in den Optionen: Er befindet sich im Hauptfenster über **Testen** und im Menü des Symbols im Infobereich. → [Erste Schritte](getting-started.md)
+
 ## Darstellung
 
 ### Design der Anwendung
@@ -65,6 +68,9 @@ Legt fest, wie ausführlich in die Protokolldateien geschrieben wird. Die Änder
 | **Trace**             | + die Einzelheiten der internen Werte. Sehr umfangreich.           | Auf Anfrage des Supports.    |
 
 **Jeden Tag** wird eine neue Datei angelegt, und Protokolle, die älter als **7 Tage** sind, werden automatisch gelöscht.
+
+!!! info "Sitzungsprotokoll"
+    Unabhängig von der Stufe wird immer ein kurzes Protokoll jeder Sitzung geschrieben: Start und Ende des Simulators, geladene Flüge, das Flugzeug und jede gestartete oder beendete Anwendung. Für den Support reicht es oft aus, selbst auf der Stufe **Fehler**.
 
 !!! tip
     Denken Sie daran, die Stufe **wieder auf Fehler zu stellen**, sobald Ihr Problem eingereicht ist: Die Stufen Debug und Trace sind sehr umfangreich.

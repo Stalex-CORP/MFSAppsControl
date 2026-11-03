@@ -25,6 +25,16 @@ MFSAppsControl è disponibile su:
     Una volta installata, l'applicazione ti **avviserà quando è disponibile una nuova versione** (badge e notifica).<br>
     Potrai scaricarla e installarla direttamente dall'applicazione facendo clic sul badge o tramite le opzioni.
 
+## Aggiornare dalla 2.0
+
+I tuoi profili e le tue impostazioni vengono convertiti automaticamente al primo avvio della 2.1.<br>
+Una copia del file precedente viene conservata in `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl`, chiamata `settings.v2.1.0.<date>.json`: tienila se pensi di tornare alla 2.0, che non sa leggere il file convertito.
+
+Subito dopo l'aggiornamento, MFSAppsControl propone anche di [raggruppare in Condiviso](profiles.md#raggruppare-in-condiviso) le applicazioni presenti in tutti i tuoi profili.
+
+!!! info "Diritti di amministratore"
+    Se uno dei tuoi profili contiene un'applicazione che richiede i diritti di amministratore, la richiesta di Windows arriva ora all'avvio, qualunque sia il profilo attivo.
+
 ## Primo avvio
 
 Al primo avvio, MFSAppsControl si apre su un **profilo vuoto** predefinito.<br>

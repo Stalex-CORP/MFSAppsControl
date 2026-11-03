@@ -21,6 +21,9 @@ Todos los ajustes se **guardan de inmediato** — no hay ningún botón
     Si **Al cerrar se minimiza en la bandeja del sistema** está activado, la cruz ya no cierra la aplicación.<br>
     Usa **Salir** en el menú del icono del área de notificación (clic derecho).
 
+!!! tip "Secuencia automática"
+    El interruptor que activa o desactiva la secuencia automática no está en las opciones: está en la ventana principal, encima de **Probar**, y en el menú del icono del área de notificación. → [Primeros pasos](getting-started.md)
+
 ## Apariencia
 
 ### Tema de la aplicación
@@ -65,6 +68,9 @@ Determina el detalle que se escribe en los archivos de registro. El cambio se ap
 | **Trace**             | + el detalle de los valores internos. Muy pesado.               | A petición del soporte.   |
 
 Se crea un archivo nuevo **cada día**, y los registros de más de **7 días** se eliminan automáticamente.
+
+!!! info "Diario de sesión"
+    Sea cual sea el nivel, siempre se escribe un breve diario de cada sesión: inicio y cierre del simulador, carga de vuelos, el avión, y cada aplicación iniciada o detenida. A menudo basta para el soporte, incluso en el nivel **Error**.
 
 !!! tip
     Acuérdate de **volver a poner el nivel en Error** una vez enviado tu problema: los niveles Debug y Trace son muy pesados.

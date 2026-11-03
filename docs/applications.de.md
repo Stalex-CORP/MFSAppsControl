@@ -35,6 +35,10 @@ Klicken Sie im Raster auf **Anwendung hinzufügen**. Es gibt zwei Modi:
 
 Der Hinzufügen-Dialog enthält anschließend die **Startargumente**, den **Auslöser**, die **Verzögerung** und die Option **Minimiert starten** – alles auch nach dem Hinzufügen noch änderbar.
 
+!!! info "Gemeinsam und Zusammenführen"
+    Eine Anwendung, die bereits in [Gemeinsam](profiles.md#das-profil-gemeinsam) ist, kann keinem Profil hinzugefügt werden: Der Dialog erklärt den Grund.<br>
+    Wird eine Anwendung hinzugefügt, die ein anderes Profil bereits enthält, wird angeboten, sie [in Gemeinsam zusammenzuführen](profiles.md#in-gemeinsam-zusammenfuhren).
+
 ---
 
 ## Aufbau einer Karte
@@ -123,7 +127,7 @@ Die **Verzögerung** ist die Wartezeit vor dem Start der Anwendung, **ab ihrem A
 - Einstellbar von **0 bis 600 Sekunden** (10 Minuten)
 - Die Schaltflächen **−** / **+** ändern den Wert in Schritten von **5 s**; Sie können den Wert auch direkt **eingeben**
 - Die Verzögerung ist **ausgegraut**, wenn kein automatischer Start gewählt ist
-- Während eines Fluges zeigt sie ein **Schloss** :material-lock: – die Konfiguration ist gesperrt
+- Während ihres eigenen Countdowns zeigt sie ein **Schloss** :material-lock:: Brechen Sie den Countdown (**✕**) ab, um sie zu ändern
 
 !!! tip "Jeder Auslöser hat seine eigene Sequenz"
     30 s Verzögerung bei einer „Simstart“-Anwendung = 30 s nach dem Start von MSFS. <br>
@@ -144,6 +148,8 @@ Die Mitte des Bandes zeigt die **Startsequenz**: welche Anwendung zu welchem Zei
 Sie erscheint, sobald mindestens eine Anwendung auf automatischen Start gestellt ist.
 
 ![Die Zeitleiste der Startsequenz](assets/timeline-dual.png)
+
+Sie zeigt die Anwendungen des Profils **Gemeinsam** und die des aktiven Profils gemeinsam.
 
 Jeder Block steht für einen Startzeitpunkt und enthält die Symbole der betroffenen Anwendungen.<br>
 Fahren Sie mit der Maus über einen Block, um die Namen und ihren Status zu sehen.
@@ -199,6 +205,7 @@ PID 24680
 | :material-square-edit-outline: **Bearbeiten** | Öffnet den Einstellungsdialog erneut, bereits ausgefüllt.   |
 | :material-play: **Jetzt starten**             | Startet die Anwendung sofort, ohne Verzögerung.             |
 | :material-stop-circle: **Stoppen**            | Beendet den laufenden Prozess (ersetzt „Jetzt starten“).    |
+| :material-layers: **Nach Gemeinsam verschieben** | Bietet an, die Anwendung über das Zusammenführen-Fenster nach Gemeinsam zu verschieben.<br>*Nicht im Tab Gemeinsam.* |
 | :material-delete: **Aus der Liste entfernen** | Entfernt die Anwendung aus dem Profil.                      |
 
 ![Eine Anwendung bearbeiten](assets/app-editmenu.png)
@@ -216,18 +223,24 @@ Diese Einstellungen ändern **nur die Anzeige** und wirken sich weder auf die St
 
 ![Filtern und sortieren](assets/app-filters.png)
 
-## Während des Fluges ist die Konfiguration gesperrt
+## Während einer Sitzung
 
-Sobald der Simulator erkannt wird, sind das Profil und die Anwendungen **gesperrt** (Schloss :material-lock:{ style="color:#3ecf8e" }).<br>
+Nichts ist gesperrt: Sie können jederzeit Anwendungen hinzufügen, bearbeiten oder entfernen und das Profil wechseln, auch im Flug.<br>
+Nur eine Karte, deren Verzögerung gerade **herunterzählt**, ist gesperrt (Schloss :material-lock:), da ihr Start ihre Einstellungen bereits verwendet: Brechen Sie den Countdown (**✕**) ab, um sie zu bearbeiten.
 
-Eine Anwendung können Sie weiterhin über das Menü **:material-dots-horizontal:** von Hand **starten** oder **stoppen**.
+- **Eine Simstart-Anwendung hinzufügen**: Sie wird mit der verbleibenden Verzögerung geplant, gezählt ab dem Start des Simulators, und startet sofort, wenn diese Zeit verstrichen ist — auch im Flug.
+- **Eine Startbereit-Anwendung hinzufügen**: Sie startet beim nächsten Bildschirm Startbereit.
+- **Eine laufende Anwendung bearbeiten**: Sie läuft weiter; ein neuer Auslöser oder eine neue Verzögerung gilt ab ihrem nächsten Start.
+- **Eine laufende Anwendung entfernen**: Sie wird nicht geschlossen, aber nicht mehr verwaltet.
+
+Der Profilwechsel folgt eigenen Regeln. → [Profil während einer Sitzung wechseln](profiles.md#profil-wahrend-einer-sitzung-wechseln)
 
 ## Anwendungen, die Administratorrechte erfordern
 
 Manche Anwendungen verlangen **Administratorrechte** (zum Beispiel Active Sky, REX Atmos).<br>
 Sie zeigen neben ihrem Namen ein **Schild** <span style="color:red;">:material-shield-alert:</span>.
 
-Sobald eine solche Anwendung im aktiven Profil enthalten ist, werden Sie beim Start oder beim Hinzufügen gebeten, **als Administrator neu zu starten** – über **eine einzige** UAC-Abfrage.
+Ist eine solche Anwendung in **Gemeinsam** oder in **irgendeinem** Ihrer Profile, fordert MFSAppsControl beim Start — oder beim Hinzufügen — über **eine einzige** UAC-Abfrage einen **Neustart als Administrator** an. So erfordert ein Profilwechsel nie einen Neustart mitten in einer Sitzung.
 
 !!! info "Nur die Anwendungen, die es verlangen, werden erhöht"
     Auch wenn MFSAppsControl als Administrator läuft, gibt es diese Rechte **nicht** an alles weiter, was es startet.<br>

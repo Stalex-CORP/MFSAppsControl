@@ -26,14 +26,14 @@ When a new version is available, a **badge** appears next to the version. Clicki
 ### 2. The status & sequence banner
 
 This is the visual display of:
-- the simulator state and the SimConnect connection,
+- the simulator state, the SimConnect connection and the aircraft loaded,
 - the application launch sequence,
-- the sequence test button.
+- the automatic sequence switch and the sequence test button.
 
 ![App Sequence - Statuses](assets/app-sequence-status.png)
 
 
-**On the left, the statuses** — MSFS and SimConnect.<br>
+**On the left, the statuses** — MSFS, SimConnect and the aircraft.<br>
 
 - MSFS status
 
@@ -51,14 +51,18 @@ This is the visual display of:
   | :material-circle:{ style="color:#3ecf8e" } green | **SimConnect connected**    | Connection established, system ready.              |
   | :material-circle:{ style="color:#ff5c5c" } red   | **SimConnect unavailable**  | SimConnect is not responding (see the [FAQ](faq.md)). |
 
+- Aircraft
+
+  The aircraft loaded in the simulator, as soon as SimConnect reports it — at the main menu too, while you browse. A :material-link-variant:{ style="color:#3ecf8e" } icon shows that it is linked to a profile, a :material-link-variant-off: icon that it is not: click its name to link or unlink it. Until an aircraft is reported, the row only shows the :material-airplane: icon. → [Profiles linked to aircraft](profiles.md#profiles-linked-to-aircraft)
+
 
 **In the center, the launch sequence**<br>
 The timeline of your applications, shown as their icons placed on their start delays (only visible if at least one application is configured). → [The timeline in detail](applications.md#the-timeline)
 
 
-**On the right, the Test/Stop button**<br>
-Simulates MSFS starting and stopping so you can test your sequences without launching MSFS.<br>
-During a flight or a test, it becomes **Stop**. → [Testing the sequence](applications.md#testing-the-sequence)
+**On the right, the Auto sequence switch and the Test/Stop button**<br>
+**Auto sequence**, on top, turns the automatic sequence on or off. When it is off, nothing is launched or stopped with the simulator. The notification area icon shows the same state with a green or red dot, and its menu has the same switch; the choice is kept across restarts.<br>
+**Test**, below it, simulates MSFS starting and stopping so you can test your sequences without launching MSFS. During a flight or a test, it becomes **Stop**. → [Testing the sequence](applications.md#testing-the-sequence)
 
 ### 3. Profiles
 
@@ -69,6 +73,8 @@ Shows all your available profiles, with the active one highlighted.
 A button to **create** a new profile.<br>
 Profiles can be reordered by dragging the tabs.<br>
 The **:material-dots-horizontal:** menu lets you rename/duplicate/delete them. → [Profiles](profiles.md)
+
+The **Shared** tab, always first, holds the applications launched with every profile; a :material-link-variant: icon marks a profile linked to aircraft.
 
 
 ### 4. Filters
@@ -137,6 +143,7 @@ Click **Stop** to end the test and close the applications configured with the op
 | The simulator loads                             | The MSFS status turns green, the SimConnect status turns green as soon as it is available, and the sim-start applications launch according to their delay.     |
 | You reach a flight's **Ready to fly** screen    | The **Ready to fly** sequence starts in turn, with its own delays.                                                                                             |
 | You switch to another flight                    | The applications **do not restart**; they stay running.                                                                                                        |
+| You change profile — by hand, or through a [linked aircraft](profiles.md#profiles-linked-to-aircraft) | Nothing on the spot. When the next flight loads, the previous profile's applications close, and the new profile's sim-start applications start right away; its ready-to-fly ones follow at the Ready to fly screen. |
 | You quit **MSFS**                               | Every application set to **Auto stop** (including those tied to "Ready to fly" mode) is closed cleanly.                                                        |
 
 !!! info "If MSFS is already running before MFSAppsControl"
