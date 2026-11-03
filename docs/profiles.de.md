@@ -73,7 +73,7 @@ Sie werden einmal eingerichtet, starten mit jedem aktiven Profil und erscheinen 
 
 MFSAppsControl bietet an, die Anwendungen, die mehrere Profile gemeinsam haben, nach Gemeinsam zu verschieben. Es **tut das nie von selbst**: Ein Fenster listet sie auf, alle angehakt, und nur was angehakt bleibt, wird verschoben.
 
-![Das Zusammenführen-Fenster](assets/shared-grouping.png)
+![Das Zusammenführen-Fenster](assets/shared-grouping.gif)
 
 Das Angebot erscheint:
 
@@ -88,10 +88,14 @@ Zwei Einträge sind dieselbe Anwendung, wenn sie **denselben Pfad und dieselben 
 
 Ein Profil kann mit **einem oder mehreren Flugzeugen verknüpft** werden: Wird ein Flug mit einem davon geladen, wird dieses Profil von selbst aktiv — der Wechsel vom A380 zur 737 erfordert keinen Profilwechsel von Hand mehr.
 
+![Das Profil folgt dem Flugzeug beim Laden des Flugs](assets/aircraft-switch.gif)
+
 **Ein Flugzeug verknüpfen**
 
 - **Im Band**: Sobald der Simulator das geladene Flugzeug meldet, klicken Sie auf seinen Namen und wählen das Profil.
 - **Im Profilmenü → Verknüpfte Flugzeuge…**: die Liste Ihrer installierten Flugzeuge (Community und Marketplace) mit Suchfeld, nutzbar mit oder ohne laufenden Simulator. Die bereits mit dem Profil verknüpften Flugzeuge stehen oben; ein anderswo verknüpftes Flugzeug zeigt, welches Profil es hat, und das Anhaken verschiebt es hierher.
+
+![Das geladene Flugzeug im Band verknüpfen](assets/aircraft-link-banner.gif)
 
 ![Die Liste der verknüpften Flugzeuge](assets/aircraft-link.png)
 

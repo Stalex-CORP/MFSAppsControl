@@ -70,6 +70,8 @@ Estas definições estão igualmente presentes na janela de modificação.
 É a definição mais útil do MFSAppsControl.<br>
 Os dois botões da esquerda (:material-play: e :material-airplane:) formam uma **escolha única**: ativar um desativa o outro, e voltar a clicar no que está ativo **desativa o arranque automático**.
 
+![Escolher o acionador e o atraso num cartão](assets/card-triggers.gif)
+
 |                       | :material-play: **Início do sim**              | :material-airplane: **Pronto para voar**      |
 | --------------------- | ---------------------------------------------- | --------------------------------------------- |
 | **É acionado**        | Quando o **processo** do MSFS é detetado       | Quando o seu **avião aparece no mundo**       |
@@ -226,6 +228,8 @@ Estas definições alteram **apenas a visualização** e não afetam nem a sequ�
 
 Nada fica bloqueado: pode adicionar, editar ou remover aplicações e mudar de perfil a qualquer momento, também em voo.<br>
 Só um cartão cujo atraso está **em contagem** fica bloqueado (cadeado :material-lock:), porque o seu arranque já usa as suas definições: cancele a contagem (**✕**) para o editar.
+
+![Cancelar uma contagem para editar o cartão](assets/countdown-cancel.gif)
 
 - **Adicionar uma aplicação Início do sim**: é planeada com o que resta do seu atraso, contado desde o arranque do simulador, e arranca de imediato se esse tempo já passou — também em voo.
 - **Adicionar uma aplicação Pronto para voar**: arranca no próximo ecrã Pronto para voar.

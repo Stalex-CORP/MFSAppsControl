@@ -71,6 +71,8 @@ Dieselben Einstellungen finden Sie auch im Bearbeiten-Dialog.
 Das ist die nützlichste Einstellung von MFSAppsControl.<br>
 Die beiden linken Schaltflächen (:material-play: und :material-airplane:) bilden eine **Entweder-oder-Auswahl**: Wenn Sie die eine aktivieren, wird die andere deaktiviert, und ein erneuter Klick auf die aktive Schaltfläche **schaltet den automatischen Start ganz ab**.
 
+![Auslöser und Verzögerung auf einer Karte wählen](assets/card-triggers.gif)
+
 |                          | :material-play: **Simstart**                | :material-airplane: **Startbereit**            |
 | ------------------------ | ------------------------------------------- | ---------------------------------------------- |
 | **Wird ausgelöst**       | wenn der **Prozess** von MSFS erkannt wird  | wenn Ihr **Flugzeug in der Welt erscheint**    |
@@ -227,6 +229,8 @@ Diese Einstellungen ändern **nur die Anzeige** und wirken sich weder auf die St
 
 Nichts ist gesperrt: Sie können jederzeit Anwendungen hinzufügen, bearbeiten oder entfernen und das Profil wechseln, auch im Flug.<br>
 Nur eine Karte, deren Verzögerung gerade **herunterzählt**, ist gesperrt (Schloss :material-lock:), da ihr Start ihre Einstellungen bereits verwendet: Brechen Sie den Countdown (**✕**) ab, um sie zu bearbeiten.
+
+![Einen Countdown abbrechen, um die Karte zu bearbeiten](assets/countdown-cancel.gif)
 
 - **Eine Simstart-Anwendung hinzufügen**: Sie wird mit der verbleibenden Verzögerung geplant, gezählt ab dem Start des Simulators, und startet sofort, wenn diese Zeit verstrichen ist — auch im Flug.
 - **Eine Startbereit-Anwendung hinzufügen**: Sie startet beim nächsten Bildschirm Startbereit.

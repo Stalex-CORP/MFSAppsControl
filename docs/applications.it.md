@@ -70,6 +70,8 @@ Queste impostazioni sono presenti anche nella finestra di modifica.
 È l'impostazione più utile di MFSAppsControl.<br>
 I due pulsanti di sinistra (:material-play: e :material-airplane:) formano una **scelta unica**: attivare l'uno disattiva l'altro, e ricliccare su quello attivo **disattiva l'avvio automatico**.
 
+![Scegliere l'attivatore e il ritardo su una scheda](assets/card-triggers.gif)
+
 |                      | :material-play: **Avvio sim**               | :material-airplane: **Pronto al volo**       |
 | -------------------- | ------------------------------------------- | -------------------------------------------- |
 | **Si attiva**        | Quando il **processo** di MSFS viene rilevato | Quando il tuo **aereo appare nel mondo**     |
@@ -226,6 +228,8 @@ Queste impostazioni cambiano **solo la visualizzazione** e non hanno effetto né
 
 Nulla è bloccato: puoi aggiungere, modificare o rimuovere applicazioni e cambiare profilo in qualsiasi momento, anche in volo.<br>
 Solo una scheda il cui ritardo è **in conto alla rovescia** è bloccata (lucchetto :material-lock:), perché il suo avvio usa già le sue impostazioni: annulla il conto alla rovescia (**✕**) per modificarla.
+
+![Annullare un conto alla rovescia per modificare la scheda](assets/countdown-cancel.gif)
 
 - **Aggiungere un'applicazione Avvio sim**: viene pianificata con ciò che resta del suo ritardo, contato dall'avvio del simulatore, e parte subito se quel tempo è trascorso — anche in volo.
 - **Aggiungere un'applicazione Pronto al volo**: parte alla prossima schermata Pronto al volo.

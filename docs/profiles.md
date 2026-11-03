@@ -73,7 +73,7 @@ They are set up once, launch with whichever profile is active, and appear on the
 
 MFSAppsControl offers to move into Shared the applications that several profiles have in common. It **never does so on its own**: a window lists them, all ticked, and only what you leave ticked moves.
 
-![The grouping window](assets/shared-grouping.png)
+![The grouping window](assets/shared-grouping.gif)
 
 The offer comes:
 
@@ -88,10 +88,14 @@ Two entries are the same application when they have the **same path and the same
 
 A profile can be **linked to one or more aircraft**: when a flight loads with one of them, that profile becomes active by itself — going from the A380 to the 737 no longer means switching profile by hand.
 
+![The profile follows the aircraft when the flight loads](assets/aircraft-switch.gif)
+
 **Linking an aircraft**
 
 - **From the banner**: once the simulator reports the loaded aircraft, click its name and choose the profile.
 - **From the profile menu → Linked aircraft…**: the list of your installed aircraft (Community and Marketplace), with a search field, usable with the simulator running or not. The aircraft already linked to the profile come first; one linked elsewhere shows which profile holds it, and ticking it moves it here.
+
+![Linking the loaded aircraft from the banner](assets/aircraft-link-banner.gif)
 
 ![The linked-aircraft list](assets/aircraft-link.png)
 

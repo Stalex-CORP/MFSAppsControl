@@ -73,7 +73,7 @@ Elles se règlent une seule fois, se lancent avec n'importe quel profil actif et
 
 MFSAppsControl propose de déplacer dans Partagé les applications que plusieurs profils ont en commun. Il **ne le fait jamais de lui-même** : une fenêtre les liste, toutes cochées, et seul ce que vous laissez coché est déplacé.
 
-![La fenêtre de regroupement](assets/shared-grouping.png)
+![La fenêtre de regroupement](assets/shared-grouping.gif)
 
 La proposition arrive :
 
@@ -88,10 +88,14 @@ Deux entrées sont la même application quand elles ont le **même chemin et les
 
 Un profil peut être **lié à un ou plusieurs avions** : quand un vol se charge avec l'un d'eux, ce profil devient actif tout seul — passer de l'A380 au 737 ne demande plus de changer de profil à la main.
 
+![Le profil suit l'avion au chargement du vol](assets/aircraft-switch.gif)
+
 **Lier un avion**
 
 - **Depuis le bandeau** : dès que le simulateur annonce l'avion chargé, cliquez sur son nom et choisissez le profil.
 - **Depuis le menu du profil → Avions liés…** : la liste de vos avions installés (Community et Marketplace), avec un champ de recherche, utilisable simulateur lancé ou non. Les avions déjà liés au profil viennent en premier ; un avion lié ailleurs indique le profil qui le détient, et le cocher le déplace ici.
+
+![Lier l'avion chargé depuis le bandeau](assets/aircraft-link-banner.gif)
 
 ![La liste des avions liés](assets/aircraft-link.png)
 

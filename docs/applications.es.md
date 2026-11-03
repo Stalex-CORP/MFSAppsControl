@@ -71,6 +71,8 @@ Estos ajustes también están presentes en la ventana de modificación.
 Es el ajuste más útil de MFSAppsControl.<br>
 Los dos botones de la izquierda (:material-play: y :material-airplane:) forman una **elección única**: activar uno desactiva el otro, y volver a hacer clic en el que está activo **desactiva el inicio automático**.
 
+![Elegir el disparador y el retardo en una tarjeta](assets/card-triggers.gif)
+
 |                        | :material-play: **Inicio del sim**            | :material-airplane: **Listo para volar**      |
 | ---------------------- | --------------------------------------------- | --------------------------------------------- |
 | **Se dispara**         | Cuando se detecta el **proceso** de MFS       | Cuando tu **avión aparece en el mundo**       |
@@ -227,6 +229,8 @@ Estos ajustes solo cambian **la visualización** y no afectan ni a la secuencia 
 
 No se bloquea nada: puedes añadir, modificar o quitar aplicaciones y cambiar de perfil en cualquier momento, también en vuelo.<br>
 Solo una tarjeta cuyo retardo está **en cuenta atrás** queda bloqueada (candado :material-lock:), porque su inicio ya usa sus ajustes: cancela la cuenta atrás (**✕**) para modificarla.
+
+![Cancelar una cuenta atrás para modificar la tarjeta](assets/countdown-cancel.gif)
 
 - **Añadir una aplicación Inicio del sim**: se planifica con lo que queda de su retardo, contado desde el inicio del simulador, y arranca enseguida si ese tiempo ya pasó — también en vuelo.
 - **Añadir una aplicación Listo para volar**: arranca en la siguiente pantalla Listo para volar.

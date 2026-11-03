@@ -70,6 +70,8 @@ Ces réglages sont présents également dans la fenêtre de modification.
 C'est le réglage le plus utile de MFSAppsControl.<br>
 Les deux boutons de gauche (:material-play: et :material-airplane:) forment un **choix unique** : activer l'un désactive l'autre, et recliquer sur celui qui est actif **désactive le démarrage automatique**.
 
+![Choisir le déclencheur et le délai sur une carte](assets/card-triggers.gif)
+
 |                      | :material-play: **Démarrage sim**         | :material-airplane: **Prêt à voler**         |
 | -------------------- | ----------------------------------------- | -------------------------------------------- |
 | **Se déclenche**     | Quand le **processus** de MFS est détecté | Quand votre **avion apparaît dans le monde** |
@@ -226,6 +228,8 @@ Ces réglages ne changent **que l'affichage** et n'impacte pas la séquence de l
 
 Rien n'est verrouillé : vous pouvez ajouter, modifier ou retirer des applications et changer de profil à tout moment, en vol compris.<br>
 Seule une carte dont le délai est **en décompte** est verrouillée (cadenas :material-lock:), car son lancement utilise déjà ses réglages : annulez le décompte (**✕**) pour la modifier.
+
+![Annuler un décompte pour modifier la carte](assets/countdown-cancel.gif)
 
 - **Ajouter une application Démarrage sim** : elle est planifiée avec ce qui reste de son délai, compté depuis le lancement du simulateur, et part tout de suite si ce temps est écoulé — en vol compris.
 - **Ajouter une application Prêt à voler** : elle part au prochain écran Prêt à voler.

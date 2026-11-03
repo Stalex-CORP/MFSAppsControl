@@ -73,7 +73,7 @@ Configuram-se uma única vez, iniciam com qualquer perfil ativo e aparecem na me
 
 O MFSAppsControl propõe mover para Compartilhado as aplicações que vários perfis têm em comum. **Nunca o faz sozinho**: uma janela lista-as, todas assinaladas, e só se move o que deixar assinalado.
 
-![A janela de agrupamento](assets/shared-grouping.png)
+![A janela de agrupamento](assets/shared-grouping.gif)
 
 A proposta surge:
 
@@ -88,10 +88,14 @@ Duas entradas são a mesma aplicação quando têm o **mesmo caminho e os mesmos
 
 Um perfil pode ser **vinculado a uma ou mais aeronaves**: quando um voo é carregado com uma delas, esse perfil fica ativo sozinho — passar do A380 para o 737 deixa de exigir uma mudança de perfil à mão.
 
+![O perfil segue a aeronave ao carregar o voo](assets/aircraft-switch.gif)
+
 **Vincular uma aeronave**
 
 - **A partir do painel**: assim que o simulador anuncia a aeronave carregada, clique no nome e escolha o perfil.
 - **A partir do menu do perfil → Aeronaves vinculadas…**: a lista das suas aeronaves instaladas (Community e Marketplace), com um campo de pesquisa, utilizável com o simulador iniciado ou não. As aeronaves já vinculadas ao perfil aparecem primeiro; uma aeronave vinculada a outro perfil indica qual a tem, e assinalá-la traz-la para aqui.
+
+![Vincular a aeronave carregada a partir do painel](assets/aircraft-link-banner.gif)
 
 ![A lista de aeronaves vinculadas](assets/aircraft-link.png)
 

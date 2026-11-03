@@ -70,6 +70,8 @@ These settings are also available in the edit window.
 This is the most useful setting in MFSAppsControl.<br>
 The two buttons on the left (:material-play: and :material-airplane:) form a **single choice**: enabling one disables the other, and clicking the active one again **turns off auto start**.
 
+![Choosing the trigger and the delay on a card](assets/card-triggers.gif)
+
 |                      | :material-play: **Sim start**             | :material-airplane: **Ready to fly**         |
 | -------------------- | ----------------------------------------- | -------------------------------------------- |
 | **Fires**            | When the MSFS **process** is detected     | When your **aircraft appears in the world**  |
@@ -226,6 +228,8 @@ These settings change **the display only**; they affect neither the launch seque
 
 Nothing is locked: you can add, edit or remove applications and change profile at any time, in flight too.<br>
 Only a card whose delay is **counting down** is locked (padlock :material-lock:), since its launch already uses its settings: cancel the countdown (**✕**) to edit it.
+
+![Cancelling a countdown to edit the card](assets/countdown-cancel.gif)
 
 - **Adding a Sim start application**: it is planned with what is left of its delay, counting from the simulator's launch, and starts right away if that time has passed — in flight too.
 - **Adding a Ready to fly application**: it starts at the next Ready to fly screen.
