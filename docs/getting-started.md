@@ -63,6 +63,7 @@ The timeline of your applications, shown as their icons placed on their start de
 
 **On the right, the Auto sequence switch and the Test/Stop button**<br>
 **Auto sequence**, on top, turns the automatic sequence on or off. When it is off, nothing is launched or stopped with the simulator. The notification area icon shows the same state with a green or red dot, and its menu has the same switch; the choice is kept across restarts.<br>
+![Auto sequence on](assets/tray.png) ![Auto sequence off](assets/tray-off.png)<br>
 **Test**, below it, simulates MSFS starting and stopping so you can test your sequences without launching MSFS. During a flight or a test, it becomes **Stop**. → [Testing the sequence](applications.md#testing-the-sequence)
 
 ### 3. Profiles

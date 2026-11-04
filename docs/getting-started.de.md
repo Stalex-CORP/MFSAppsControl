@@ -63,6 +63,7 @@ Die Zeitleiste Ihrer Anwendungen, dargestellt durch ihre Symbole, verteilt auf i
 
 **Rechts der Schalter Auto-Sequenz und die Schaltfläche Testen/Stoppen**<br>
 **Auto-Sequenz**, oben, schaltet die automatische Sequenz ein oder aus. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet. Das Symbol im Infobereich zeigt denselben Zustand mit einem grünen oder roten Punkt, und sein Menü bietet denselben Schalter; die Wahl bleibt nach einem Neustart erhalten.<br>
+![Auto-Sequenz ein](assets/tray.png) ![Auto-Sequenz aus](assets/tray-off.png)<br>
 **Testen**, darunter, simuliert Start und Ende von MSFS, damit Sie Ihre Sequenzen ohne MSFS testen können. Während eines Flugs oder Tests wird daraus **Stoppen**. → [Die Sequenz testen](applications.md#die-sequenz-testen)
 
 ### 3. Die Profile

@@ -63,6 +63,7 @@ La timeline delle tue applicazioni, rappresentate dalle loro icone, sui rispetti
 
 **A destra, l'interruttore Sequenza auto e il pulsante Prova/Arresta**<br>
 **Sequenza auto**, in alto, attiva o disattiva la sequenza automatica. Quando è disattivata, nulla viene avviato o arrestato con il simulatore. L'icona dell'area di notifica mostra lo stesso stato con un pallino verde o rosso, e il suo menu offre lo stesso interruttore; la scelta resta dopo un riavvio.<br>
+![Sequenza auto attivata](assets/tray.png) ![Sequenza auto disattivata](assets/tray-off.png)<br>
 **Prova**, sotto, simula l'avvio e l'arresto di MSFS per testare le tue sequenze senza avviare MSFS. Durante un volo o un test diventa **Arresta**. → [Provare la sequenza](applications.md#provare-la-sequenza)
 
 ### 3. I profili

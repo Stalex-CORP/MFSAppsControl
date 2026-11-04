@@ -63,6 +63,7 @@ A linha temporal das suas aplicações, representadas pelos seus ícones, sobre 
 
 **À direita, o interruptor Sequência auto e o botão Testar/Parar**<br>
 **Sequência auto**, em cima, ativa ou desativa a sequência automática. Desativada, nada é iniciado nem parado com o simulador. O ícone da área de notificação mostra o mesmo estado com um ponto verde ou vermelho, e o seu menu oferece o mesmo interruptor; a escolha mantém-se após reiniciar.<br>
+![Sequência auto ativada](assets/tray.png) ![Sequência auto desativada](assets/tray-off.png)<br>
 **Testar**, por baixo, simula o arranque e a paragem do MSFS para testar as suas sequências sem iniciar o MSFS. Durante um voo ou um teste, passa a **Parar**. → [Testar a sequência](applications.md#testar-a-sequencia)
 
 ### 3. Os perfis

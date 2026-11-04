@@ -63,6 +63,7 @@ La timeline de vos applications représentées par leurs icônes, sur les délai
 
 **À droite, l'interrupteur Séquence auto et le bouton Tester/Arrêter**<br>
 **Séquence auto**, en haut, active ou désactive la séquence automatique. Désactivée, rien n'est lancé ni arrêté avec le simulateur. L'icône de la zone de notification affiche le même état par une pastille verte ou rouge, et son menu propose le même interrupteur ; le choix est conservé au redémarrage.<br>
+![Séquence auto activée](assets/tray.png) ![Séquence auto désactivée](assets/tray-off.png)<br>
 **Tester**, en dessous, simule le démarrage et l'arrêt de MSFS pour tester vos séquences sans lancer MSFS. Pendant un vol ou un test, il devient **Arrêter**. → [Tester la séquence](applications.md#tester-la-sequence)
 
 ### 3. Les profils

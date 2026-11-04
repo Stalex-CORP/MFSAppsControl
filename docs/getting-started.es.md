@@ -63,6 +63,7 @@ La línea de tiempo de tus aplicaciones, representadas por sus iconos sobre sus 
 
 **A la derecha, el interruptor Secuencia auto y el botón Probar/Detener**<br>
 **Secuencia auto**, arriba, activa o desactiva la secuencia automática. Desactivada, no se inicia ni se detiene nada con el simulador. El icono del área de notificación muestra el mismo estado con un punto verde o rojo, y su menú ofrece el mismo interruptor; la elección se conserva al reiniciar.<br>
+![Secuencia auto activada](assets/tray.png) ![Secuencia auto desactivada](assets/tray-off.png)<br>
 **Probar**, debajo, simula el inicio y el cierre de MSFS para probar tus secuencias sin iniciar MSFS. Durante un vuelo o una prueba, se convierte en **Detener**. → [Probar la secuencia](applications.md#probar-la-secuencia)
 
 ### 3. Los perfiles
