@@ -139,9 +139,6 @@
     o guardar, copie-o tal como está.
     → [Perfis](profiles.md)
 
-    Quando uma atualização converte este ficheiro, é mantida ao lado uma cópia do anterior,
-    chamada `settings.v<version>.<date>.json`: é essa que deve repor se voltar a uma versão anterior.
-
 ??? question "Onde estão os registos (logs)?"
     Em `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Um ficheiro por dia, conservados **7 dias**).<br>
     **Para os enviar ao suporte:**<br>

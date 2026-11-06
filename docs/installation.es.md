@@ -27,8 +27,7 @@ MFSAppsControl está disponible en:
 
 ## Actualizar desde la 2.0
 
-Tus perfiles y ajustes se convierten automáticamente en el primer inicio de la 2.1.<br>
-Se conserva una copia del archivo anterior en `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl`, llamada `settings.v2.1.0.<date>.json`: guárdala si piensas volver a la 2.0, que no sabe leer el archivo convertido.
+Tus perfiles y ajustes se convierten automáticamente en el primer inicio de la 2.1.
 
 Justo después de la actualización, MFSAppsControl también ofrece [agrupar en Compartido](profiles.md#agrupar-en-compartido) las aplicaciones presentes en todos tus perfiles.
 

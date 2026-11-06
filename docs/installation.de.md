@@ -27,8 +27,7 @@ MFSAppsControl ist erhältlich auf:
 
 ## Update von 2.0
 
-Ihre Profile und Einstellungen werden beim ersten Start von 2.1 automatisch umgewandelt.<br>
-Eine Kopie der vorherigen Datei wird in `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl` als `settings.v2.1.0.<date>.json` aufbewahrt: Behalten Sie sie, falls Sie zu 2.0 zurückkehren möchten, das die umgewandelte Datei nicht lesen kann.
+Ihre Profile und Einstellungen werden beim ersten Start von 2.1 automatisch umgewandelt.
 
 Direkt nach dem Update bietet MFSAppsControl außerdem an, die Anwendungen, die in allen Ihren Profilen vorhanden sind, [in Gemeinsam zusammenzuführen](profiles.md#in-gemeinsam-zusammenfuhren).
 

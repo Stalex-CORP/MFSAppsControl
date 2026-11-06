@@ -140,9 +140,6 @@
     Sichern kopieren Sie sie einfach so, wie sie ist.
     → [Profile](profiles.md)
 
-    Wandelt ein Update diese Datei um, wird eine Kopie der vorherigen daneben aufbewahrt,
-    benannt `settings.v<version>.<date>.json`: Sie ist zurückzulegen, wenn Sie zu einer älteren Version zurückkehren.
-
 ??? question "Wo sind die Protokolle (Logs)?"
     In `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Eine Datei pro Tag, **7 Tage** lang aufbewahrt.)<br>
     **Um sie an den Support zu übermitteln:**<br>

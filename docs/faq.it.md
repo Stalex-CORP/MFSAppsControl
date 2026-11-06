@@ -139,9 +139,6 @@
     salvarlo, copialo così com'è.
     → [Profili](profiles.md)
 
-    Quando un aggiornamento converte questo file, accanto ne viene conservata una copia del precedente,
-    chiamata `settings.v<version>.<date>.json`: è quella da ripristinare se torni a una versione precedente.
-
 ??? question "Dove sono i log?"
     In `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Un file al giorno, conservati **7 giorni**).<br>
     **Per trasmetterli al supporto:**<br>

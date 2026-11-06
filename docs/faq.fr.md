@@ -137,9 +137,6 @@
 
     Ce fichier est **chiffré** : il n'est pas modifiable directement.
 
-    Quand une mise à jour convertit ce fichier, une copie du précédent est conservée à côté,
-    nommée `settings.v<version>.<date>.json` : c'est elle qu'il faut remettre en place si vous revenez à une version antérieure.
-
 ??? question "Où sont les journaux (logs) ?"
     Dans `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Un fichier par jour, conservés **7 jours**).<br>
     **Pour les transmettre au support :**<br>

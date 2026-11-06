@@ -137,9 +137,6 @@
     copy it as-is.
     → [Back up your profiles](profiles.md)
 
-    When an update converts this file, a copy of the previous one is kept next to it, named
-    `settings.v<version>.<date>.json`: it is the one to put back if you return to an older version.
-
 ??? question "Where are the logs?"
     In `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (One file per day, kept for **7 days**.)<br>
     **To send them to support:**<br>

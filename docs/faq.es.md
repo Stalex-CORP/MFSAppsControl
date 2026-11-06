@@ -139,9 +139,6 @@
     hacer una copia de seguridad, cópialo tal cual.
     → [Perfiles](profiles.md)
 
-    Cuando una actualización convierte este archivo, se conserva al lado una copia del anterior,
-    llamada `settings.v<version>.<date>.json`: es la que hay que restaurar si vuelves a una versión anterior.
-
 ??? question "¿Dónde están los registros (logs)?"
     En `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Un archivo por día, conservados **7 días**).<br>
     **Para enviarlos al soporte:**<br>
