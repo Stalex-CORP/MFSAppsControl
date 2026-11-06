@@ -97,7 +97,7 @@ Un profilo può essere **collegato a uno o più aerei**: quando si carica un vol
 
 ![Collegare l'aereo caricato dal banner](assets/aircraft-link-banner.gif)
 
-![L'elenco degli aerei collegati](assets/aircraft-link.png)
+![L'elenco degli aerei collegati](assets/aircraft-link.gif)
 
 Un profilo collegato mostra un'icona :material-link-variant: sul suo badge; passaci sopra per vedere i suoi aerei.
 

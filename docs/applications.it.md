@@ -14,7 +14,7 @@ Fai clic su **Aggiungi un'applicazione** nella griglia. Due modalità:
     Elenca i software già installati (tramite il registro di Windows).<br>
     Cercala e selezionala: nome, icona e percorso vengono recuperati automaticamente.
 
-    ![Modalità applicazioni installate](assets/add-app-installed.png)
+    ![Modalità applicazioni installate](assets/add-app-installed.gif)
 
     !!! note "L'elenco è filtrato di proposito"
         Per restare leggibile, l'elenco esclude i software estranei al volo
@@ -27,7 +27,7 @@ Fai clic su **Aggiungi un'applicazione** nella griglia. Due modalità:
 
     Indica il percorso di un `.exe`, oppure fai clic su **Sfoglia** per selezionarlo: nome e icona vengono recuperati automaticamente.
 
-    ![Modalità sfoglia](assets/add-app-browse.png)
+    ![Modalità sfoglia](assets/add-app-browse.gif)
 
     !!! note "Quando usarla"
         Questa modalità serve per le applicazioni **portatili** (non installate) o non rilevate, che non compaiono nel registro di Windows.

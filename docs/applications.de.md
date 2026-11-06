@@ -14,7 +14,7 @@ Klicken Sie im Raster auf **Anwendung hinzufügen**. Es gibt zwei Modi:
     Listet die bereits installierten Programme auf (über die Windows-Registrierung).<br>
     Suchen Sie die Anwendung und wählen Sie sie aus: Name, Symbol und Pfad werden automatisch übernommen.
 
-    ![Modus „Installierte Anwendungen“](assets/add-app-installed.png)
+    ![Modus „Installierte Anwendungen“](assets/add-app-installed.gif)
 
     !!! note "Die Liste ist bewusst gefiltert"
         Damit sie übersichtlich bleibt, blendet die Liste Programme ohne Bezug zur
@@ -28,7 +28,7 @@ Klicken Sie im Raster auf **Anwendung hinzufügen**. Es gibt zwei Modi:
 
     Geben Sie den Pfad einer `.exe` an oder klicken Sie auf **Durchsuchen…**, um sie auszuwählen: Name und Symbol werden automatisch übernommen.
 
-    ![Modus „Durchsuchen“](assets/add-app-browse.png)
+    ![Modus „Durchsuchen“](assets/add-app-browse.gif)
 
     !!! note "Verwendung"
         Dieser Modus ist für **portable** (nicht installierte) oder nicht erkannte Anwendungen gedacht, die nicht in der Windows-Registrierung stehen.

@@ -97,7 +97,7 @@ Ein Profil kann mit **einem oder mehreren Flugzeugen verknüpft** werden: Wird e
 
 ![Das geladene Flugzeug im Band verknüpfen](assets/aircraft-link-banner.gif)
 
-![Die Liste der verknüpften Flugzeuge](assets/aircraft-link.png)
+![Die Liste der verknüpften Flugzeuge](assets/aircraft-link.gif)
 
 Ein verknüpftes Profil zeigt ein Symbol :material-link-variant: auf seinem Badge; fahren Sie darüber, um seine Flugzeuge zu sehen.
 

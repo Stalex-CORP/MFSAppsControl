@@ -97,7 +97,7 @@ A profile can be **linked to one or more aircraft**: when a flight loads with on
 
 ![Linking the loaded aircraft from the banner](assets/aircraft-link-banner.gif)
 
-![The linked-aircraft list](assets/aircraft-link.png)
+![The linked-aircraft list](assets/aircraft-link.gif)
 
 A linked profile shows a :material-link-variant: icon on its badge; hover it to see its aircraft.
 

@@ -14,7 +14,7 @@ Clique em **Adicionar uma aplicação** na grelha. Dois modos:
     Lista os programas já instalados (através do registo do Windows).<br>
     Procure-a e selecione-a: o nome, o ícone e o caminho são recuperados automaticamente.
 
-    ![Modo aplicações instaladas](assets/add-app-installed.png)
+    ![Modo aplicações instaladas](assets/add-app-installed.gif)
 
     !!! note "A lista é filtrada de propósito"
         Para se manter legível, a lista exclui os programas sem relação com o voo
@@ -27,7 +27,7 @@ Clique em **Adicionar uma aplicação** na grelha. Dois modos:
 
     Indique o caminho de um `.exe`, ou clique em **Procurar** para a selecionar: o nome e o ícone são recuperados automaticamente.
 
-    ![Modo procurar](assets/add-app-browse.png)
+    ![Modo procurar](assets/add-app-browse.gif)
 
     !!! note "Utilização"
         Este modo destina-se às aplicações **portáteis** (não instaladas) ou não detetadas, que não aparecem no registo do Windows.

@@ -14,7 +14,7 @@ Cliquez sur **Ajouter une application** dans la grille. Deux modes :
     Liste les logiciels déjà installés (via le registre Windows).<br>
     Recherchez la et sélectionnez-la : le nom, l'icône et le chemin sont récupérés automatiquement.
 
-    ![Mode applications installées](assets/add-app-installed.png)
+    ![Mode applications installées](assets/add-app-installed.gif)
 
     !!! note "La liste est volontairement filtrée"
         Pour rester lisible, la liste écarte les logiciels sans rapport avec le vol
@@ -27,7 +27,7 @@ Cliquez sur **Ajouter une application** dans la grille. Deux modes :
 
     Définissez le chemin d'un `.exe`, ou cliquez sur **Parcourir** pour la sélectionner: le nom et l'icône sont récupérés automatiquement.
 
-    ![Mode parcourir](assets/add-app-browse.png)
+    ![Mode parcourir](assets/add-app-browse.gif)
 
     !!! note "Utilisation"
         Ce mode est pour les applications **portables** (non installées) ou non détectées qui n'apparaissent pas dans le registre Windows.

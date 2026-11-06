@@ -14,7 +14,7 @@ Click **Add an application** in the grid. Two modes:
     Lists the software already installed on your PC (via the Windows registry).<br>
     Search for it and select it: the name, the icon and the path are retrieved automatically.
 
-    ![Installed applications mode](assets/add-app-installed.png)
+    ![Installed applications mode](assets/add-app-installed.gif)
 
     !!! note "The list is deliberately filtered"
         To stay readable, the list leaves out software unrelated to flying
@@ -27,7 +27,7 @@ Click **Add an application** in the grid. Two modes:
 
     Type the path to an `.exe`, or click **Browse…** to pick it: the name and the icon are retrieved automatically.
 
-    ![Browse mode](assets/add-app-browse.png)
+    ![Browse mode](assets/add-app-browse.gif)
 
     !!! note "When to use it"
         This mode is for **portable** applications (not installed) or undetected ones that don't appear in the Windows registry.

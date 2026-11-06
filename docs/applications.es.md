@@ -14,7 +14,7 @@ Haz clic en **Añadir una aplicación** en la cuadrícula. Hay dos modos:
     Lista los programas ya instalados (a través del registro de Windows).<br>
     Búscala y selecciónala: el nombre, el icono y la ruta se recuperan automáticamente.
 
-    ![Modo aplicaciones instaladas](assets/add-app-installed.png)
+    ![Modo aplicaciones instaladas](assets/add-app-installed.gif)
 
     !!! note "La lista está filtrada a propósito"
         Para que siga siendo legible, la lista descarta los programas sin relación
@@ -28,7 +28,7 @@ Haz clic en **Añadir una aplicación** en la cuadrícula. Hay dos modos:
 
     Indica la ruta de un `.exe`, o haz clic en **Examinar…** para seleccionarlo: el nombre y el icono se recuperan automáticamente.
 
-    ![Modo examinar](assets/add-app-browse.png)
+    ![Modo examinar](assets/add-app-browse.gif)
 
     !!! note "Uso"
         Este modo está pensado para las aplicaciones **portables** (no instaladas) o las que no se detectan porque no aparecen en el registro de Windows.

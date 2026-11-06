@@ -97,7 +97,7 @@ Un profil peut être **lié à un ou plusieurs avions** : quand un vol se charge
 
 ![Lier l'avion chargé depuis le bandeau](assets/aircraft-link-banner.gif)
 
-![La liste des avions liés](assets/aircraft-link.png)
+![La liste des avions liés](assets/aircraft-link.gif)
 
 Un profil lié affiche une icône :material-link-variant: sur son badge ; survolez-la pour voir ses avions.
 

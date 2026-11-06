@@ -97,7 +97,7 @@ Un perfil puede **vincularse a uno o varios aviones**: cuando se carga un vuelo 
 
 ![Vincular el avión cargado desde el panel](assets/aircraft-link-banner.gif)
 
-![La lista de aviones vinculados](assets/aircraft-link.png)
+![La lista de aviones vinculados](assets/aircraft-link.gif)
 
 Un perfil vinculado muestra un icono :material-link-variant: en su insignia; pasa el ratón por encima para ver sus aviones.
 
