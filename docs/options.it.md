@@ -13,7 +13,7 @@ Tutte le impostazioni vengono **salvate immediatamente** — non c'è alcun puls
 | Opzione                                       | Effetto                                                                                              |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | **Avvia all'avvio di Windows**                | Si avvia automaticamente con la tua sessione di Windows.                                             |
-| **Riduci nell'area di notifica**              | Riduce la finestra nell'area di notifica (tray) invece di lasciarla nella barra delle applicazioni.  |
+| **Riduci nell'area di notifica**              | La riduzione — dalla barra del titolo, dal pulsante nella barra delle applicazioni o con Win+M — nasconde la finestra nell'area di notifica (tray) invece di lasciarla nella barra delle applicazioni. |
 | **La chiusura riduce nell'area di notifica**  | La chiusura riduce la finestra nell'area di notifica (tray) invece di chiudere l'applicazione.       |
 | **Avvia ridotto nell'area di notifica**       | Si avvia direttamente nel tray, con la finestra nascosta.                                            |
 

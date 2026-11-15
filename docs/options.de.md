@@ -13,7 +13,7 @@ Alle Einstellungen werden **sofort gespeichert** — es gibt keine Schaltfläche
 | Option                                              | Wirkung                                                                                                     |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Beim Windows-Start ausführen**                    | Startet automatisch mit Ihrer Windows-Sitzung.                                                              |
-| **In den Infobereich minimieren**                   | Minimiert das Fenster in den Infobereich (Tray), statt es in der Taskleiste zu belassen.                    |
+| **In den Infobereich minimieren**                   | Beim Minimieren – über die Titelleiste, die Schaltfläche in der Taskleiste oder Win+M – wird das Fenster in den Infobereich (Tray) ausgeblendet, statt in der Taskleiste zu bleiben. |
 | **Beim Schließen in den Infobereich minimieren**    | Das Schließen minimiert das Fenster in den Infobereich (Tray), statt die Anwendung zu beenden.              |
 | **Minimiert im Infobereich starten**                | Startet direkt im Infobereich, mit ausgeblendetem Fenster.                                                  |
 

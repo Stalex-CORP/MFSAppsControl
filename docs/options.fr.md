@@ -13,7 +13,7 @@ Tous les réglages sont **enregistrés immédiatement** — il n'y a pas de bout
 | Option                                        | Effet                                                                                             |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | **Lancer au démarrage de Windows**            | Démarre automatiquement avec votre session windows.                                               |
-| **Réduire dans la barre système**             | Réduit la fenêtre dans la zone de notification (tray) au lieu de rester dans la barre des tâches. |
+| **Réduire dans la barre système**             | La réduction — depuis la barre de titre, le bouton de la barre des tâches ou Win+M — masque la fenêtre dans la zone de notification (tray) au lieu de la laisser dans la barre des tâches. |
 | **La fermeture réduit dans la barre système** | Fermer réduit la fenêtre dans la zone de notification (tray) au lieu de se fermer.                |
 | **Démarrer réduit dans la barre système**     | Démarre directement dans le tray, fenêtre masquée.                                                |
 

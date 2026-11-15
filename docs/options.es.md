@@ -13,7 +13,7 @@ Todos los ajustes se **guardan de inmediato** — no hay ningún botón
 | Opción                                              | Efecto                                                                                                     |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | **Iniciar al arrancar Windows**                     | Se inicia automáticamente con tu sesión de Windows.                                                        |
-| **Minimizar en la bandeja del sistema**             | Minimiza la ventana en el área de notificación (bandeja) en lugar de dejarla en la barra de tareas.        |
+| **Minimizar en la bandeja del sistema**             | Al minimizar —desde la barra de título, el botón de la barra de tareas o Win+M—, la ventana se oculta en el área de notificación (bandeja) en lugar de quedarse en la barra de tareas. |
 | **Al cerrar se minimiza en la bandeja del sistema** | Cerrar minimiza la ventana en el área de notificación (bandeja) en lugar de cerrar la aplicación.          |
 | **Iniciar minimizado en la bandeja del sistema**    | Arranca directamente en la bandeja, con la ventana oculta.                                                 |
 

@@ -13,7 +13,7 @@ Todas as definições são **guardadas imediatamente** — não existe botão
 | Opção                                             | Efeito                                                                                                       |
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | **Iniciar no arranque do Windows**                | Inicia automaticamente com a sua sessão do Windows.                                                          |
-| **Minimizar para a bandeja do sistema**           | Minimiza a janela para a área de notificação (bandeja) em vez de a deixar na barra de tarefas.               |
+| **Minimizar para a bandeja do sistema**           | Ao minimizar — pela barra de título, pelo botão na barra de tarefas ou com Win+M —, a janela oculta-se na área de notificação (bandeja) em vez de ficar na barra de tarefas. |
 | **Fechar minimiza para a bandeja do sistema**     | Fechar minimiza a janela para a área de notificação (bandeja) em vez de encerrar a aplicação.                |
 | **Iniciar minimizado na bandeja do sistema**      | Inicia diretamente na bandeja, com a janela oculta.                                                          |
 

@@ -13,7 +13,7 @@ Every setting is **saved immediately** — there is no
 | Option                                    | Effect                                                                                   |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
 | **Launch at Windows startup**             | Starts automatically with your Windows session.                                            |
-| **Minimize to system tray**               | Minimizes the window to the notification area (tray) instead of keeping it in the taskbar. |
+| **Minimize to system tray**               | Minimizing — from the title bar, the taskbar button or Win+M — hides the window in the notification area (tray) instead of keeping it in the taskbar. |
 | **Closing minimizes to system tray**      | Closing hides the window in the notification area (tray) instead of quitting.              |
 | **Start minimized to the system tray**    | Starts straight into the tray, with the window hidden.                                     |
 
