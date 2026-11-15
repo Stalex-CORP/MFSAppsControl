@@ -11,15 +11,18 @@ Haz clic en **Añadir una aplicación** en la cuadrícula. Hay dos modos:
 
 === "Aplicaciones instaladas"
 
-    Lista los programas ya instalados (a través del registro de Windows).<br>
-    Búscala y selecciónala: el nombre, el icono y la ruta se recuperan automáticamente.
+    Lista los programas ya instalados (a través del registro de Windows y, cuando este no indica su programa, de su acceso directo del menú Inicio).<br>
+    Búscala y selecciónala: el nombre, el icono y la ruta se recuperan automáticamente.<br>
+    Las aplicaciones que se ejecutan con Node.js, Java o Python, como ApronLife, también aparecen, con su propio icono, y se inician con los argumentos de su acceso directo.
 
     ![Modo aplicaciones instaladas](assets/add-app-installed.gif)
 
     !!! note "La lista está filtrada a propósito"
         Para que siga siendo legible, la lista descarta los programas sin relación
         con el vuelo (controladores y utilidades del sistema, navegadores, juegos,
-        lanzadores, etc.) y oculta las aplicaciones **ya presentes en el perfil
+        lanzadores, instaladores, herramientas de desarrollo y de edición de vídeo,
+        programas de streaming y de voz, herramientas de rendimiento, programas de
+        control aéreo, etc.) y oculta las aplicaciones **ya presentes en el perfil
         activo**. Una aplicación instalada de forma clásica que no aparezca — o un
         programa **portable** — siempre se puede añadir desde la pestaña
         **Examinar**.
@@ -34,6 +37,8 @@ Haz clic en **Añadir una aplicación** en la cuadrícula. Hay dos modos:
         Este modo está pensado para las aplicaciones **portables** (no instaladas) o las que no se detectan porque no aparecen en el registro de Windows.
 
 La ventana de añadir contiene después los **argumentos de inicio**, el **disparador**, el **retardo** y la opción **Iniciar minimizada**, todos modificables después de añadir la aplicación.
+
+Después, los iconos siguen las actualizaciones de las aplicaciones, al igual que los nombres de las aplicaciones instaladas, número de versión incluido: sin reiniciar MFSAppsControl y nunca durante una sesión.
 
 !!! info "Compartido y agrupación"
     Una aplicación que ya está en [Compartido](profiles.md#el-perfil-compartido) no se puede añadir a un perfil: la ventana explica por qué.<br>

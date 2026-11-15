@@ -11,14 +11,17 @@ Cliquez sur **Ajouter une application** dans la grille. Deux modes :
 
 === "Applications installées"
 
-    Liste les logiciels déjà installés (via le registre Windows).<br>
-    Recherchez la et sélectionnez-la : le nom, l'icône et le chemin sont récupérés automatiquement.
+    Liste les logiciels déjà installés (via le registre Windows, et leur raccourci du menu Démarrer quand le registre ne désigne pas leur programme).<br>
+    Recherchez-la et sélectionnez-la : le nom, l'icône et le chemin sont récupérés automatiquement.<br>
+    Les applications lancées par Node.js, Java ou Python, comme ApronLife, y figurent aussi, avec leur propre icône, et se lancent avec les arguments de leur raccourci.
 
     ![Mode applications installées](assets/add-app-installed.gif)
 
     !!! note "La liste est volontairement filtrée"
         Pour rester lisible, la liste écarte les logiciels sans rapport avec le vol
-        (pilotes et utilitaires système, navigateurs, jeux, lanceurs, etc.) et
+        (pilotes et utilitaires système, navigateurs, jeux, lanceurs, installeurs,
+        outils de développement et de montage vidéo, logiciels de streaming et de
+        voix, outils de performance, logiciels de contrôle aérien, etc.) et
         masque les applications **déjà présentes dans le profil actif**. Une
         application installée classiquement qui n'apparaîtrait pas — ou un logiciel
         **portable** — s'ajoute toujours via l'onglet **Parcourir**.
@@ -33,6 +36,8 @@ Cliquez sur **Ajouter une application** dans la grille. Deux modes :
         Ce mode est pour les applications **portables** (non installées) ou non détectées qui n'apparaissent pas dans le registre Windows.
 
 La fenêtre d'ajout contient ensuite les **arguments de lancement**, le **déclencheur**, le **délai** et l'option **Démarrer réduit**, tous modifiables après l'ajout.
+
+Par la suite, les icônes suivent les mises à jour des applications, tout comme le nom des applications installées, numéro de version compris : sans redémarrer MFSAppsControl, et jamais pendant une session.
 
 !!! info "Partagé et regroupement"
     Une application déjà dans [Partagé](profiles.md#le-profil-partage) ne peut pas être ajoutée à un profil : la fenêtre explique pourquoi.<br>

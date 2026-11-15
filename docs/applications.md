@@ -11,14 +11,17 @@ Click **Add an application** in the grid. Two modes:
 
 === "Installed applications"
 
-    Lists the software already installed on your PC (via the Windows registry).<br>
-    Search for it and select it: the name, the icon and the path are retrieved automatically.
+    Lists the software already installed on your PC (via the Windows registry, and their Start menu shortcut when the registry does not name their program).<br>
+    Search for it and select it: the name, the icon and the path are retrieved automatically.<br>
+    Applications run through Node.js, Java or Python, such as ApronLife, are listed too, with their own icon, and launched with the arguments of their shortcut.
 
     ![Installed applications mode](assets/add-app-installed.gif)
 
     !!! note "The list is deliberately filtered"
         To stay readable, the list leaves out software unrelated to flying
-        (system drivers and utilities, browsers, games, launchers, etc.) and
+        (system drivers and utilities, browsers, games, launchers, installers,
+        development and video editing tools, streaming and voice software,
+        performance tools, air traffic control software, etc.) and
         hides the applications **already in the active profile**. A normally
         installed application that doesn't show up — or a **portable**
         program — can always be added from the **Browse** tab.
@@ -33,6 +36,8 @@ Click **Add an application** in the grid. Two modes:
         This mode is for **portable** applications (not installed) or undetected ones that don't appear in the Windows registry.
 
 The add window then holds the **launch arguments**, the **trigger**, the **delay** and the **Start minimized** option, all of them editable after adding.
+
+Afterwards, the icons follow the applications' updates, and so do the names of installed applications, version number included: without restarting MFSAppsControl, and never during a session.
 
 !!! info "Shared and grouping"
     An application already in [Shared](profiles.md#the-shared-profile) cannot be added to a profile: the window explains why.<br>

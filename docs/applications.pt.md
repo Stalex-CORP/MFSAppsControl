@@ -11,14 +11,18 @@ Clique em **Adicionar uma aplicação** na grelha. Dois modos:
 
 === "Aplicações instaladas"
 
-    Lista os programas já instalados (através do registo do Windows).<br>
-    Procure-a e selecione-a: o nome, o ícone e o caminho são recuperados automaticamente.
+    Lista os programas já instalados (através do registo do Windows e, quando este não indica o programa, do seu atalho no menu Iniciar).<br>
+    Procure-a e selecione-a: o nome, o ícone e o caminho são recuperados automaticamente.<br>
+    As aplicações executadas através do Node.js, Java ou Python, como o ApronLife, também aparecem, com o seu próprio ícone, e são iniciadas com os argumentos do seu atalho.
 
     ![Modo aplicações instaladas](assets/add-app-installed.gif)
 
     !!! note "A lista é filtrada de propósito"
         Para se manter legível, a lista exclui os programas sem relação com o voo
-        (controladores e utilitários do sistema, navegadores, jogos, lançadores, etc.) e
+        (controladores e utilitários do sistema, navegadores, jogos, lançadores,
+        instaladores, ferramentas de desenvolvimento e de edição de vídeo, programas
+        de streaming e de voz, ferramentas de desempenho, programas de controlo de
+        tráfego aéreo, etc.) e
         oculta as aplicações **já presentes no perfil ativo**. Uma
         aplicação instalada normalmente que não apareça — ou um programa
         **portátil** — pode sempre ser adicionada através do separador **Procurar**.
@@ -33,6 +37,8 @@ Clique em **Adicionar uma aplicação** na grelha. Dois modos:
         Este modo destina-se às aplicações **portáteis** (não instaladas) ou não detetadas, que não aparecem no registo do Windows.
 
 A janela de adição contém depois os **argumentos de arranque**, o **acionador**, o **atraso** e a opção **Iniciar minimizada**, todos modificáveis após a adição.
+
+Depois, os ícones acompanham as atualizações das aplicações, tal como os nomes das aplicações instaladas, número de versão incluído: sem reiniciar o MFSAppsControl e nunca durante uma sessão.
 
 !!! info "Compartilhado e agrupamento"
     Uma aplicação que já está em [Compartilhado](profiles.md#o-perfil-compartilhado) não pode ser adicionada a um perfil: a janela explica porquê.<br>

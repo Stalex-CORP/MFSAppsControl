@@ -11,14 +11,18 @@ Fai clic su **Aggiungi un'applicazione** nella griglia. Due modalità:
 
 === "Applicazioni installate"
 
-    Elenca i software già installati (tramite il registro di Windows).<br>
-    Cercala e selezionala: nome, icona e percorso vengono recuperati automaticamente.
+    Elenca i software già installati (tramite il registro di Windows e, quando questo non indica il programma, il suo collegamento nel menu Start).<br>
+    Cercala e selezionala: nome, icona e percorso vengono recuperati automaticamente.<br>
+    Anche le applicazioni eseguite tramite Node.js, Java o Python, come ApronLife, compaiono nell'elenco, con la propria icona, e vengono avviate con gli argomenti del loro collegamento.
 
     ![Modalità applicazioni installate](assets/add-app-installed.gif)
 
     !!! note "L'elenco è filtrato di proposito"
         Per restare leggibile, l'elenco esclude i software estranei al volo
-        (driver e utilità di sistema, browser, giochi, launcher, ecc.) e
+        (driver e utilità di sistema, browser, giochi, launcher, programmi di
+        installazione, strumenti di sviluppo e di montaggio video, software di
+        streaming e voce, strumenti di prestazioni, software di controllo del
+        traffico aereo, ecc.) e
         nasconde le applicazioni **già presenti nel profilo attivo**. Un'applicazione
         installata normalmente che non dovesse comparire — o un software
         **portatile** — si aggiunge sempre dalla scheda **Sfoglia**.
@@ -33,6 +37,8 @@ Fai clic su **Aggiungi un'applicazione** nella griglia. Due modalità:
         Questa modalità serve per le applicazioni **portatili** (non installate) o non rilevate, che non compaiono nel registro di Windows.
 
 La finestra di aggiunta contiene poi gli **argomenti di avvio**, l'**attivazione**, il **ritardo** e l'opzione **Avvia ridotta**, tutti modificabili dopo l'aggiunta.
+
+In seguito, le icone seguono gli aggiornamenti delle applicazioni, così come i nomi delle applicazioni installate, numero di versione compreso: senza riavviare MFSAppsControl e mai durante una sessione.
 
 !!! info "Condiviso e raggruppamento"
     Un'applicazione già in [Condiviso](profiles.md#il-profilo-condiviso) non può essere aggiunta a un profilo: la finestra spiega il perché.<br>

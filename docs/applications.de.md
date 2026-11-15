@@ -11,14 +11,17 @@ Klicken Sie im Raster auf **Anwendung hinzufügen**. Es gibt zwei Modi:
 
 === "Installierte Anwendungen"
 
-    Listet die bereits installierten Programme auf (über die Windows-Registrierung).<br>
-    Suchen Sie die Anwendung und wählen Sie sie aus: Name, Symbol und Pfad werden automatisch übernommen.
+    Listet die bereits installierten Programme auf (über die Windows-Registrierung und, wenn diese das Programm nicht nennt, über seine Verknüpfung im Startmenü).<br>
+    Suchen Sie die Anwendung und wählen Sie sie aus: Name, Symbol und Pfad werden automatisch übernommen.<br>
+    Anwendungen, die über Node.js, Java oder Python laufen, wie ApronLife, erscheinen ebenfalls, mit ihrem eigenen Symbol, und werden mit den Argumenten ihrer Verknüpfung gestartet.
 
     ![Modus „Installierte Anwendungen“](assets/add-app-installed.gif)
 
     !!! note "Die Liste ist bewusst gefiltert"
         Damit sie übersichtlich bleibt, blendet die Liste Programme ohne Bezug zur
-        Fliegerei aus (Treiber und Systemwerkzeuge, Browser, Spiele, Launcher usw.)
+        Fliegerei aus (Treiber und Systemwerkzeuge, Browser, Spiele, Launcher,
+        Installationsprogramme, Entwicklungs- und Videoschnittwerkzeuge, Streaming-
+        und Sprachsoftware, Leistungswerkzeuge, Flugsicherungssoftware usw.)
         und verbirgt Anwendungen, die **bereits im aktiven Profil enthalten** sind.
         Eine ganz normal installierte Anwendung, die dort nicht auftaucht – oder ein
         **portables** Programm – lässt sich immer über den Tab **Durchsuchen**
@@ -34,6 +37,8 @@ Klicken Sie im Raster auf **Anwendung hinzufügen**. Es gibt zwei Modi:
         Dieser Modus ist für **portable** (nicht installierte) oder nicht erkannte Anwendungen gedacht, die nicht in der Windows-Registrierung stehen.
 
 Der Hinzufügen-Dialog enthält anschließend die **Startargumente**, den **Auslöser**, die **Verzögerung** und die Option **Minimiert starten** – alles auch nach dem Hinzufügen noch änderbar.
+
+Danach folgen die Symbole den Updates der Anwendungen, ebenso die Namen installierter Anwendungen samt Versionsnummer: ohne MFSAppsControl neu zu starten und nie während einer Sitzung.
 
 !!! info "Gemeinsam und Zusammenführen"
     Eine Anwendung, die bereits in [Gemeinsam](profiles.md#das-profil-gemeinsam) ist, kann keinem Profil hinzugefügt werden: Der Dialog erklärt den Grund.<br>
