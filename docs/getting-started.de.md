@@ -62,8 +62,8 @@ Die Zeitleiste Ihrer Anwendungen, dargestellt durch ihre Symbole, verteilt auf i
 
 
 **Rechts der Schalter Auto-Sequenz und die Schaltfläche Testen/Stoppen**<br>
-**Auto-Sequenz**, oben, schaltet die automatische Sequenz ein oder aus. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet. Das Symbol im Infobereich zeigt denselben Zustand mit einem grünen oder roten Punkt, und sein Menü bietet denselben Schalter; die Wahl bleibt nach einem Neustart erhalten.<br>
-![Auto-Sequenz ein](assets/tray.png) ![Auto-Sequenz aus](assets/tray-off.png)<br>
+**Auto-Sequenz**, oben, schaltet die automatische Sequenz ein oder aus. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet, und das Symbol im Infobereich trägt einen roten Punkt; ist sie ein, folgt der Punkt der Sequenz (→ [Immer bereit](#immer-bereit)). Das Menü des Symbols bietet denselben Schalter, und die Wahl bleibt nach einem Neustart erhalten.<br>
+![Auto-Sequenz ein](assets/tray-idle.png) ![Auto-Sequenz aus](assets/tray-off.png)<br>
 **Testen**, darunter, simuliert Start und Ende von MSFS, damit Sie Ihre Sequenzen ohne MSFS testen können. Während eines Flugs oder Tests wird daraus **Stoppen**. → [Die Sequenz testen](applications.md#die-sequenz-testen)
 
 ### 3. Die Profile
@@ -161,4 +161,11 @@ Klicken Sie auf **Stoppen**, um den Test zu beenden und die Anwendungen zu schli
 Aktivieren Sie **Beim Windows-Start ausführen** und **Minimiert im Infobereich starten** in den [Optionen](options.md).<br>
 Danach können Sie MFSAppsControl vergessen oder es einfach öffnen, um vor Ihrem Flug das Profil zu wechseln.
 
-![Das Symbol im Infobereich](assets/tray.png)
+Sein Symbol zeigt auf einen Blick, was MFSAppsControl gerade tut. Fahren Sie mit der Maus darüber, um den Zustand in Worten zu lesen.
+
+| Symbol | Punkt | Bedeutung |
+| :---: | :---: | --- |
+| ![Grauer Punkt](assets/tray-idle.png) | grau | Die automatische Sequenz ist ein und wartet: auf den Simulator, oder in dieser Sitzung bleibt nichts mehr zu tun. |
+| ![Grüner Punkt](assets/tray.png) | grün | Die Sequenz hat etwas gestartet und hat in dieser Sitzung noch etwas zu tun: einen Countdown, eine „Startbereit“-Anwendung, die auf den Flug wartet, oder eine Anwendung, die mit dem Simulator geschlossen wird. |
+| ![Oranger Punkt](assets/tray-warning.png) | orange | Eine Anwendung konnte nicht gestartet werden, oder SimConnect antwortet nicht. → [Fehlerbehebung](faq.md) |
+| ![Roter Punkt](assets/tray-off.png) | rot | Die automatische Sequenz ist aus: Mit dem Simulator wird nichts gestartet oder beendet. |

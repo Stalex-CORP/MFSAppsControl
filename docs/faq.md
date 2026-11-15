@@ -97,6 +97,12 @@
     The **automatic sequence** is probably switched off: the **Auto sequence** switch above **Test** is gray, and the notification area icon shows a **red** dot.<br>
     Turn it back on from the switch or from the icon's menu. While it is off, nothing is launched or stopped with the simulator, and no profile is activated by an aircraft.
 
+??? question "The notification area icon shows an orange dot"
+    Something needs a look: hover the icon to read what.
+
+    - **An application could not be launched**: its card is in error. Hover its badge for the cause, and see *An application doesn't launch* above.
+    - **SimConnect is not responding**: the simulator has been running for a while without SimConnect. See *The SimConnect dot stays gray while MSFS is running* above.
+
 ??? question "My profile does not switch with the aircraft"
     - Check that the aircraft is **linked** to the profile: its name in the banner shows a green link icon.
     - The switch happens **when the flight loads**, not while you browse aircraft at the main menu.

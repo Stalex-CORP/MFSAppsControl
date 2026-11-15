@@ -99,6 +99,12 @@
     A **sequência automática** está provavelmente desativada: o interruptor **Sequência auto** por cima de **Testar** está cinzento, e o ícone da área de notificação mostra um ponto **vermelho**.<br>
     Volte a ativá-la no interruptor ou no menu do ícone. Desativada, nada é iniciado nem parado com o simulador, e nenhuma aeronave ativa um perfil.
 
+??? question "O ícone da área de notificação mostra um ponto laranja"
+    Algo precisa da sua atenção: passe o rato por cima do ícone para ler o quê.
+
+    - **Não foi possível iniciar uma aplicação**: o seu cartão está em erro. Passe o rato sobre o seu emblema para ler a causa, e veja *Uma aplicação não inicia* mais acima.
+    - **O SimConnect não responde**: o simulador está em execução há algum tempo sem SimConnect. Veja *O indicador do SimConnect fica cinzento apesar de o MSFS estar em execução* mais acima.
+
 ??? question "O meu perfil não muda com a aeronave"
     - Verifique se a aeronave está **vinculada** ao perfil: o nome no painel mostra um ícone de ligação verde.
     - A mudança acontece **ao carregar o voo**, não enquanto percorre as aeronaves no menu principal.

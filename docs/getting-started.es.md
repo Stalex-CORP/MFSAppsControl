@@ -62,8 +62,8 @@ La línea de tiempo de tus aplicaciones, representadas por sus iconos sobre sus 
 
 
 **A la derecha, el interruptor Secuencia auto y el botón Probar/Detener**<br>
-**Secuencia auto**, arriba, activa o desactiva la secuencia automática. Desactivada, no se inicia ni se detiene nada con el simulador. El icono del área de notificación muestra el mismo estado con un punto verde o rojo, y su menú ofrece el mismo interruptor; la elección se conserva al reiniciar.<br>
-![Secuencia auto activada](assets/tray.png) ![Secuencia auto desactivada](assets/tray-off.png)<br>
+**Secuencia auto**, arriba, activa o desactiva la secuencia automática. Desactivada, no se inicia ni se detiene nada con el simulador, y el icono del área de notificación lleva un punto rojo; activada, el punto sigue la secuencia (→ [Siempre listo](#siempre-listo)). El menú del icono ofrece el mismo interruptor, y la elección se conserva al reiniciar.<br>
+![Secuencia auto activada](assets/tray-idle.png) ![Secuencia auto desactivada](assets/tray-off.png)<br>
 **Probar**, debajo, simula el inicio y el cierre de MSFS para probar tus secuencias sin iniciar MSFS. Durante un vuelo o una prueba, se convierte en **Detener**. → [Probar la secuencia](applications.md#probar-la-secuencia)
 
 ### 3. Los perfiles
@@ -161,4 +161,11 @@ Haz clic en **Detener** para terminar la prueba y cerrar las aplicaciones que te
 Activa **Iniciar al arrancar Windows** e **Iniciar minimizado en la bandeja del sistema** en las [Opciones](options.md).<br>
 Puedes olvidarte de la aplicación o simplemente abrirla para cambiar de perfil antes de tu vuelo.
 
-![El icono en el área de notificación](assets/tray.png)
+Su icono muestra de un vistazo lo que está haciendo MFSAppsControl. Pasa el cursor por encima para leer el estado con palabras.
+
+| Icono | Punto | Significado |
+| :---: | :---: | --- |
+| ![Punto gris](assets/tray-idle.png) | gris | La secuencia automática está activada y espera: al simulador, o ya no queda nada por hacer en esta sesión. |
+| ![Punto verde](assets/tray.png) | verde | La secuencia ha iniciado algo y aún tiene trabajo en esta sesión: una cuenta atrás, una aplicación «listo para volar» que espera el vuelo, o una aplicación que cerrar con el simulador. |
+| ![Punto naranja](assets/tray-warning.png) | naranja | No se pudo iniciar una aplicación, o SimConnect no responde. → [Solución de problemas](faq.md) |
+| ![Punto rojo](assets/tray-off.png) | rojo | La secuencia automática está desactivada: no se inicia ni se detiene nada con el simulador. |

@@ -62,8 +62,8 @@ The timeline of your applications, shown as their icons placed on their start de
 
 
 **On the right, the Auto sequence switch and the Test/Stop button**<br>
-**Auto sequence**, on top, turns the automatic sequence on or off. When it is off, nothing is launched or stopped with the simulator. The notification area icon shows the same state with a green or red dot, and its menu has the same switch; the choice is kept across restarts.<br>
-![Auto sequence on](assets/tray.png) ![Auto sequence off](assets/tray-off.png)<br>
+**Auto sequence**, on top, turns the automatic sequence on or off. When it is off, nothing is launched or stopped with the simulator, and the notification area icon carries a red dot; when it is on, the dot follows the sequence (→ [Always ready](#always-ready)). The icon's menu has the same switch, and the choice is kept across restarts.<br>
+![Auto sequence on](assets/tray-idle.png) ![Auto sequence off](assets/tray-off.png)<br>
 **Test**, below it, simulates MSFS starting and stopping so you can test your sequences without launching MSFS. During a flight or a test, it becomes **Stop**. → [Testing the sequence](applications.md#testing-the-sequence)
 
 ### 3. Profiles
@@ -161,4 +161,11 @@ Click **Stop** to end the test and close the applications configured with the op
 Turn on **Launch at Windows startup** and **Start minimized to the system tray** in the [Options](options.md).<br>
 You can then forget about it, or simply open it to switch profiles before your flight.
 
-![The icon in the notification area](assets/tray.png)
+Its icon shows at a glance what MFSAppsControl is doing. Hover it to read the state in words.
+
+| Icon | Dot | Meaning |
+| :---: | :---: | --- |
+| ![Grey dot](assets/tray-idle.png) | grey | The automatic sequence is on and waiting: for the simulator, or with nothing left to do in this session. |
+| ![Green dot](assets/tray.png) | green | The sequence has launched something and still has work to do in this session: a countdown, a ready-to-fly application waiting for the flight, or an application to close with the simulator. |
+| ![Orange dot](assets/tray-warning.png) | orange | An application could not be launched, or SimConnect does not answer. → [Troubleshooting](faq.md) |
+| ![Red dot](assets/tray-off.png) | red | The automatic sequence is off: nothing is launched or stopped with the simulator. |

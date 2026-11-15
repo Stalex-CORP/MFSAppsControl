@@ -99,6 +99,12 @@
     La **secuencia automática** probablemente está desactivada: el interruptor **Secuencia auto** encima de **Probar** está gris, y el icono del área de notificación muestra un punto **rojo**.<br>
     Vuelve a activarla desde el interruptor o desde el menú del icono. Desactivada, no se inicia ni se detiene nada con el simulador, y ningún avión activa un perfil.
 
+??? question "El icono del área de notificación muestra un punto naranja"
+    Algo requiere tu atención: pasa el cursor por encima del icono para leer qué.
+
+    - **No se pudo iniciar una aplicación**: su tarjeta está en error. Pasa el cursor por su insignia para leer la causa, y consulta *Una aplicación no se inicia* más arriba.
+    - **SimConnect no responde**: el simulador lleva un rato en marcha sin SimConnect. Consulta *El punto de SimConnect sigue en gris aunque MFS esté en marcha* más arriba.
+
 ??? question "Mi perfil no cambia con el avión"
     - Comprueba que el avión está **vinculado** al perfil: su nombre en el panel muestra un icono de vínculo verde.
     - El cambio se produce **al cargar el vuelo**, no mientras recorres los aviones en el menú principal.

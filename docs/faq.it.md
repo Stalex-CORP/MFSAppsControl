@@ -99,6 +99,12 @@
     La **sequenza automatica** è probabilmente disattivata: l'interruttore **Sequenza auto** sopra **Prova** è grigio, e l'icona dell'area di notifica mostra un pallino **rosso**.<br>
     Riattivala dall'interruttore o dal menu dell'icona. Quando è disattivata, nulla viene avviato o arrestato con il simulatore, e nessun profilo viene attivato da un aereo.
 
+??? question "L'icona dell'area di notifica mostra un pallino arancione"
+    Qualcosa richiede la tua attenzione: passa il mouse sull'icona per leggere cosa.
+
+    - **Non è stato possibile avviare un'applicazione**: la sua scheda è in errore. Passa il mouse sul suo badge per leggerne la causa, e vedi *Un'applicazione non si avvia* più sopra.
+    - **SimConnect non risponde**: il simulatore è in esecuzione da un po' senza SimConnect. Vedi *L'indicatore SimConnect resta grigio anche se MSFS è in esecuzione* più sopra.
+
 ??? question "Il mio profilo non cambia con l'aereo"
     - Verifica che l'aereo sia **collegato** al profilo: il suo nome nel banner mostra un'icona di collegamento verde.
     - Il cambio avviene **al caricamento del volo**, non mentre sfogli gli aerei nel menu principale.

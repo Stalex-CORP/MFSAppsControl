@@ -100,6 +100,12 @@
     Die **automatische Sequenz** ist vermutlich ausgeschaltet: Der Schalter **Auto-Sequenz** über **Testen** ist grau, und das Symbol im Infobereich zeigt einen **roten** Punkt.<br>
     Schalten Sie sie über den Schalter oder das Menü des Symbols wieder ein. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet, und kein Profil wird durch ein Flugzeug aktiviert.
 
+??? question "Das Symbol im Infobereich zeigt einen orangen Punkt"
+    Etwas braucht Ihre Aufmerksamkeit: Fahren Sie mit der Maus über das Symbol, um zu lesen, was.
+
+    - **Eine Anwendung konnte nicht gestartet werden**: Ihre Karte ist im Fehlerzustand. Fahren Sie über ihren Badge, um die Ursache zu lesen, und siehe *Eine Anwendung startet nicht* weiter oben.
+    - **SimConnect antwortet nicht**: Der Simulator läuft schon eine Weile ohne SimConnect. Siehe *Der SimConnect-Punkt bleibt grau, obwohl MSFS läuft* weiter oben.
+
 ??? question "Mein Profil wechselt nicht mit dem Flugzeug"
     - Prüfen Sie, ob das Flugzeug mit dem Profil **verknüpft** ist: Sein Name im Band zeigt ein grünes Verknüpfungssymbol.
     - Der Wechsel erfolgt **beim Laden des Flugs**, nicht während Sie im Hauptmenü Flugzeuge durchsehen.

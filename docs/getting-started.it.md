@@ -62,8 +62,8 @@ La timeline delle tue applicazioni, rappresentate dalle loro icone, sui rispetti
 
 
 **A destra, l'interruttore Sequenza auto e il pulsante Prova/Arresta**<br>
-**Sequenza auto**, in alto, attiva o disattiva la sequenza automatica. Quando è disattivata, nulla viene avviato o arrestato con il simulatore. L'icona dell'area di notifica mostra lo stesso stato con un pallino verde o rosso, e il suo menu offre lo stesso interruttore; la scelta resta dopo un riavvio.<br>
-![Sequenza auto attivata](assets/tray.png) ![Sequenza auto disattivata](assets/tray-off.png)<br>
+**Sequenza auto**, in alto, attiva o disattiva la sequenza automatica. Quando è disattivata, nulla viene avviato o arrestato con il simulatore, e l'icona dell'area di notifica porta un pallino rosso; quando è attiva, il pallino segue la sequenza (→ [Sempre pronto](#sempre-pronto)). Il menu dell'icona offre lo stesso interruttore, e la scelta resta dopo un riavvio.<br>
+![Sequenza auto attivata](assets/tray-idle.png) ![Sequenza auto disattivata](assets/tray-off.png)<br>
 **Prova**, sotto, simula l'avvio e l'arresto di MSFS per testare le tue sequenze senza avviare MSFS. Durante un volo o un test diventa **Arresta**. → [Provare la sequenza](applications.md#provare-la-sequenza)
 
 ### 3. I profili
@@ -161,4 +161,11 @@ Fai clic su **Arresta** per fermare la prova e chiudere le applicazioni configur
 Attiva **Avvia all'avvio di Windows** e **Avvia ridotto nell'area di notifica** nelle [Opzioni](options.md).<br>
 Puoi dimenticartene, oppure aprirlo semplicemente per cambiare profilo prima del volo.
 
-![L'icona nell'area di notifica](assets/tray.png)
+La sua icona mostra a colpo d'occhio cosa sta facendo MFSAppsControl. Passa il mouse sopra per leggere lo stato a parole.
+
+| Icona | Pallino | Significato |
+| :---: | :---: | --- |
+| ![Pallino grigio](assets/tray-idle.png) | grigio | La sequenza automatica è attiva e in attesa: del simulatore, oppure non resta più nulla da fare in questa sessione. |
+| ![Pallino verde](assets/tray.png) | verde | La sequenza ha avviato qualcosa e ha ancora da fare in questa sessione: un conto alla rovescia, un'applicazione «pronto al volo» in attesa del volo, o un'applicazione da chiudere con il simulatore. |
+| ![Pallino arancione](assets/tray-warning.png) | arancione | Non è stato possibile avviare un'applicazione, oppure SimConnect non risponde. → [Risoluzione dei problemi](faq.md) |
+| ![Pallino rosso](assets/tray-off.png) | rosso | La sequenza automatica è disattivata: nulla viene avviato o arrestato con il simulatore. |

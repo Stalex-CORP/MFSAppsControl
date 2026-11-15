@@ -62,8 +62,8 @@ La timeline de vos applications représentées par leurs icônes, sur les délai
 
 
 **À droite, l'interrupteur Séquence auto et le bouton Tester/Arrêter**<br>
-**Séquence auto**, en haut, active ou désactive la séquence automatique. Désactivée, rien n'est lancé ni arrêté avec le simulateur. L'icône de la zone de notification affiche le même état par une pastille verte ou rouge, et son menu propose le même interrupteur ; le choix est conservé au redémarrage.<br>
-![Séquence auto activée](assets/tray.png) ![Séquence auto désactivée](assets/tray-off.png)<br>
+**Séquence auto**, en haut, active ou désactive la séquence automatique. Désactivée, rien n'est lancé ni arrêté avec le simulateur, et l'icône de la zone de notification porte une pastille rouge ; activée, sa pastille suit la séquence (→ [Toujours prêt](#toujours-pret)). Le menu de l'icône propose le même interrupteur, et le choix est conservé au redémarrage.<br>
+![Séquence auto activée](assets/tray-idle.png) ![Séquence auto désactivée](assets/tray-off.png)<br>
 **Tester**, en dessous, simule le démarrage et l'arrêt de MSFS pour tester vos séquences sans lancer MSFS. Pendant un vol ou un test, il devient **Arrêter**. → [Tester la séquence](applications.md#tester-la-sequence)
 
 ### 3. Les profils
@@ -161,4 +161,11 @@ Cliquez sur **Arrêter** pour arrêter le test et fermer les applications config
 Activez **Lancer au démarrage de Windows** et **Démarrer réduit dans la barre système** dans les [Options](options.md).<br>
 Vous pouvez l'oublier ou simplement l'ouvrir pour changer de profil avant votre vol.
 
-![L'icône dans la zone de notification](assets/tray.png)
+Son icône montre d'un coup d'œil ce que fait MFSAppsControl. Survolez-la pour lire l'état en toutes lettres.
+
+| Icône | Pastille | Signification |
+| :---: | :---: | --- |
+| ![Pastille grise](assets/tray-idle.png) | grise | La séquence automatique est activée et attend : le simulateur, ou il ne reste plus rien à faire dans cette session. |
+| ![Pastille verte](assets/tray.png) | verte | La séquence a lancé quelque chose et a encore à faire dans cette session : un décompte, une application « prêt à voler » qui attend le vol, ou une application à fermer avec le simulateur. |
+| ![Pastille orange](assets/tray-warning.png) | orange | Une application n'a pas pu être lancée, ou SimConnect ne répond pas. → [Dépannage](faq.md) |
+| ![Pastille rouge](assets/tray-off.png) | rouge | La séquence automatique est désactivée : rien n'est lancé ni arrêté avec le simulateur. |

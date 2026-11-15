@@ -99,6 +99,12 @@
     La **séquence automatique** est sans doute désactivée : l'interrupteur **Séquence auto** au-dessus de **Tester** est gris, et l'icône de la zone de notification porte une pastille **rouge**.<br>
     Réactivez-la depuis l'interrupteur ou le menu de l'icône. Désactivée, rien n'est lancé ni arrêté avec le simulateur, et aucun profil n'est activé par un avion.
 
+??? question "L'icône de la zone de notification porte une pastille orange"
+    Quelque chose demande votre attention : survolez l'icône pour lire quoi.
+
+    - **Une application n'a pas pu être lancée** : sa carte est en erreur. Survolez son badge pour en lire la cause, et voyez *Une application ne se lance pas* plus haut.
+    - **SimConnect ne répond pas** : le simulateur tourne depuis un moment sans SimConnect. Voyez *La pastille SimConnect reste grise alors que MFS tourne* plus haut.
+
 ??? question "Mon profil ne bascule pas avec l'avion"
     - Vérifiez que l'avion est **lié** au profil : son nom dans le bandeau affiche une icône de lien verte.
     - La bascule se fait **au chargement du vol**, pas pendant que vous parcourez les avions au menu principal.
