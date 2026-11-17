@@ -68,6 +68,8 @@ They are set up once, launch with whichever profile is active, and appear on the
 - It cannot be renamed, duplicated, deleted or moved.
 - Selecting it on its own runs only its applications.
 - An application is either in Shared or in profiles, never both: the add window explains why when you try.
+- Its applications are split into two blocks: those of your sessions, **While MSFS runs**, and those that close when the simulator starts or launch once it has closed, **While MSFS is closed**. → [Applications for while MSFS is closed](applications.md#applications-for-while-msfs-is-closed)
+- A profile with no application of its own says so, and how many applications of Shared launch with it.
 
 ## Grouping into Shared
 

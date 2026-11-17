@@ -112,6 +112,12 @@
     - Die **automatische Sequenz** muss eingeschaltet sein.
     - Der Simulator lädt einen Flug manchmal **ohne das Flugzeug**: Laden Sie den Flug neu, der Wechsel erfolgt bei diesem Laden.
 
+??? question "Eine Anwendung aus „Während MSFS geschlossen ist“ schließt oder startet nicht"
+    - Die **automatische Sequenz** muss aktiviert sein.
+    - Prüfen Sie, ob **Beim Start schließen** oder **Beim Beenden starten** auf ihrer Karte aktiviert ist.
+    - Sie schließt sich, wenn MSFS **startet**, während MFSAppsControl bereits läuft: Für einen Simulator, der bereits lief, wird nichts geschlossen.
+    - Sie startet, sobald MSFS **beendet** ist und die Anwendungen der Sitzung gestoppt sind, dann nach ihrer Verzögerung: Ihre Karte zeigt währenddessen den Countdown.
+
 ## Oberfläche
 
 ??? question "Warum ist die Verzögerung ausgegraut?"
@@ -135,6 +141,12 @@
     **Praktischer Tipp**<br>
     Verwenden Sie „ ++windows++ + Pfeiltaste links “ oder „ ++windows++ + Pfeiltaste rechts “, um es auf die Bereiche der Bildschirme zu verschieben.
 
+??? question "Ein Block der Zeitleiste zeigt +3"
+    Wenn selbst die kleinsten Symbole nicht passen, zeigt ein sehr großer Block seine ersten Symbole, gefolgt von **+n**, der Zahl der nicht gezeichneten Anwendungen. Fahren Sie über den Block: Sein Tooltip listet alle auf. Ein breiteres Fenster bringt sie zurück.
+
+??? question "MFSAppsControl bittet mich um eine Bewertung"
+    Einmalig, nach einigen Flugtagen, lädt MFSAppsControl Sie ein, auf seiner flightsim.to-Seite eine Bewertung abzugeben, nie während eines Flugs. **Später** fragt einen Tag später erneut, **Nein danke** nie wieder; das Fenster zu schließen gilt als **Später**.
+
 ## Daten und Wartung
 
 ??? question "Wo werden meine Profile und Einstellungen gespeichert?"
@@ -152,7 +164,7 @@
     **Optionen → Fehlersuche → Logs exportieren** erzeugt eine vollständige `.zip` (Protokolle + Konfiguration). → [Support](support.md)
 
 ??? question "Wie fange ich wieder bei null an?"
-    **Optionen → Fehlersuche → Anwendung zurücksetzen** löscht alles und versetzt die Anwendung in den Zustand nach der Installation.<br>
+    **Optionen → Anwendung zurücksetzen** löscht alles und versetzt die Anwendung in den Zustand nach der Installation.<br>
     **Diese Aktion ist unwiderruflich** — kopieren Sie bei Bedarf vorher Ihre `settings.json`.
 
 ??? question "Kann ich MFSAppsControl mit MSFS 2020 verwenden?"

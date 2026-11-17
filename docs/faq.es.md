@@ -111,6 +111,12 @@
     - La **secuencia automática** debe estar activada.
     - A veces el simulador carga un vuelo **sin el avión**: vuelve a cargar el vuelo y el cambio se producirá en esa carga.
 
+??? question "Una aplicación de «Con MSFS cerrado» no se cierra o no se inicia"
+    - La **secuencia automática** debe estar activada.
+    - Comprueba que **Cerrar al iniciar** o **Iniciar al cerrar** esté activado en su tarjeta.
+    - Se cierra cuando MSFS **se inicia** con MFSAppsControl ya en ejecución: no se cierra nada para un simulador que ya estaba en ejecución.
+    - Se inicia cuando MSFS **se ha cerrado** y las aplicaciones de la sesión se han detenido, y luego tras su retardo: mientras tanto, su tarjeta muestra la cuenta atrás.
+
 ## Interfaz
 
 ??? question "¿Por qué el retardo aparece atenuado?"
@@ -134,6 +140,12 @@
     **Consejo práctico**<br>
     Usa " ++windows++ + flecha izquierda " o " ++windows++ + flecha derecha " para moverla entre las zonas de las pantallas.
 
+??? question "Un bloque de la línea de tiempo muestra +3"
+    Cuando ni siquiera los iconos más pequeños caben, un bloque muy grande muestra sus primeros iconos seguidos de **+n**, el número de aplicaciones no dibujadas. Pasa el ratón por el bloque: su información emergente las enumera todas. Una ventana más ancha las devuelve.
+
+??? question "MFSAppsControl me pide que lo valore"
+    Una sola vez, tras unos días volando con él, MFSAppsControl te invita a dejar tu opinión en su página de flightsim.to, nunca durante un vuelo. **Más tarde** vuelve a preguntar un día después, **No, gracias** nunca más; cerrar la ventana equivale a **Más tarde**.
+
 ## Datos y mantenimiento
 
 ??? question "¿Dónde se guardan mis perfiles y ajustes?"
@@ -151,7 +163,7 @@
     **Opciones → Depuración → Exportar registros**, que genera un `.zip` completo (registros + configuración). → [Soporte](support.md)
 
 ??? question "¿Cómo empiezo de cero?"
-    **Opciones → Depuración → Restablecer la aplicación** borra todo y devuelve la aplicación a su estado de instalación.<br>
+    **Opciones → Restablecer la aplicación** borra todo y devuelve la aplicación a su estado de instalación.<br>
     **Esta acción es irreversible** — copia antes tu `settings.json` si lo necesitas.
 
 ??? question "¿Puedo usar MFSAppsControl con MFS 2020?"

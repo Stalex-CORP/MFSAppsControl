@@ -42,7 +42,7 @@ C'est l'affichage visuel de :
   | ------------------------------------------------ | ------------------------------------ | ---------------------------------------------- |
   | :material-circle:{ style="color:#8a8f98" } grise | **MFS arrêté**                       | Le simulateur n'est pas lancé/détecté.         |
   | :material-circle:{ style="color:#4a9eff" } bleue | **Lancement des applications…**      | Le processus du simulateur est détecté.        |
-  | :material-circle:{ style="color:#3ecf8e" } verte | `FlightSimulator2024.exe · PID 1234` | Les informations du processus sont récupérées. |
+  | :material-circle:{ style="color:#3ecf8e" } verte | **MSFS 2024 lancé** | Le simulateur tourne (2024 ou 2020). Survolez-le pour son processus et son PID. |
 
 - Statut SimConnect
 
@@ -57,14 +57,19 @@ C'est l'affichage visuel de :
   L'avion chargé dans le simulateur, dès que SimConnect l'annonce — au menu principal aussi, pendant que vous parcourez les avions. Une icône :material-link-variant:{ style="color:#3ecf8e" } indique qu'il est lié à un profil, une icône :material-link-variant-off: qu'il ne l'est pas : cliquez sur son nom pour le lier ou le délier. Tant qu'aucun avion n'est annoncé, la ligne ne montre que l'icône :material-airplane:. → [Profils liés aux avions](profiles.md#profils-lies-aux-avions)
 
 
+Hors session, seule la ligne MSFS s'affiche : SimConnect et l'avion n'ont de sens que pendant que le simulateur tourne, et leurs lignes reviennent avec lui.
+
+
 **Au centre, la séquence de lancement**<br>
 La timeline de vos applications représentées par leurs icônes, sur les délais de démarrage (visible uniquement si au moins une application est configurée). → [Le détail de la timeline](applications.md#la-timeline)
 
 
 **À droite, l'interrupteur Séquence auto et le bouton Tester/Arrêter**<br>
-**Séquence auto**, en haut, active ou désactive la séquence automatique. Désactivée, rien n'est lancé ni arrêté avec le simulateur, et l'icône de la zone de notification porte une pastille rouge ; activée, sa pastille suit la séquence (→ [Toujours prêt](#toujours-pret)). Le menu de l'icône propose le même interrupteur, et le choix est conservé au redémarrage.<br>
+**Séquence auto**, en haut, active ou désactive la séquence automatique. Désactivée, rien n'est lancé ni arrêté avec le simulateur, et l'icône de la zone de notification porte une pastille rouge ; activée, sa pastille suit la séquence (→ [Toujours prêt](#toujours-pret)). Le menu de l'icône propose le même interrupteur, et le choix est conservé au redémarrage. Le bouton indique **ON** ou **OFF**.<br>
 ![Séquence auto activée](assets/tray-idle.png) ![Séquence auto désactivée](assets/tray-off.png)<br>
 **Tester**, en dessous, simule le démarrage et l'arrêt de MSFS pour tester vos séquences sans lancer MSFS. Pendant un vol ou un test, il devient **Arrêter**. → [Tester la séquence](applications.md#tester-la-sequence)
+
+Pendant un vrai vol, **Arrêter** liste d'abord les applications qu'il va fermer et vous demande de confirmer ; la session continue jusqu'à ce que vous quittiez MSFS.
 
 ### 3. Les profils
 
@@ -91,6 +96,10 @@ Affiche le nombre d'applications et permet de filtrer et trier les applications 
 Ces réglages n'affectent que l'affichage.
 
 
+À droite, :material-view-grid-outline: **Cartes** et :material-view-agenda-outline: **Liste compacte** choisissent l'affichage des applications. Le choix est conservé d'un lancement à l'autre.<br>
+Tant qu'un profil n'a aucune application, cette barre n'affiche que le compte.
+
+
 ### 5. Les applications
 
 Représentées par des **cartes** pour chaque application configurée.
@@ -98,6 +107,8 @@ Représentées par des **cartes** pour chaque application configurée.
 ![App - Carte](assets/app-card.png)
 
 Une **carte** affiche les informations de l'application et sa configuration. → [Anatomie d'une carte](applications.md#anatomie-dune-carte)
+
+Dans l'onglet **Partagé**, les cartes se répartissent en deux blocs, **Quand MSFS est ouvert** et **Quand MSFS est fermé**. → [Applications quand MSFS est fermé](applications.md#applications-quand-msfs-est-ferme)
 
 
 ---
@@ -141,12 +152,12 @@ Cliquez sur **Arrêter** pour arrêter le test et fermer les applications config
 
 | Moment                                             | Ce que fait MFSAppsControl                                                                                                                          |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Vous lancez **MFS**                                | Le statut MFS passe au bleu.                                                                                                                        |
+| Vous lancez **MFS**                                | Le statut MFS passe au bleu. Les applications du bloc **Quand MSFS est fermé** réglées pour se fermer sont fermées. |
 | Le simulateur charge                               | Le statut MFS passe au vert, le statut SimConnect passe au vert dès que disponible et les applications démarrage sim sont lancées selon leur délai. |
 | Vous arrivez sur l'écran **Prêt à voler** d'un vol | La séquence **Prêt à voler** démarre à son tour, avec ses propres délais.                                                                           |
 | Vous changez de vol                                | Les applications **ne se relancent pas**, elles restent actives.                                                                                    |
 | Vous changez de profil — à la main, ou par un [avion lié](profiles.md#profils-lies-aux-avions) | Rien sur le moment. Au chargement du vol suivant, les applications de l'ancien profil se ferment et celles du nouveau profil en démarrage sim partent tout de suite ; ses applications prêt à voler suivent à l'écran Prêt à voler. |
-| Vous quittez **MFS**                               | Toutes les applications configurées en **Arrêt auto** (incluant celles liées au mode "Prêt à voler") sont fermées proprement.                       |
+| Vous quittez **MFS**                               | Toutes les applications configurées en **Arrêt auto** (incluant celles liées au mode "Prêt à voler") sont fermées proprement. Puis celles du bloc **Quand MSFS est fermé** réglées pour se lancer démarrent, après leur délai. |
 
 !!! info "Si MFS est déjà démarré avant MFSAppsControl"
     La séquence **ne se déclenche pas** ! Elle s'armera au prochain lancement de MFS.<br>
@@ -158,7 +169,7 @@ Cliquez sur **Arrêter** pour arrêter le test et fermer les applications config
 
 ## Toujours prêt
 
-Activez **Lancer au démarrage de Windows** et **Démarrer réduit dans la barre système** dans les [Options](options.md).<br>
+Activez **Lancer au démarrage de Windows** et **Démarrer dans la zone de notification** dans les [Options](options.md).<br>
 Vous pouvez l'oublier ou simplement l'ouvrir pour changer de profil avant votre vol.
 
 Son icône montre d'un coup d'œil ce que fait MFSAppsControl. Survolez-la pour lire l'état en toutes lettres.

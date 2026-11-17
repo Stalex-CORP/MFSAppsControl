@@ -111,6 +111,12 @@
     - A **sequência automática** tem de estar ativa.
     - Por vezes o simulador carrega um voo **sem a aeronave**: volte a carregar o voo e a mudança acontece nesse carregamento.
 
+??? question "Uma aplicação de «Com o MSFS fechado» não fecha ou não inicia"
+    - A **sequência automática** tem de estar ativada.
+    - Verifique se **Fechar no arranque** ou **Iniciar ao fechar** está ativado no seu cartão.
+    - Fecha quando o MSFS **arranca** com o MFSAppsControl já em execução: nada é fechado para um simulador que já estava em execução.
+    - Inicia depois de o MSFS **fechar** e as aplicações da sessão pararem, e depois do seu atraso: entretanto, o cartão mostra a contagem decrescente.
+
 ## Interface
 
 ??? question "Porque é que o atraso está a cinzento?"
@@ -134,6 +140,12 @@
     **Dica prática**<br>
     Use " ++windows++ + seta esquerda " ou " ++windows++ + seta direita " para a deslocar pelas zonas dos ecrãs.
 
+??? question "Um bloco da linha do tempo mostra +3"
+    Quando nem os ícones mais pequenos cabem, um bloco muito grande mostra os primeiros ícones seguidos de **+n**, o número de aplicações não desenhadas. Passe o rato pelo bloco: a sua dica lista-as todas. Uma janela mais larga trá-las de volta.
+
+??? question "O MFSAppsControl pede-me para o avaliar"
+    Uma única vez, após alguns dias de voo, o MFSAppsControl convida-o a deixar a sua opinião na sua página do flightsim.to, nunca durante um voo. **Mais tarde** volta a perguntar um dia depois, **Não, obrigado** nunca mais; fechar a janela equivale a **Mais tarde**.
+
 ## Dados e manutenção
 
 ??? question "Onde são guardados os meus perfis e definições?"
@@ -151,7 +163,7 @@
     **Opções → Depuração → Exportar registos**, que produz um `.zip` completo (registos + configuração). → [Suporte](support.md)
 
 ??? question "Como recomeçar do zero?"
-    **Opções → Depuração → Repor a aplicação** apaga tudo e repõe a aplicação no seu estado de instalação.<br>
+    **Opções → Repor a aplicação** apaga tudo e repõe a aplicação no seu estado de instalação.<br>
     **Esta ação é irreversível** — copie primeiro o seu `settings.json` se for necessário.
 
 ??? question "Posso usar o MFSAppsControl com o MSFS 2020?"

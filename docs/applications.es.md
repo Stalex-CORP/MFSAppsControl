@@ -54,7 +54,7 @@ Después, los iconos siguen las actualizaciones de las aplicaciones, al igual qu
 
 - El icono de la aplicación
 - Su **nombre**
-- Su **ruta**
+- Su **ruta**, recortada por el principio si es demasiado larga para que el nombre del programa siga visible (la ruta completa está en su información emergente)
 - Sus **argumentos** (bajo la ruta, cuando están definidos).
 
 A la derecha, la **insignia de estado** (visible durante la ejecución) y el menú **:material-dots-horizontal:**.
@@ -149,6 +149,37 @@ La aplicación siempre se inicia desde **su propia carpeta de instalación**.
 
 ---
 
+## Aplicaciones con MSFS cerrado
+
+Algunas aplicaciones viven fuera de tus vuelos: un Stream Deck que prefieres cerrar en vuelo, Dropbox para iniciar una vez terminado el vuelo…<br>
+En la pestaña **Compartido** tienen su propio bloque, **Con MSFS cerrado**, debajo de las aplicaciones de tus sesiones, **Con MSFS abierto**. Haz clic en el título de un bloque para plegarlo o desplegarlo; pasa el ratón por encima para recordar lo que contiene.
+
+![Los dos bloques de Compartido](assets/shared-blocks.png)
+
+Añádelas con la tarjeta **Añadir una aplicación** de ese bloque: decide el bloque desde el que añades, y el título de la ventana te lo recuerda. Sus controles sustituyen a los de inicio y cierre:
+
+| Control | Función |
+| --- | --- |
+| :material-power-off: **Cerrar al iniciar** | Cierra la aplicación en cuanto MSFS se inicia, si está en ejecución. |
+| :material-power: **Iniciar al cerrar** | Inicia la aplicación cuando MSFS se ha cerrado y las aplicaciones de la sesión se han detenido. |
+| :material-arrow-collapse: **Iniciar minimizada** | La inicia en una ventana minimizada. |
+| :material-minus::material-plus: **Retardo** | Espera antes del inicio al cerrar.<br>*En gris sin «Iniciar al cerrar»: el cierre es inmediato* |
+
+![Una tarjeta del bloque «Con MSFS cerrado»](assets/card-closed.png)
+
+Las dos opciones van juntas o por separado: un Stream Deck puede cerrarse al iniciar y volver al cerrar, Dropbox solo iniciarse al cerrar.
+
+![Editar una aplicación del bloque «Con MSFS cerrado»](assets/add-app-closed.png)
+
+!!! info "Conviene saber"
+    - No pasa nada mientras la **secuencia automática** esté desactivada.
+    - Si MSFS ya estaba en ejecución al iniciar MFSAppsControl, no se cierra nada, igual que la secuencia no inicia nada en ese caso.
+    - Un inicio que aún espera su retardo se cancela si MSFS vuelve a iniciarse.
+    - **Probar** reproduce los dos momentos: las cierra al empezar y las inicia cuando la detienes.
+    - Estas aplicaciones nunca participan en la secuencia de inicio: no están en la línea de tiempo y **Detener** no las cierra.
+
+---
+
 ## La línea de tiempo
 
 El centro del panel muestra la **secuencia de inicio**: qué aplicación arranca en qué momento.<br>
@@ -166,12 +197,17 @@ Como los dos disparadores son independientes, la línea de tiempo muestra **dos 
 - Una pista para «inicio del sim»
 - Una pista para «listo para volar».
 
+La escala muestra **0** y el retardo de cada bloque, justo donde está, y nada donde nada se inicia.<br>
+Los bloques nunca se solapan, sea cual sea el tamaño de la ventana: donde están cerca, la escala se estira; si no basta, los iconos se reducen; como último recurso, un bloque muy grande muestra sus primeros iconos seguidos de **+n**, y su información emergente sigue enumerándolos todos.
+
 ### Dos estilos de visualización posibles
 
 En las [Opciones](options.md) → **Apariencia** → **Estilo de la secuencia** puedes elegir la representación que más te convenga:
 
-- **Doble** — Dos pistas individuales, una para cada secuencia
-- **Mono** — Una sola pista dividida en dos por el centro, una mitad para cada secuencia
+- **Separada** — Dos pistas separadas, una para cada secuencia; cada bloque empieza en su retardo, como se lee un horario.
+- **Combinada** — Una sola pista, como una pista de aterrizaje: el inicio del sim encima del eje, listo para volar debajo, los retardos pintados en el suelo.
+
+![El estilo Combinada](assets/timeline-combined.png)
 
 ## Los estados de una tarjeta
 
@@ -185,6 +221,10 @@ El **contorno** de la tarjeta y su **insignia** indican el estado de la aplicaci
 |                  *sin insignia*                     |          | Aplicación detenida o inactiva.                                        |
 
 **Pasa el cursor por una insignia** para obtener más detalles: la insignia de error indica la causa (ejecutable no encontrado, permisos de administrador necesarios…) y la insignia verde muestra el **PID** del proceso.
+
+Cuando un inicio falla, su causa también aparece en rojo en la tarjeta, a la derecha de la barra de control, sin pasar el ratón.
+
+![La causa de un fallo en su tarjeta](assets/app-card-error.png)
 
 ### Cancelar un inicio
 
@@ -229,6 +269,10 @@ La barra situada encima de la cuadrícula ofrece dos menús:
 Estos ajustes solo cambian **la visualización** y no afectan ni a la secuencia de inicio ni al perfil.
 
 ![Filtrar y ordenar](assets/app-filters.png)
+
+A la derecha de la barra, :material-view-grid-outline: **Tarjetas** y :material-view-agenda-outline: **Lista compacta** eligen cómo se muestran las aplicaciones: la lista compacta pone cada una en una sola línea, con los mismos controles. La elección se conserva entre reinicios.
+
+![La lista compacta](assets/compact-list.png)
 
 ## Durante una sesión
 
@@ -283,6 +327,13 @@ El desarrollo es el siguiente:
 
 El botón pasa a ser **Detener** desde el principio: haz clic en él para terminar la prueba y cerrar todas las aplicaciones con cierre auto que ya estén iniciadas.<br>
 Se **bloquea** durante el cierre — algunas aplicaciones tardan unos segundos en cerrarse correctamente — y después vuelve a ser **Probar**.
+
+Las aplicaciones del bloque **Con MSFS cerrado** también participan: las configuradas para cerrarse se cierran al empezar la prueba, y las configuradas para iniciarse lo hacen tras su retardo cuando la detienes.
+
+!!! info "Detener durante un vuelo real"
+    Con el simulador realmente en ejecución, **Detener** enumera primero las aplicaciones que va a cerrar y espera tu confirmación. La sesión continúa: solo cerrar MSFS la termina.
+
+    ![Detener pregunta primero](assets/stop-confirm.png)
 
 !!! note
     Atención: las aplicaciones que ya estuvieran iniciadas antes de la prueba también se **cerrarán** si están configuradas con el cierre automático. La prueba no distingue entre las aplicaciones iniciadas por MFSAppsControl y las iniciadas manualmente.

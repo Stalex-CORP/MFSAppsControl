@@ -109,6 +109,12 @@
     - The **automatic sequence** must be on.
     - The simulator sometimes loads a flight **without the aircraft**: reload the flight, and the switch happens at that load.
 
+??? question "A 'While MSFS is closed' application does not close or launch"
+    - The **automatic sequence** must be on.
+    - Check that **Close at start** or **Launch at exit** is on, on its card.
+    - It closes when MSFS **starts** while MFSAppsControl is already running: nothing is closed for a simulator that was already running.
+    - It launches once MSFS has **closed** and the session's applications have stopped, then after its delay: its card counts down meanwhile.
+
 ## Interface
 
 ??? question "Why is the delay grayed out?"
@@ -132,6 +138,12 @@
     **Handy tip**<br>
     Use "++windows++ + left arrow" or "++windows++ + right arrow" to move it across your screens.
 
+??? question "A block of the timeline shows +3"
+    When even the smallest icons do not fit, a very large block shows its first icons followed by **+n**, the number of applications left out. Hover the block: its tooltip lists them all. A wider window brings them back.
+
+??? question "MFSAppsControl asks me to rate it"
+    Once, after a few days of flying with it, MFSAppsControl invites you to leave a review on its flightsim.to page, never during a flight. **Later** asks again a day later, **No thanks** never again; closing the window counts as **Later**.
+
 ## Data and maintenance
 
 ??? question "Where are my profiles and settings stored?"
@@ -149,7 +161,7 @@
     **Options → Debugging → Export logs**, which produces a complete `.zip` (logs + configuration). → [Support](support.md)
 
 ??? question "How do I start over from scratch?"
-    **Options → Debugging → Reset the application** erases everything and returns the application to its freshly installed state.<br>
+    **Options → Reset the application** erases everything and returns the application to its freshly installed state.<br>
     **This action is irreversible** — copy your `settings.json` first if needed.
 
 ??? question "Can I use MFSAppsControl with MSFS 2020?"

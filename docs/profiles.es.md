@@ -68,6 +68,8 @@ Se configuran una sola vez, se inician con cualquier perfil activo y aparecen en
 - No se puede renombrar, duplicar, eliminar ni mover.
 - Seleccionarla sola ejecuta solo sus aplicaciones.
 - Una aplicación está en Compartido o en perfiles, nunca en ambos: la ventana de añadir explica por qué si lo intentas.
+- Sus aplicaciones se reparten en dos bloques: las de tus sesiones, **Con MSFS abierto**, y las que se cierran al iniciar el simulador o se inician cuando se ha cerrado, **Con MSFS cerrado**. → [Aplicaciones con MSFS cerrado](applications.md#aplicaciones-con-msfs-cerrado)
+- Un perfil sin aplicaciones propias lo indica, con el número de aplicaciones de Compartido que se inician con él.
 
 ## Agrupar en Compartido
 

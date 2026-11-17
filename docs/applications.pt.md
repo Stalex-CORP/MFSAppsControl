@@ -54,7 +54,7 @@ Depois, os ícones acompanham as atualizações das aplicações, tal como os no
 
 - O ícone da aplicação
 - O seu **nome**
-- O seu **caminho**
+- O seu **caminho**, cortado no início quando é demasiado longo, para que o nome do programa continue visível (o caminho completo está na sua dica)
 - Os seus **argumentos** (por baixo do caminho, quando definidos).
 
 À direita, o **emblema de estado** (visível durante a execução) e o menu **:material-dots-horizontal:**.
@@ -149,6 +149,37 @@ A aplicação é sempre iniciada a partir da **sua própria pasta de instalaçã
 
 ---
 
+## Aplicações com o MSFS fechado
+
+Algumas aplicações vivem fora dos seus voos: um Stream Deck que prefere fechar em voo, o Dropbox a iniciar depois do voo…<br>
+No separador **Compartilhado**, têm um bloco próprio, **Com o MSFS fechado**, por baixo das aplicações das suas sessões, **Com o MSFS aberto**. Clique no título de um bloco para o recolher ou expandir; passe o rato por cima para relembrar o que contém.
+
+![Os dois blocos de Compartilhado](assets/shared-blocks.png)
+
+Adicione-as com o cartão **Adicionar uma aplicação** desse bloco: decide o bloco a partir do qual adiciona, e o título da janela lembra-o. Os seus controlos substituem os de arranque e paragem:
+
+| Controlo | Função |
+| --- | --- |
+| :material-power-off: **Fechar no arranque** | Fecha a aplicação assim que o MSFS arranca, se estiver em execução. |
+| :material-power: **Iniciar ao fechar** | Inicia a aplicação depois de o MSFS fechar e as aplicações da sessão pararem. |
+| :material-arrow-collapse: **Iniciar minimizada** | Inicia-a numa janela minimizada. |
+| :material-minus::material-plus: **Atraso** | Espera antes do arranque ao fechar.<br>*A cinzento sem «Iniciar ao fechar»: o fecho é imediato* |
+
+![Um cartão do bloco «Com o MSFS fechado»](assets/card-closed.png)
+
+As duas opções vão juntas ou separadas: um Stream Deck pode fechar no arranque e voltar ao fechar, o Dropbox só iniciar ao fechar.
+
+![Editar uma aplicação do bloco «Com o MSFS fechado»](assets/add-app-closed.png)
+
+!!! info "Bom saber"
+    - Nada acontece enquanto a **sequência automática** estiver desativada.
+    - Se o MSFS já estava em execução quando o MFSAppsControl arrancou, nada é fechado, tal como a sequência não inicia nada nesse caso.
+    - Um arranque que ainda espera o seu atraso é cancelado se o MSFS voltar a arrancar.
+    - **Testar** reproduz os dois momentos: fecha-as ao começar e inicia-as quando o parar.
+    - Estas aplicações nunca participam na sequência de arranque: não estão na linha do tempo e **Parar** não as fecha.
+
+---
+
 ## A linha temporal
 
 O centro do painel mostra a **sequência de arranque**: que aplicação arranca em que momento.<br>
@@ -166,12 +197,17 @@ Como os dois acionadores são independentes, a linha temporal mostra **duas faix
 - Uma faixa para «início do sim»
 - Uma faixa para «pronto para voar».
 
+A escala mostra **0** e o atraso de cada bloco, exatamente onde está, e nada onde nada arranca.<br>
+Os blocos nunca se sobrepõem, seja qual for o tamanho da janela: onde estão próximos, a escala estica; se não chegar, os ícones ficam mais pequenos; em último recurso, um bloco muito grande mostra os primeiros ícones seguidos de **+n**, e a sua dica continua a listá-los todos.
+
 ### Dois estilos de visualização possíveis
 
 Nas [Opções](options.md) → **Aparência** → **Estilo da sequência**, pode escolher a representação que mais lhe agradar:
 
-- **Duplo** — Duas faixas individuais, uma para cada sequência
-- **Mono** — Uma única faixa dividida ao meio, uma metade para cada sequência
+- **Separada** — Duas faixas separadas, uma para cada sequência; cada bloco começa no seu atraso, como se lê um horário.
+- **Combinada** — Uma única faixa, como uma pista: o início do sim acima do eixo, pronto para voar abaixo, os atrasos pintados no chão.
+
+![O estilo Combinada](assets/timeline-combined.png)
 
 ## Os estados de um cartão
 
@@ -185,6 +221,10 @@ O **contorno** do cartão e o seu **emblema** indicam o estado da aplicação
 |                     *sem emblema*                          |          | Aplicação parada/inativa.                                              |
 
 **Passe o rato sobre um emblema** para obter mais detalhes: o emblema de erro indica a causa (executável não encontrado, direitos de administrador necessários…) e o emblema verde mostra o **PID** do processo.
+
+Quando um arranque falha, a causa também aparece a vermelho no cartão, à direita da barra de controlo, sem passar o rato.
+
+![A causa de uma falha no cartão](assets/app-card-error.png)
 
 ### Cancelar um arranque
 
@@ -229,6 +269,10 @@ A barra por cima da grelha oferece dois menus:
 Estas definições alteram **apenas a visualização** e não afetam nem a sequência de arranque nem o perfil.
 
 ![Filtrar e ordenar](assets/app-filters.png)
+
+À direita da barra, :material-view-grid-outline: **Cartões** e :material-view-agenda-outline: **Lista compacta** escolhem como as aplicações são apresentadas: a lista compacta põe cada uma numa única linha, com os mesmos controlos. A escolha mantém-se entre reinícios.
+
+![A lista compacta](assets/compact-list.png)
 
 ## Durante uma sessão
 
@@ -283,6 +327,13 @@ O decurso é o seguinte:
 
 O botão passa a **Parar** logo desde o início: clique nele para terminar o teste e fechar todas as aplicações com paragem auto que já estejam iniciadas.<br>
 Fica **bloqueado** durante o fecho — algumas aplicações demoram alguns segundos a fechar corretamente — e depois volta a **Testar**.
+
+As aplicações do bloco **Com o MSFS fechado** também participam: as configuradas para fechar são fechadas no início do teste, e as configuradas para iniciar arrancam após o seu atraso quando o parar.
+
+!!! info "Parar durante um voo real"
+    Com o simulador realmente em execução, **Parar** lista primeiro as aplicações que vai fechar e aguarda a sua confirmação. A sessão continua: só sair do MSFS a termina.
+
+    ![Parar pergunta primeiro](assets/stop-confirm.png)
 
 !!! note
     Atenção: as aplicações já iniciadas antes do teste também serão **fechadas** se estiverem configuradas para a paragem automática. O teste não distingue entre as aplicações iniciadas pelo MFSAppsControl e as iniciadas manualmente.

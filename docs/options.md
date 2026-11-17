@@ -35,8 +35,8 @@ The :material-weather-sunny:/:material-weather-night: button in the title bar is
 
 Chooses how the [sequence](applications.md#the-timeline) is shown:
 
-- **Double** — two independent tracks, each showing one sequence.
-- **Mono** — a single track split in the middle, one part per sequence.
+- **Split** — two independent tracks, each showing one sequence.
+- **Combined** — a single track, like a runway, one side per sequence.
 
 ### Interface language
 
@@ -79,7 +79,7 @@ A new file is created **every day**, and logs older than **7 days** are deleted 
 
 Creates a **`zip`** file containing all your logs **and** your configuration, everything support needs.
 
-### Reset the application
+## Reset the application
 
 Erases **all your profiles and settings** and starts over as on a fresh install.<br>
 **An explicit confirmation is required.**

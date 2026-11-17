@@ -42,7 +42,7 @@ This is the visual display of:
   | ------------------------------------------------ | ------------------------------------ | ------------------------------------------ |
   | :material-circle:{ style="color:#8a8f98" } gray  | **MSFS not running**                 | The simulator is not running/detected.     |
   | :material-circle:{ style="color:#4a9eff" } blue  | **Launching addons…**                | The simulator process has been detected.   |
-  | :material-circle:{ style="color:#3ecf8e" } green | `FlightSimulator2024.exe · PID 1234` | The process information has been retrieved. |
+  | :material-circle:{ style="color:#3ecf8e" } green | **MSFS 2024 running** | The simulator is running (2024 or 2020). Hover it for its process and PID. |
 
 - SimConnect status
 
@@ -57,14 +57,19 @@ This is the visual display of:
   The aircraft loaded in the simulator, as soon as SimConnect reports it — at the main menu too, while you browse. A :material-link-variant:{ style="color:#3ecf8e" } icon shows that it is linked to a profile, a :material-link-variant-off: icon that it is not: click its name to link or unlink it. Until an aircraft is reported, the row only shows the :material-airplane: icon. → [Profiles linked to aircraft](profiles.md#profiles-linked-to-aircraft)
 
 
+Outside a session, only the MSFS row shows: SimConnect and the aircraft only mean something while the simulator runs, and their rows come back with it.
+
+
 **In the center, the launch sequence**<br>
 The timeline of your applications, shown as their icons placed on their start delays (only visible if at least one application is configured). → [The timeline in detail](applications.md#the-timeline)
 
 
 **On the right, the Auto sequence switch and the Test/Stop button**<br>
-**Auto sequence**, on top, turns the automatic sequence on or off. When it is off, nothing is launched or stopped with the simulator, and the notification area icon carries a red dot; when it is on, the dot follows the sequence (→ [Always ready](#always-ready)). The icon's menu has the same switch, and the choice is kept across restarts.<br>
+**Auto sequence**, on top, turns the automatic sequence on or off. When it is off, nothing is launched or stopped with the simulator, and the notification area icon carries a red dot; when it is on, the dot follows the sequence (→ [Always ready](#always-ready)). The icon's menu has the same switch, and the choice is kept across restarts. The button reads **ON** or **OFF**.<br>
 ![Auto sequence on](assets/tray-idle.png) ![Auto sequence off](assets/tray-off.png)<br>
 **Test**, below it, simulates MSFS starting and stopping so you can test your sequences without launching MSFS. During a flight or a test, it becomes **Stop**. → [Testing the sequence](applications.md#testing-the-sequence)
+
+During a real flight, **Stop** first lists the applications it is about to close and asks you to confirm; the session goes on until you quit MSFS.
 
 ### 3. Profiles
 
@@ -91,6 +96,10 @@ Shows the number of applications, and lets you filter and sort the applications 
 These settings only affect the display.
 
 
+On the right, :material-view-grid-outline: **Cards** and :material-view-agenda-outline: **Compact list** choose how the applications are shown. The choice is kept across restarts.<br>
+When a profile has no application at all, this bar only shows the count.
+
+
 ### 5. Applications
 
 Shown as a **card** for each configured application.
@@ -98,6 +107,8 @@ Shown as a **card** for each configured application.
 ![App - Card](assets/app-card.png)
 
 A **card** shows the application's information and its settings. → [Anatomy of a card](applications.md#anatomy-of-a-card)
+
+On the **Shared** tab, the cards are split into two blocks, **While MSFS runs** and **While MSFS is closed**. → [Applications for while MSFS is closed](applications.md#applications-for-while-msfs-is-closed)
 
 
 ---
@@ -141,12 +152,12 @@ Click **Stop** to end the test and close the applications configured with the op
 
 | Moment                                          | What MFSAppsControl does                                                                                                                                       |
 | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| You launch **MSFS**                             | The MSFS status turns blue.                                                                                                                                    |
+| You launch **MSFS**                             | The MSFS status turns blue. Applications of the **While MSFS is closed** block set to close are closed. |
 | The simulator loads                             | The MSFS status turns green, the SimConnect status turns green as soon as it is available, and the sim-start applications launch according to their delay.     |
 | You reach a flight's **Ready to fly** screen    | The **Ready to fly** sequence starts in turn, with its own delays.                                                                                             |
 | You switch to another flight                    | The applications **do not restart**; they stay running.                                                                                                        |
 | You change profile — by hand, or through a [linked aircraft](profiles.md#profiles-linked-to-aircraft) | Nothing on the spot. When the next flight loads, the previous profile's applications close, and the new profile's sim-start applications start right away; its ready-to-fly ones follow at the Ready to fly screen. |
-| You quit **MSFS**                               | Every application set to **Auto stop** (including those tied to "Ready to fly" mode) is closed cleanly.                                                        |
+| You quit **MSFS**                               | Every application set to **Auto stop** (including those tied to "Ready to fly" mode) is closed cleanly. Then those of the **While MSFS is closed** block set to launch start, after their delay. |
 
 !!! info "If MSFS is already running before MFSAppsControl"
     The sequence **does not fire**. It will arm itself the next time MSFS starts.<br>

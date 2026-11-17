@@ -22,7 +22,7 @@ MFSAppsControl follows your flight from end to end, in **three stages**:
   icon: ' :material-numeric-2: '
 
 - title: Simulator shutdown
-  content: Applications set to **Auto stop** close cleanly when the simulator quits.
+  content: Applications set to **Auto stop** close cleanly when the simulator quits. Then those of the **While MSFS is closed** block set to launch at exit start.
   icon: ' :material-numeric-3: '
 
 ::/timeline::
@@ -48,6 +48,9 @@ You choose whichever suits the application best. → [Applications & sequence](a
 
 - <span style="color: var(--md-accent-fg-color)">:material-layers: **Shared profile**</span><br>
   The applications you use with every aircraft are set up once, in Shared, and launch with whichever profile is active.
+
+- <span style="color: var(--md-accent-fg-color)">:material-power: **While MSFS is closed**</span><br>
+  Close an application when the simulator starts, launch others once it has closed: a Stream Deck put away for the flight, Dropbox once it is over.
 
 - <span style="color: var(--md-accent-fg-color)">:material-link-variant: **Profiles linked to aircraft**</span><br>
   Link a profile to your aircraft: loading a flight with one of them activates that profile by itself.

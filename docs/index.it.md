@@ -22,7 +22,7 @@ MFSAppsControl segue il tuo volo dall'inizio alla fine, in **tre fasi**:
   icon: ' :material-numeric-2: '
 
 - title: Arresto del simulatore
-  content: Le applicazioni impostate su **Arresto auto** si chiudono in modo pulito alla chiusura del simulatore.
+  content: Le applicazioni impostate su **Arresto auto** si chiudono in modo pulito alla chiusura del simulatore. Poi si avviano quelle del blocco **Con MSFS chiuso** impostate per avviarsi alla chiusura.
   icon: ' :material-numeric-3: '
 
 ::/timeline::
@@ -48,6 +48,9 @@ Sta a te scegliere ciò che si adatta meglio all'applicazione. → [Applicazioni
 
 - <span style="color: var(--md-accent-fg-color)">:material-layers: **Profilo Condiviso**</span><br>
   Le applicazioni che usi con tutti i tuoi aerei si configurano una sola volta, in Condiviso, e si avviano con qualsiasi profilo.
+
+- <span style="color: var(--md-accent-fg-color)">:material-power: **Con MSFS chiuso**</span><br>
+  Chiudi un'applicazione all'avvio del simulatore e avviane altre quando è chiuso: uno Stream Deck messo da parte durante il volo, Dropbox a volo finito.
 
 - <span style="color: var(--md-accent-fg-color)">:material-link-variant: **Profili collegati agli aerei**</span><br>
   Collega un profilo ai tuoi aerei: caricando un volo con uno di essi, quel profilo si attiva da solo.

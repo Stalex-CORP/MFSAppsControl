@@ -54,7 +54,7 @@ Danach folgen die Symbole den Updates der Anwendungen, ebenso die Namen installi
 
 - das Symbol der Anwendung
 - ihren **Namen**
-- ihren **Pfad**
+- ihren **Pfad**, bei zu großer Länge am Anfang gekürzt, damit der Programmname sichtbar bleibt (der vollständige Pfad steht im Tooltip)
 - ihre **Argumente** (unter dem Pfad, sofern definiert).
 
 Rechts der **Status-Badge** (sichtbar während der Ausführung) und das Menü **:material-dots-horizontal:**.
@@ -149,6 +149,37 @@ Die Anwendung wird immer aus **ihrem eigenen Installationsordner** heraus gestar
 
 ---
 
+## Anwendungen, während MSFS geschlossen ist
+
+Manche Anwendungen gehören nicht zu Ihren Flügen: ein Stream Deck, das Sie im Flug lieber schließen, Dropbox, das nach dem Flug starten soll…<br>
+Im Tab **Gemeinsam** haben sie einen eigenen Block, **Während MSFS geschlossen ist**, unter den Anwendungen Ihrer Sitzungen, **Während MSFS läuft**. Ein Klick auf den Titel eines Blocks klappt ihn ein oder aus; fahren Sie darüber, um zu sehen, was er enthält.
+
+![Die beiden Blöcke von Gemeinsam](assets/shared-blocks.png)
+
+Fügen Sie sie mit der Karte **Anwendung hinzufügen** dieses Blocks hinzu: Der Block, aus dem Sie hinzufügen, entscheidet, und der Fenstertitel erinnert daran. Ihre Steuerelemente ersetzen die für Start und Stopp:
+
+| Steuerelement | Funktion |
+| --- | --- |
+| :material-power-off: **Beim Start schließen** | Schließt die Anwendung, sobald MSFS startet, falls sie läuft. |
+| :material-power: **Beim Beenden starten** | Startet die Anwendung, sobald MSFS beendet ist und die Anwendungen der Sitzung gestoppt sind. |
+| :material-arrow-collapse: **Minimiert starten** | Startet sie in einem minimierten Fenster. |
+| :material-minus::material-plus: **Verzögerung** | Wartezeit vor dem Start beim Beenden.<br>*Ausgegraut ohne „Beim Beenden starten“: das Schließen erfolgt sofort* |
+
+![Eine Karte des Blocks „Während MSFS geschlossen ist“](assets/card-closed.png)
+
+Die beiden Optionen gehen zusammen oder einzeln: Ein Stream Deck kann sich beim Start schließen und beim Beenden zurückkommen, Dropbox nur beim Beenden starten.
+
+![Eine Anwendung des Blocks „Während MSFS geschlossen ist“ bearbeiten](assets/add-app-closed.png)
+
+!!! info "Gut zu wissen"
+    - Solange die **automatische Sequenz** deaktiviert ist, passiert nichts.
+    - Lief MSFS bereits beim Start von MFSAppsControl, wird nichts geschlossen, so wie die Sequenz dann nichts startet.
+    - Ein Start, der noch auf seine Verzögerung wartet, wird abgebrochen, wenn MSFS erneut startet.
+    - **Testen** spielt beide Momente durch: Es schließt sie zu Beginn und startet sie, wenn Sie den Test beenden.
+    - Diese Anwendungen nehmen nie an der Startsequenz teil: Sie stehen nicht auf der Zeitleiste, und **Stoppen** schließt sie nicht.
+
+---
+
 ## Die Zeitleiste
 
 Die Mitte des Bandes zeigt die **Startsequenz**: welche Anwendung zu welchem Zeitpunkt startet.<br>
@@ -166,12 +197,17 @@ Da die beiden Auslöser voneinander unabhängig sind, zeigt die Zeitleiste **zwe
 - eine Spur für „Simstart“
 - eine Spur für „Startbereit“.
 
+Die Skala zeigt **0** und die Verzögerung jedes Blocks, genau an seiner Stelle, und nichts, wo nichts startet.<br>
+Blöcke überlappen sich nie, egal wie groß das Fenster ist: Wo sie nah beieinander liegen, wird die Skala gedehnt; reicht das nicht, werden die Symbole kleiner; als letztes Mittel zeigt ein sehr großer Block seine ersten Symbole, gefolgt von **+n**, und sein Tooltip listet weiterhin alle auf.
+
 ### Zwei mögliche Anzeigestile
 
 Unter [Optionen](options.md) → **Darstellung** → **Sequenzstil** wählen Sie die Darstellung, die Ihnen am meisten zusagt:
 
-- **Doppelt** — zwei getrennte Spuren, eine je Sequenz
-- **Mono** — eine einzige Spur, in der Mitte in die beiden Sequenzen geteilt
+- **Getrennt** — zwei getrennte Spuren, eine je Sequenz; jeder Block beginnt bei seiner Verzögerung, wie man einen Fahrplan liest.
+- **Kombiniert** — eine einzige Spur, wie eine Landebahn: Simstart über der Achse, Startbereit darunter, die Verzögerungen auf den Boden gemalt.
+
+![Der Stil Kombiniert](assets/timeline-combined.png)
 
 ## Die Statusanzeigen einer Karte
 
@@ -185,6 +221,10 @@ Der **Rahmen** der Karte und ihr **Badge** zeigen den Zustand der Anwendung an.
 |                 *kein Badge*                  |        | Anwendung gestoppt/inaktiv.                                           |
 
 **Fahren Sie mit der Maus über einen Badge**, um mehr zu erfahren: Der Fehler-Badge nennt die Ursache (ausführbare Datei nicht gefunden, Administratorrechte erforderlich…), und der grüne Badge zeigt die **PID** des Prozesses.
+
+Schlägt ein Start fehl, erscheint die Ursache auch rot auf der Karte, rechts neben der Steuerleiste, ohne darüberzufahren.
+
+![Die Ursache eines Fehlers auf der Karte](assets/app-card-error.png)
 
 ### Einen Start abbrechen
 
@@ -229,6 +269,10 @@ Die Leiste über dem Raster bietet zwei Menüs:
 Diese Einstellungen ändern **nur die Anzeige** und wirken sich weder auf die Startsequenz noch auf das Profil aus.
 
 ![Filtern und sortieren](assets/app-filters.png)
+
+Rechts in der Leiste wählen :material-view-grid-outline: **Karten** und :material-view-agenda-outline: **Kompakte Liste** die Darstellung der Anwendungen: Die kompakte Liste zeigt jede in einer einzigen Zeile, mit denselben Steuerelementen. Die Wahl bleibt über Neustarts hinweg erhalten.
+
+![Die kompakte Liste](assets/compact-list.png)
 
 ## Während einer Sitzung
 
@@ -283,6 +327,13 @@ Der Ablauf ist folgender:
 
 Die Schaltfläche wird von Anfang an zu **Stoppen**: Klicken Sie darauf, um den Test zu beenden und alle bereits gestarteten Anwendungen mit Autostopp zu schließen.<br>
 Sie ist während des Schließens **gesperrt** – manche Anwendungen brauchen einige Sekunden, um sich sauber zu beenden – und wird danach wieder zu **Testen**.
+
+Die Anwendungen des Blocks **Während MSFS geschlossen ist** nehmen ebenfalls teil: Die zum Schließen eingestellten werden zu Beginn des Tests geschlossen, die zum Starten eingestellten starten nach ihrer Verzögerung, wenn Sie ihn beenden.
+
+!!! info "Stoppen während eines echten Flugs"
+    Wenn der Simulator wirklich läuft, listet **Stoppen** zuerst die Anwendungen auf, die geschlossen werden, und wartet auf Ihre Bestätigung. Die Sitzung läuft weiter: Erst das Beenden von MSFS beendet sie.
+
+    ![Stoppen fragt zuerst](assets/stop-confirm.png)
 
 !!! note
     Achtung: Anwendungen, die schon vor dem Test liefen, werden ebenfalls **geschlossen**, wenn für sie der automatische Stopp konfiguriert ist. Der Test unterscheidet nicht zwischen Anwendungen, die MFSAppsControl gestartet hat, und solchen, die Sie von Hand gestartet haben.

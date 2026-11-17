@@ -68,6 +68,8 @@ Elles se règlent une seule fois, se lancent avec n'importe quel profil actif et
 - Il ne peut être ni renommé, ni dupliqué, ni supprimé, ni déplacé.
 - Le sélectionner seul n'exécute que ses applications.
 - Une application est soit dans Partagé, soit dans des profils, jamais les deux : la fenêtre d'ajout explique pourquoi si vous essayez.
+- Ses applications se répartissent en deux blocs : celles de vos sessions, **Quand MSFS est ouvert**, et celles qui se ferment au lancement du simulateur ou se lancent une fois qu'il est fermé, **Quand MSFS est fermé**. → [Applications quand MSFS est fermé](applications.md#applications-quand-msfs-est-ferme)
+- Un profil sans application propre le dit, avec le nombre d'applications de Partagé qui se lancent avec lui.
 
 ## Regrouper dans Partagé
 

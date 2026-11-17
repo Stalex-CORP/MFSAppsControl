@@ -13,12 +13,12 @@ Tous les réglages sont **enregistrés immédiatement** — il n'y a pas de bout
 | Option                                        | Effet                                                                                             |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | **Lancer au démarrage de Windows**            | Démarre automatiquement avec votre session windows.                                               |
-| **Réduire dans la barre système**             | La réduction — depuis la barre de titre, le bouton de la barre des tâches ou Win+M — masque la fenêtre dans la zone de notification (tray) au lieu de la laisser dans la barre des tâches. |
-| **La fermeture réduit dans la barre système** | Fermer réduit la fenêtre dans la zone de notification (tray) au lieu de se fermer.                |
-| **Démarrer réduit dans la barre système**     | Démarre directement dans le tray, fenêtre masquée.                                                |
+| **Réduire dans la zone de notification**             | La réduction — depuis la barre de titre, le bouton de la barre des tâches ou Win+M — masque la fenêtre dans la zone de notification (tray) au lieu de la laisser dans la barre des tâches. |
+| **Fermer réduit dans la zone de notification** | Fermer réduit la fenêtre dans la zone de notification (tray) au lieu de se fermer.                |
+| **Démarrer dans la zone de notification**     | Démarre directement dans le tray, fenêtre masquée.                                                |
 
 !!! info "Comment fermer vraiment l'application si la fermeture réduit dans la zone de notification ?"
-    Si **La fermeture réduit dans la barre système** est activée, la croix ne ferme plus l'application.<br>
+    Si **Fermer réduit dans la zone de notification** est activée, la croix ne ferme plus l'application.<br>
     Utilisez **Quitter** dans le menu de l'icône de la zone de notification (clic droit).
 
 !!! tip "Séquence automatique"
@@ -35,8 +35,8 @@ Le bouton :material-weather-sunny:/:material-weather-night: de la barre de titre
 
 Choisit la représentation de la [séquence](applications.md#la-timeline) :
 
-- **Double** — Deux pistes indépendantes qui affiche chaque séquence.
-- **Mono** — Une seule piste séparée au milieu pour chaque séquence.
+- **Séparée** — Deux pistes indépendantes, une pour chaque séquence.
+- **Combinée** — Une seule piste, façon piste d'aéroport, un côté par séquence.
 
 ### Langue de l'interface
 
@@ -79,7 +79,7 @@ Un nouveau fichier est créé **chaque jour**, et les journaux de plus de **7 jo
 
 Crée un fichier **`zip`** contenant tous vos journaux **et** votre configuration nécessaire à des fins de support.
 
-### Réinitialiser l'application
+## Réinitialiser l'application
 
 Efface **tous vos profils et réglages** et repart à zéro comme à l'installation.<br>
 **Une confirmation explicite est demandée.**

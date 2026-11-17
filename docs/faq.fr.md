@@ -111,6 +111,12 @@
     - La **séquence automatique** doit être activée.
     - Le simulateur charge parfois un vol **sans l'avion** : rechargez le vol, la bascule se fera à ce chargement.
 
+??? question "Une application « Quand MSFS est fermé » ne se ferme pas ou ne se lance pas"
+    - La **séquence automatique** doit être activée.
+    - Vérifiez que **Fermer au lancement** ou **Lancer à la fermeture** est activé sur sa carte.
+    - Elle se ferme quand MSFS **démarre** alors que MFSAppsControl tourne déjà : rien n'est fermé pour un simulateur qui tournait déjà.
+    - Elle se lance une fois MSFS **fermé** et les applications de la session arrêtées, puis après son délai : sa carte affiche le décompte entre-temps.
+
 ## Interface
 
 ??? question "Pourquoi le délai est-il grisé ?"
@@ -125,7 +131,7 @@
     Repassez la carte en **Démarrage sim** si vous voulez la garder ouverte après le vol.
 
 ??? question "Comment quitter réellement l'application quand elle est dans la zone de notification ?"
-    Si l'option **La fermeture réduit dans la barre système** est activée, la croix masque la fenêtre au lieu de quitter.<br>
+    Si l'option **Fermer réduit dans la zone de notification** est activée, la croix masque la fenêtre au lieu de quitter.<br>
     Faites un **clic droit sur l'icône** dans la zone de notification → **Quitter**.<br>
     Sinon utilisez simplement la croix de la fenêtre pour fermer l'application.
 
@@ -133,6 +139,12 @@
     MFSAppsControl mémorise la position de la fenêtre. En cas de souci d'affichage (par exemple après un changement d'écran), déplacez ou redimensionnez la fenêtre : la nouvelle position sera mémorisée.<br><br>
     **Astuce pratique**<br>
     Utilisez " ++windows++ + flèche de gauche " ou " ++windows++ + flèche de droite " pour la déplacer sur les zones des écrans.
+
+??? question "Un bloc de la timeline affiche +3"
+    Quand même les plus petites icônes ne tiennent pas, un très gros bloc montre ses premières icônes suivies de **+n**, le nombre d'applications non dessinées. Survolez le bloc : son infobulle les liste toutes. Une fenêtre plus large les fait revenir.
+
+??? question "MFSAppsControl me demande de le noter"
+    Une seule fois, après quelques jours de vol avec lui, MFSAppsControl vous invite à laisser un avis sur sa page flightsim.to, jamais pendant un vol. **Plus tard** repropose un jour plus tard, **Non merci** plus jamais ; fermer la fenêtre vaut **Plus tard**.
 
 ## Données et maintenance
 
@@ -149,7 +161,7 @@
     **Options → Débogage → Exporter les logs**, qui produit un `.zip` complet (journaux + configuration). → [Support](support.md)
 
 ??? question "Comment repartir de zéro ?"
-    **Options → Débogage → Réinitialiser l'application** efface tous et remet l'application dans son état d'installation.<br>
+    **Options → Réinitialiser l'application** efface tous et remet l'application dans son état d'installation.<br>
     **Cette action est irréversible** — copiez votre `settings.json` avant si besoin.
 
 ??? question "Puis-je utiliser MFSAppsControl avec MFS 2020 ?"

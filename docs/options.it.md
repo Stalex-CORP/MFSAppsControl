@@ -35,8 +35,8 @@ Anche il pulsante :material-weather-sunny:/:material-weather-night: della barra 
 
 Sceglie la rappresentazione della [sequenza](applications.md#la-timeline):
 
-- **Doppio** — Due piste indipendenti, una per ciascuna sequenza.
-- **Mono** — Una sola pista divisa a metà, una parte per ciascuna sequenza.
+- **Separata** — Due piste indipendenti, una per ciascuna sequenza.
+- **Combinata** — Una sola pista, come una pista d'atterraggio, un lato per ciascuna sequenza.
 
 ### Lingua dell'interfaccia
 
@@ -79,7 +79,7 @@ Ogni giorno viene creato un nuovo file, e i log più vecchi di **7 giorni** veng
 
 Crea un file **`zip`** contenente tutti i tuoi log **e** la tua configurazione, necessari a fini di supporto.
 
-### Reimpostare l'applicazione
+## Reimpostare l'applicazione
 
 Cancella **tutti i tuoi profili e le tue impostazioni** e riparte da zero come al momento dell'installazione.<br>
 **Viene chiesta una conferma esplicita.**

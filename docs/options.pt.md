@@ -35,8 +35,8 @@ O botão :material-weather-sunny:/:material-weather-night: da barra de título t
 
 Escolhe a representação da [sequência](applications.md#a-linha-temporal):
 
-- **Duplo** — Duas faixas independentes que apresentam cada sequência.
-- **Mono** — Uma única faixa dividida ao meio, uma metade para cada sequência.
+- **Separada** — Duas faixas independentes que apresentam cada sequência.
+- **Combinada** — Uma única faixa, como uma pista, um lado para cada sequência.
 
 ### Idioma da interface
 
@@ -79,7 +79,7 @@ Determina o detalhe escrito nos ficheiros de registo. A alteração aplica-se **
 
 Cria um ficheiro **`zip`** com todos os seus registos **e** a sua configuração, necessários para fins de suporte.
 
-### Repor a aplicação
+## Repor a aplicação
 
 Apaga **todos os seus perfis e definições** e recomeça do zero, como numa instalação nova.<br>
 **É pedida uma confirmação explícita.**

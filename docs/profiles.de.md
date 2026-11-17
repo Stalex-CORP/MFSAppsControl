@@ -68,6 +68,8 @@ Sie werden einmal eingerichtet, starten mit jedem aktiven Profil und erscheinen 
 - Es kann weder umbenannt, dupliziert, gelöscht noch verschoben werden.
 - Wird es allein ausgewählt, laufen nur seine Anwendungen.
 - Eine Anwendung ist entweder in Gemeinsam oder in Profilen, nie in beiden: Der Hinzufügen-Dialog erklärt den Grund, wenn Sie es versuchen.
+- Seine Anwendungen verteilen sich auf zwei Blöcke: die Ihrer Sitzungen, **Während MSFS läuft**, und die, die sich beim Start des Simulators schließen oder nach seinem Beenden starten, **Während MSFS geschlossen ist**. → [Anwendungen, während MSFS geschlossen ist](applications.md#anwendungen-wahrend-msfs-geschlossen-ist)
+- Ein Profil ohne eigene Anwendung sagt es, mit der Zahl der Anwendungen aus Gemeinsam, die mit ihm starten.
 
 ## In Gemeinsam zusammenführen
 

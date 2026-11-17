@@ -35,8 +35,8 @@ Die Schaltfläche :material-weather-sunny:/:material-weather-night: in der Titel
 
 Legt die Darstellung der [Sequenz](applications.md#die-zeitleiste) fest:
 
-- **Doppelt** — zwei unabhängige Spuren, die jede Sequenz getrennt anzeigen.
-- **Mono** — eine einzige Spur, in der Mitte für die beiden Sequenzen geteilt.
+- **Getrennt** — zwei unabhängige Spuren, die jede Sequenz getrennt anzeigen.
+- **Kombiniert** — eine einzige Spur, wie eine Landebahn, eine Seite je Sequenz.
 
 ### Sprache der Oberfläche
 
@@ -79,7 +79,7 @@ Legt fest, wie ausführlich in die Protokolldateien geschrieben wird. Die Änder
 
 Erstellt eine **`zip`**-Datei mit allen Ihren Protokollen **und** Ihrer Konfiguration, wie sie für den Support benötigt wird.
 
-### Anwendung zurücksetzen
+## Anwendung zurücksetzen
 
 Löscht **alle Ihre Profile und Einstellungen** und beginnt wieder bei null, wie nach der Installation.<br>
 **Eine ausdrückliche Bestätigung wird verlangt.**

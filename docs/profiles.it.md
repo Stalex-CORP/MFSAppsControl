@@ -68,6 +68,8 @@ Si configurano una sola volta, si avviano con qualsiasi profilo attivo e compaio
 - Non può essere rinominato, duplicato, eliminato né spostato.
 - Selezionarlo da solo esegue solo le sue applicazioni.
 - Un'applicazione sta in Condiviso o nei profili, mai in entrambi: la finestra di aggiunta spiega il perché se ci provi.
+- Le sue applicazioni si dividono in due blocchi: quelle delle tue sessioni, **Con MSFS aperto**, e quelle che si chiudono all'avvio del simulatore o si avviano quando è chiuso, **Con MSFS chiuso**. → [Applicazioni con MSFS chiuso](applications.md#applicazioni-con-msfs-chiuso)
+- Un profilo senza applicazioni proprie lo indica, con il numero di applicazioni di Condiviso che si avviano con lui.
 
 ## Raggruppare in Condiviso
 

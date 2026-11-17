@@ -42,7 +42,7 @@ Hier sehen Sie auf einen Blick:
   | ------------------------------------------------ | ------------------------------------ | ----------------------------------------------- |
   | :material-circle:{ style="color:#8a8f98" } grau  | **MSFS nicht aktiv**                 | Der Simulator läuft nicht bzw. wird nicht erkannt. |
   | :material-circle:{ style="color:#4a9eff" } blau  | **Addons werden gestartet…**         | Der Prozess des Simulators wurde erkannt.       |
-  | :material-circle:{ style="color:#3ecf8e" } grün  | `FlightSimulator2024.exe · PID 1234` | Die Prozessinformationen wurden ausgelesen.     |
+  | :material-circle:{ style="color:#3ecf8e" } grün  | **MSFS 2024 läuft** | Der Simulator läuft (2024 oder 2020). Fahren Sie darüber, um Prozess und PID zu sehen. |
 
 - SimConnect-Status
 
@@ -57,14 +57,19 @@ Hier sehen Sie auf einen Blick:
   Das im Simulator geladene Flugzeug, sobald SimConnect es meldet — auch im Hauptmenü, während Sie die Flugzeuge durchsehen. Ein Symbol :material-link-variant:{ style="color:#3ecf8e" } zeigt, dass es mit einem Profil verknüpft ist, ein Symbol :material-link-variant-off:, dass es das nicht ist: Klicken Sie auf seinen Namen, um es zu verknüpfen oder die Verknüpfung zu lösen. Solange kein Flugzeug gemeldet ist, zeigt die Zeile nur das Symbol :material-airplane:. → [Mit Flugzeugen verknüpfte Profile](profiles.md#mit-flugzeugen-verknupfte-profile)
 
 
+Außerhalb einer Sitzung ist nur die MSFS-Zeile zu sehen: SimConnect und das Flugzeug haben nur Sinn, während der Simulator läuft, und ihre Zeilen kommen mit ihm zurück.
+
+
 **In der Mitte die Startsequenz**<br>
 Die Zeitleiste Ihrer Anwendungen, dargestellt durch ihre Symbole, verteilt auf ihre Startverzögerungen (nur sichtbar, wenn mindestens eine Anwendung konfiguriert ist). → [Die Zeitleiste im Detail](applications.md#die-zeitleiste)
 
 
 **Rechts der Schalter Auto-Sequenz und die Schaltfläche Testen/Stoppen**<br>
-**Auto-Sequenz**, oben, schaltet die automatische Sequenz ein oder aus. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet, und das Symbol im Infobereich trägt einen roten Punkt; ist sie ein, folgt der Punkt der Sequenz (→ [Immer bereit](#immer-bereit)). Das Menü des Symbols bietet denselben Schalter, und die Wahl bleibt nach einem Neustart erhalten.<br>
+**Auto-Sequenz**, oben, schaltet die automatische Sequenz ein oder aus. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet, und das Symbol im Infobereich trägt einen roten Punkt; ist sie ein, folgt der Punkt der Sequenz (→ [Immer bereit](#immer-bereit)). Das Menü des Symbols bietet denselben Schalter, und die Wahl bleibt nach einem Neustart erhalten. Die Schaltfläche zeigt **ON** oder **OFF**.<br>
 ![Auto-Sequenz ein](assets/tray-idle.png) ![Auto-Sequenz aus](assets/tray-off.png)<br>
 **Testen**, darunter, simuliert Start und Ende von MSFS, damit Sie Ihre Sequenzen ohne MSFS testen können. Während eines Flugs oder Tests wird daraus **Stoppen**. → [Die Sequenz testen](applications.md#die-sequenz-testen)
+
+Während eines echten Flugs listet **Stoppen** zuerst die Anwendungen auf, die geschlossen werden, und bittet um Bestätigung; die Sitzung läuft weiter, bis Sie MSFS beenden.
 
 ### 3. Die Profile
 
@@ -91,6 +96,10 @@ Zeigt die Anzahl der Anwendungen an und ermöglicht es, die Liste zu filtern und
 Diese Einstellungen betreffen ausschließlich die Anzeige.
 
 
+Rechts wählen :material-view-grid-outline: **Karten** und :material-view-agenda-outline: **Kompakte Liste** die Darstellung der Anwendungen. Die Wahl bleibt über Neustarts hinweg erhalten.<br>
+Solange ein Profil keine Anwendung enthält, zeigt diese Leiste nur die Anzahl.
+
+
 ### 5. Die Anwendungen
 
 Jede konfigurierte Anwendung wird durch eine **Karte** dargestellt.
@@ -98,6 +107,8 @@ Jede konfigurierte Anwendung wird durch eine **Karte** dargestellt.
 ![App – Karte](assets/app-card.png)
 
 Eine **Karte** zeigt die Informationen der Anwendung und ihre Konfiguration. → [Aufbau einer Karte](applications.md#aufbau-einer-karte)
+
+Im Tab **Gemeinsam** verteilen sich die Karten auf zwei Blöcke, **Während MSFS läuft** und **Während MSFS geschlossen ist**. → [Anwendungen, während MSFS geschlossen ist](applications.md#anwendungen-wahrend-msfs-geschlossen-ist)
 
 
 ---
@@ -141,12 +152,12 @@ Klicken Sie auf **Stoppen**, um den Test zu beenden und die Anwendungen zu schli
 
 | Zeitpunkt                                            | Was MFSAppsControl tut                                                                                                                                                    |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sie starten **MSFS**                                 | Der MSFS-Status wird blau.                                                                                                                                                |
+| Sie starten **MSFS**                                 | Der MSFS-Status wird blau. Die Anwendungen des Blocks **Während MSFS geschlossen ist**, die sich schließen sollen, werden geschlossen. |
 | Der Simulator lädt                                   | Der MSFS-Status wird grün, der SimConnect-Status wird grün, sobald die Verbindung verfügbar ist, und die Simstart-Anwendungen werden gemäß ihrer Verzögerung gestartet.  |
 | Sie erreichen den Bildschirm **Startbereit** eines Fluges | Nun läuft die Sequenz **Startbereit** an, mit ihren eigenen Verzögerungen.                                                                                            |
 | Sie wechseln den Flug                                | Die Anwendungen **starten nicht erneut**, sie bleiben aktiv.                                                                                                              |
 | Sie wechseln das Profil — von Hand oder über ein [verknüpftes Flugzeug](profiles.md#mit-flugzeugen-verknupfte-profile) | Im Moment nichts. Beim Laden des nächsten Flugs werden die Anwendungen des vorherigen Profils geschlossen, und die Simstart-Anwendungen des neuen Profils starten sofort; seine Startbereit-Anwendungen folgen beim Bildschirm Startbereit. |
-| Sie beenden **MSFS**                                 | Alle Anwendungen mit **Autostopp** (einschließlich der an den Modus „Startbereit“ gekoppelten) werden sauber geschlossen.                                                  |
+| Sie beenden **MSFS**                                 | Alle Anwendungen mit **Autostopp** (einschließlich der an den Modus „Startbereit“ gekoppelten) werden sauber geschlossen. Danach starten die Anwendungen des Blocks **Während MSFS geschlossen ist**, die starten sollen, nach ihrer Verzögerung. |
 
 !!! info "Wenn MSFS schon läuft, bevor MFSAppsControl gestartet wird"
     Die Sequenz wird **nicht ausgelöst**! Sie wird beim nächsten Start von MSFS scharf geschaltet.<br>

@@ -68,6 +68,8 @@ Configuram-se uma única vez, iniciam com qualquer perfil ativo e aparecem na me
 - Não pode mudar de nome, ser duplicado, eliminado nem deslocado.
 - Selecioná-lo sozinho executa apenas as suas aplicações.
 - Uma aplicação está em Compartilhado ou em perfis, nunca nos dois: a janela de adição explica porquê se tentar.
+- As suas aplicações dividem-se em dois blocos: as das suas sessões, **Com o MSFS aberto**, e as que fecham quando o simulador arranca ou iniciam depois de ele fechar, **Com o MSFS fechado**. → [Aplicações com o MSFS fechado](applications.md#aplicacoes-com-o-msfs-fechado)
+- Um perfil sem aplicações próprias indica-o, com o número de aplicações de Compartilhado que iniciam com ele.
 
 ## Agrupar em Compartilhado
 

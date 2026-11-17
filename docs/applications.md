@@ -53,7 +53,7 @@ Afterwards, the icons follow the applications' updates, and so do the names of i
 
 - The application icon
 - Its **name**
-- Its **path**
+- Its **path**, cut at the start when too long so that the program's name stays visible (the full path is in its tooltip)
 - Its **arguments** (under the path, when set).
   
 On the right, the **status badge** (visible while running) and the **:material-dots-horizontal:** menu.
@@ -148,6 +148,37 @@ The application is always launched from **its own installation folder**.
 
 ---
 
+## Applications for while MSFS is closed
+
+Some applications belong outside your flights: a Stream Deck you would rather close while flying, Dropbox to launch once the flight is over…<br>
+On the **Shared** tab, they have a block of their own, **While MSFS is closed**, under the applications of your sessions, **While MSFS runs**. Click a block's title to fold or unfold it; hover it for a reminder of what it holds.
+
+![The two blocks of Shared](assets/shared-blocks.png)
+
+Add them with the **Add an application** card of that block: the block you add from decides, and the window's title reminds you of it. Their controls replace the start and stop ones:
+
+| Control | Role |
+| --- | --- |
+| :material-power-off: **Close at start** | Closes the application as soon as MSFS starts, if it is running. |
+| :material-power: **Launch at exit** | Launches the application once MSFS has closed and the session's applications have stopped. |
+| :material-arrow-collapse: **Start minimized** | Launches it in a minimized window. |
+| :material-minus::material-plus: **Delay** | Wait before the launch at exit.<br>*Grayed out without "Launch at exit": the close is immediate* |
+
+![A card of the "While MSFS is closed" block](assets/card-closed.png)
+
+The two options go together or separately: a Stream Deck can close at start and come back at exit, Dropbox only launch at exit.
+
+![Editing an application of the "While MSFS is closed" block](assets/add-app-closed.png)
+
+!!! info "Good to know"
+    - Nothing happens while the **automatic sequence** is off.
+    - If MSFS was already running when MFSAppsControl started, nothing is closed, just as the sequence launches nothing then.
+    - A launch still waiting for its delay is cancelled if MSFS starts again.
+    - **Test** plays both moments: it closes them when it starts, and launches them when you stop it.
+    - These applications never take part in the launch sequence: they are not on the timeline, and **Stop** does not close them.
+
+---
+
 ## The timeline
 
 The center of the banner shows the **launch sequence**: which application starts when.<br>
@@ -165,12 +196,17 @@ Because the two triggers are independent, the timeline shows **two tracks**:
 - One track for "sim start"
 - One track for "ready to fly". 
 
+The scale shows **0** and the delay of each block, right where it is, and nothing where nothing starts.<br>
+Blocks never overlap, whatever the size of the window: where they are close, the scale stretches; if that is not enough, the icons get smaller; as a last resort, a very large block shows its first icons followed by **+n**, its tooltip still listing them all.
+
 ### Two possible display styles
 
 In [Options](options.md) → **Appearance** → **Sequence style**, you can pick the representation that speaks to you most:
 
-- **Double** — two separate tracks, one for each sequence
-- **Mono** — a single track split in two in the middle, one half for each sequence
+- **Split** — two separate tracks, one for each sequence; each block starts on its delay, as a schedule reads.
+- **Combined** — a single track, like a runway: sim start above the axis, ready to fly below, the delays painted on the ground.
+
+![The Combined style](assets/timeline-combined.png)
 
 ## Card statuses
 
@@ -184,6 +220,10 @@ The card's **outline** and its **badge** show the state of the application
 |                 *no badge*                    |         | Application stopped/inactive.                                       |
 
 **Hover a badge** for more detail: the error badge gives the cause (executable not found, administrator rights required…), and the green badge shows the process **PID**.
+
+When a launch fails, its cause also shows in red on the card, at the right of the control bar, without hovering.
+
+![The cause of a failure on its card](assets/app-card-error.png)
 
 ### Canceling a launch
 
@@ -228,6 +268,10 @@ The bar above the grid offers two menus:
 These settings change **the display only**; they affect neither the launch sequence nor the profile.
 
 ![Filter and sort](assets/app-filters.png)
+
+On the right of the bar, :material-view-grid-outline: **Cards** and :material-view-agenda-outline: **Compact list** choose how the applications are shown: the compact list puts each one on a single line, with the same controls. The choice is kept across restarts.
+
+![The compact list](assets/compact-list.png)
 
 ## During a session
 
@@ -282,6 +326,13 @@ Here is the flow:
 
 The button becomes **Stop** right from the start: click it to end the test and close every auto-stop application that is already running.<br>
 It **locks** while they close — some applications take a few seconds to shut down cleanly — then turns back into **Test**.
+
+The applications of the **While MSFS is closed** block take part too: those set to close are closed when the test starts, and those set to launch start after their delay when you stop it.
+
+!!! info "Stop during a real flight"
+    With the simulator really running, **Stop** first lists the applications it is about to close and waits for your confirmation. The session goes on: only quitting MSFS ends it.
+
+    ![Stop asks first](assets/stop-confirm.png)
 
 !!! note
     Careful: applications that were already running before the test are also **closed** if they are set to auto stop. The test makes no distinction between applications launched by MFSAppsControl and those launched by hand.

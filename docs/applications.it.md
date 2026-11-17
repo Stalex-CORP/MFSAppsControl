@@ -54,7 +54,7 @@ In seguito, le icone seguono gli aggiornamenti delle applicazioni, così come i 
 
 - L'icona dell'applicazione
 - Il suo **nome**
-- Il suo **percorso**
+- Il suo **percorso**, tagliato all'inizio se troppo lungo perché il nome del programma resti visibile (il percorso completo è nel suo tooltip)
 - I suoi **argomenti** (sotto il percorso, quando sono definiti).
 
 A destra, il **badge di stato** (visibile durante l'esecuzione) e il menu **:material-dots-horizontal:**.
@@ -149,6 +149,37 @@ L'applicazione viene sempre avviata dalla **propria cartella di installazione**.
 
 ---
 
+## Applicazioni con MSFS chiuso
+
+Alcune applicazioni stanno fuori dai tuoi voli: uno Stream Deck che preferisci chiudere in volo, Dropbox da avviare a volo finito…<br>
+Nel profilo **Condiviso** hanno un blocco tutto loro, **Con MSFS chiuso**, sotto le applicazioni delle tue sessioni, **Con MSFS aperto**. Clicca sul titolo di un blocco per comprimerlo o espanderlo; passaci sopra per ricordare cosa contiene.
+
+![I due blocchi di Condiviso](assets/shared-blocks.png)
+
+Aggiungile con la scheda **Aggiungi un'applicazione** di quel blocco: decide il blocco da cui aggiungi, e il titolo della finestra te lo ricorda. I loro controlli sostituiscono quelli di avvio e arresto:
+
+| Controllo | Ruolo |
+| --- | --- |
+| :material-power-off: **Chiudi all'avvio** | Chiude l'applicazione appena MSFS si avvia, se è in esecuzione. |
+| :material-power: **Avvia alla chiusura** | Avvia l'applicazione una volta chiuso MSFS e arrestate le applicazioni della sessione. |
+| :material-arrow-collapse: **Avvia ridotta** | La avvia in una finestra ridotta. |
+| :material-minus::material-plus: **Ritardo** | Attesa prima dell'avvio alla chiusura.<br>*Disattivato senza «Avvia alla chiusura»: la chiusura è immediata* |
+
+![Una scheda del blocco «Con MSFS chiuso»](assets/card-closed.png)
+
+Le due opzioni vanno insieme o separate: uno Stream Deck può chiudersi all'avvio e tornare alla chiusura, Dropbox solo avviarsi alla chiusura.
+
+![Modificare un'applicazione del blocco «Con MSFS chiuso»](assets/add-app-closed.png)
+
+!!! info "Buono a sapersi"
+    - Non succede nulla finché la **sequenza automatica** è disattivata.
+    - Se MSFS era già in esecuzione all'avvio di MFSAppsControl, non viene chiuso nulla, così come la sequenza non avvia nulla in quel caso.
+    - Un avvio che attende ancora il suo ritardo viene annullato se MSFS si riavvia.
+    - **Prova** riproduce i due momenti: le chiude all'inizio e le avvia quando lo arresti.
+    - Queste applicazioni non partecipano mai alla sequenza di avvio: non sono sulla timeline e **Arresta** non le chiude.
+
+---
+
 ## La timeline
 
 Il centro del banner mostra la **sequenza di avvio**: quale applicazione parte in quale momento.<br>
@@ -166,12 +197,17 @@ Poiché i due attivatori sono indipendenti, la timeline mostra **due piste**:
 - Una pista per «avvio sim»
 - Una pista per «pronto al volo».
 
+La scala mostra **0** e il ritardo di ogni blocco, proprio dove si trova, e nulla dove non parte nulla.<br>
+I blocchi non si sovrappongono mai, qualunque sia la dimensione della finestra: dove sono vicini, la scala si allunga; se non basta, le icone si rimpiccioliscono; come ultima risorsa, un blocco molto grande mostra le prime icone seguite da **+n**, e il suo tooltip le elenca comunque tutte.
+
 ### Due stili di visualizzazione possibili
 
 Nelle [Opzioni](options.md) → **Aspetto** → **Stile della sequenza** puoi scegliere la rappresentazione che ti è più congeniale:
 
-- **Doppio** — Due piste distinte, una per ciascuna sequenza
-- **Mono** — Una sola pista divisa a metà, una parte per ciascuna sequenza
+- **Separata** — Due piste distinte, una per ciascuna sequenza; ogni blocco inizia al suo ritardo, come si legge un orario.
+- **Combinata** — Una sola pista, come una pista d'atterraggio: avvio sim sopra l'asse, pronto al volo sotto, i ritardi dipinti a terra.
+
+![Lo stile Combinata](assets/timeline-combined.png)
 
 ## Gli stati di una scheda
 
@@ -185,6 +221,10 @@ Il **contorno** della scheda e il suo **badge** indicano lo stato dell'applicazi
 |                   *nessun badge*                    |          | Applicazione arrestata/inattiva.                                   |
 
 **Passa il mouse su un badge** per avere più dettagli: il badge di errore indica la causa (eseguibile non trovato, diritti di amministratore richiesti…), e il badge verde mostra il **PID** del processo.
+
+Quando un avvio non riesce, la causa compare anche in rosso sulla scheda, a destra della barra di controllo, senza passarci sopra.
+
+![La causa di un errore sulla scheda](assets/app-card-error.png)
 
 ### Annullare un avvio
 
@@ -229,6 +269,10 @@ La barra sopra la griglia offre due menu:
 Queste impostazioni cambiano **solo la visualizzazione** e non hanno effetto né sulla sequenza di avvio né sul profilo.
 
 ![Filtrare e ordinare](assets/app-filters.png)
+
+A destra della barra, :material-view-grid-outline: **Schede** e :material-view-agenda-outline: **Elenco compatto** scelgono come mostrare le applicazioni: l'elenco compatto mette ognuna su una sola riga, con gli stessi controlli. La scelta resta tra un avvio e l'altro.
+
+![L'elenco compatto](assets/compact-list.png)
 
 ## Durante una sessione
 
@@ -283,6 +327,13 @@ Lo svolgimento è il seguente:
 
 Il pulsante diventa **Arresta** fin dall'inizio: cliccaci per terminare la prova e chiudere tutte le applicazioni con arresto automatico già avviate.<br>
 Si **blocca** durante la chiusura — alcune applicazioni impiegano qualche secondo a chiudersi correttamente — poi torna a essere **Prova**.
+
+Partecipano anche le applicazioni del blocco **Con MSFS chiuso**: quelle impostate per chiudersi vengono chiuse all'inizio del test, e quelle impostate per avviarsi partono dopo il loro ritardo quando lo arresti.
+
+!!! info "Arresta durante un volo reale"
+    Con il simulatore realmente in esecuzione, **Arresta** elenca prima le applicazioni che sta per chiudere e attende la tua conferma. La sessione continua: solo la chiusura di MSFS la termina.
+
+    ![Arresta chiede prima](assets/stop-confirm.png)
 
 !!! note
     Attenzione: anche le applicazioni già avviate prima della prova verranno **chiuse** se sono configurate per l'arresto automatico. La prova non fa distinzione tra le applicazioni avviate da MFSAppsControl e quelle avviate manualmente.

@@ -53,7 +53,7 @@ Par la suite, les icônes suivent les mises à jour des applications, tout comme
 
 - L'icône de l'application
 - Son **nom**
-- Son **chemin**
+- Son **chemin**, coupé au début s'il est trop long, pour que le nom du programme reste visible (le chemin complet est dans son infobulle)
 - Ses **arguments** (sous le chemin lorsque défini).
   
 À droite, le **badge de statut** (visible lors de l'exécution) et le menu **:material-dots-horizontal:**.
@@ -148,6 +148,37 @@ L'application est toujours lancée depuis **son propre dossier d'installation**.
 
 ---
 
+## Applications quand MSFS est fermé
+
+Certaines applications vivent en dehors de vos vols : un Stream Deck que vous préférez fermer en vol, Dropbox à lancer une fois le vol terminé…<br>
+Dans l'onglet **Partagé**, elles ont leur propre bloc, **Quand MSFS est fermé**, sous les applications de vos sessions, **Quand MSFS est ouvert**. Cliquez sur le titre d'un bloc pour le replier ou le déplier ; survolez-le pour un rappel de ce qu'il contient.
+
+![Les deux blocs de Partagé](assets/shared-blocks.png)
+
+Ajoutez-les avec la carte **Ajouter une application** de ce bloc : c'est le bloc d'où vous ajoutez qui décide, et le titre de la fenêtre vous le rappelle. Leurs contrôles remplacent ceux du démarrage et de l'arrêt :
+
+| Contrôle | Rôle |
+| --- | --- |
+| :material-power-off: **Fermer au lancement** | Ferme l'application dès que MSFS démarre, si elle tourne. |
+| :material-power: **Lancer à la fermeture** | Lance l'application une fois MSFS fermé et les applications de la session arrêtées. |
+| :material-arrow-collapse: **Démarrer réduit** | La lance dans une fenêtre réduite. |
+| :material-minus::material-plus: **Délai** | Attente avant le lancement à la fermeture.<br>*Grisé sans « Lancer à la fermeture » : la fermeture est immédiate* |
+
+![Une carte du bloc « Quand MSFS est fermé »](assets/card-closed.png)
+
+Les deux options vont ensemble ou séparément : un Stream Deck peut se fermer au lancement et revenir à la fermeture, Dropbox seulement se lancer à la fermeture.
+
+![Modifier une application du bloc « Quand MSFS est fermé »](assets/add-app-closed.png)
+
+!!! info "Bon à savoir"
+    - Rien ne se passe tant que la **séquence automatique** est désactivée.
+    - Si MSFS tournait déjà au démarrage de MFSAppsControl, rien n'est fermé, comme la séquence ne lance rien dans ce cas.
+    - Un lancement qui attend encore son délai est annulé si MSFS redémarre.
+    - **Tester** joue les deux moments : il les ferme à son démarrage, et les lance quand vous l'arrêtez.
+    - Ces applications ne prennent jamais part à la séquence de lancement : elles ne sont pas sur la timeline, et **Arrêter** ne les ferme pas.
+
+---
+
 ## La timeline
 
 Le centre du bandeau affiche la **séquence de lancement** : quelle application démarre à quel moment.<br>
@@ -165,12 +196,17 @@ Comme les deux déclencheurs sont indépendants, la timeline montre **deux piste
 - Une piste pour « démarrage sim »
 - Une piste pour « prêt à voler ». 
 
+L'échelle affiche **0** et le délai de chaque bloc, juste à son emplacement, et rien là où rien ne démarre.<br>
+Les blocs ne se chevauchent jamais, quelle que soit la taille de la fenêtre : là où ils sont proches, l'échelle s'étire ; si cela ne suffit pas, les icônes rapetissent ; en dernier recours, un très gros bloc montre ses premières icônes suivies de **+n**, et son infobulle les liste toujours toutes.
+
 ### Deux styles d'affichage possibles
 
 Dans les [Options](options.md) → **Apparence** → **Style de la séquence**, vous pouvez choisir la représentation qui vous parle le plus :
 
-- **Double** — Deux pistes individuelles pour chaque séquence
-- **Mono** — Une seule piste découpées en deux au milieu pour chaque séquence
+- **Séparée** — Deux pistes séparées, une pour chaque séquence ; chaque bloc commence sur son délai, comme se lit un horaire.
+- **Combinée** — Une seule piste, façon piste d'aéroport : le démarrage sim au-dessus de l'axe, le prêt à voler en dessous, les délais peints au sol.
+
+![Le style Combinée](assets/timeline-combined.png)
 
 ## Les statuts d'une carte
 
@@ -184,6 +220,10 @@ Le **contour** de la carte et son **badge** indiquent l'état de l'application
 |                 *aucun badge*                 |         | Application arrêtée/inactive.                                      |
 
 **Survolez un badge** pour avoir plus de détails : le badge d'erreur indique la cause (exécutable introuvable, droits administrateur requis…), et le badge vert affiche le **PID** du processus.
+
+Quand un lancement échoue, sa cause s'affiche aussi en rouge sur la carte, à droite de la barre de contrôle, sans survol.
+
+![La cause d'un échec sur sa carte](assets/app-card-error.png)
 
 ### Annuler un lancement
 
@@ -228,6 +268,10 @@ La barre au-dessus de la grille propose deux menus :
 Ces réglages ne changent **que l'affichage** et n'impacte pas la séquence de lancement ni le profil.
 
 ![Filtrer et trier](assets/app-filters.png)
+
+À droite de la barre, :material-view-grid-outline: **Cartes** et :material-view-agenda-outline: **Liste compacte** choisissent l'affichage des applications : la liste compacte met chacune sur une seule ligne, avec les mêmes contrôles. Le choix est conservé d'un lancement à l'autre.
+
+![La liste compacte](assets/compact-list.png)
 
 ## Pendant une session
 
@@ -282,6 +326,13 @@ Le déroulé est le suivant :
 
 Le bouton devient **Arrêter** dès le départ : cliquez dessus pour terminer le test et fermer toutes les applications en arrêt auto qui sont déjà lancées.<br>
 Il se **verrouille** pendant la fermeture — certaines applications mettent quelques secondes à se fermer proprement — puis redevient **Tester**.
+
+Les applications du bloc **Quand MSFS est fermé** y prennent part aussi : celles réglées pour se fermer sont fermées au démarrage du test, et celles réglées pour se lancer démarrent après leur délai quand vous l'arrêtez.
+
+!!! info "Arrêter pendant un vrai vol"
+    Quand le simulateur tourne vraiment, **Arrêter** liste d'abord les applications qu'il va fermer et attend votre confirmation. La session continue : seule la fermeture de MSFS la termine.
+
+    ![Arrêter demande d'abord](assets/stop-confirm.png)
 
 !!! note
     Attention, les applications déjà lancées avant le test seront également **fermées** si elles sont configurées pour l'arrêt automatique. Le test ne fait pas de distinction entre les applications lancées par MFSAppsControl et celles lancées manuellement.

@@ -22,7 +22,7 @@ O MFSAppsControl acompanha o seu voo de ponta a ponta, em **três fases**:
   icon: ' :material-numeric-2: '
 
 - title: Encerramento do simulador
-  content: As aplicações configuradas em **Paragem auto** fecham de forma limpa ao fechar o simulador.
+  content: As aplicações configuradas em **Paragem auto** fecham de forma limpa ao fechar o simulador. Depois, iniciam-se as do bloco **Com o MSFS fechado** configuradas para iniciar ao fechar.
   icon: ' :material-numeric-3: '
 
 ::/timeline::
@@ -48,6 +48,9 @@ Deve escolher o que melhor corresponde a cada aplicação. → [Aplicações e s
 
 - <span style="color: var(--md-accent-fg-color)">:material-layers: **Perfil Compartilhado**</span><br>
   As aplicações que utiliza com todas as suas aeronaves configuram-se uma única vez, em Compartilhado, e iniciam com qualquer perfil.
+
+- <span style="color: var(--md-accent-fg-color)">:material-power: **Com o MSFS fechado**</span><br>
+  Feche uma aplicação quando o simulador arranca e inicie outras depois de ele fechar: um Stream Deck posto de lado durante o voo, o Dropbox no fim.
 
 - <span style="color: var(--md-accent-fg-color)">:material-link-variant: **Perfis vinculados a aeronaves**</span><br>
   Vincule um perfil às suas aeronaves: ao carregar um voo com uma delas, esse perfil fica ativo sozinho.

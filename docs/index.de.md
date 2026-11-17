@@ -22,7 +22,7 @@ MFSAppsControl begleitet Ihren Flug von Anfang bis Ende, in **drei Schritten**:
   icon: ' :material-numeric-2: '
 
 - title: Beenden des Simulators
-  content: Die auf **Autostopp** gestellten Anwendungen werden sauber geschlossen, wenn der Simulator beendet wird.
+  content: Die auf **Autostopp** gestellten Anwendungen werden sauber geschlossen, wenn der Simulator beendet wird. Danach starten die Anwendungen des Blocks **Während MSFS geschlossen ist**, die beim Beenden starten sollen.
   icon: ' :material-numeric-3: '
 
 ::/timeline::
@@ -48,6 +48,9 @@ Sie entscheiden, was am besten zur jeweiligen Anwendung passt. → [Anwendungen 
 
 - <span style="color: var(--md-accent-fg-color)">:material-layers: **Profil Gemeinsam**</span><br>
   Die Anwendungen, die Sie mit jedem Flugzeug nutzen, werden einmal in Gemeinsam eingerichtet und starten mit jedem Profil.
+
+- <span style="color: var(--md-accent-fg-color)">:material-power: **Während MSFS geschlossen ist**</span><br>
+  Schließen Sie eine Anwendung beim Start des Simulators und starten Sie andere, sobald er beendet ist: ein Stream Deck, das während des Flugs ruht, Dropbox nach dem Flug.
 
 - <span style="color: var(--md-accent-fg-color)">:material-link-variant: **Mit Flugzeugen verknüpfte Profile**</span><br>
   Verknüpfen Sie ein Profil mit Ihren Flugzeugen: Wird ein Flug mit einem davon geladen, wird dieses Profil von selbst aktiv.

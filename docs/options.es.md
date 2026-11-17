@@ -35,8 +35,8 @@ El botón :material-weather-sunny:/:material-weather-night: de la barra de títu
 
 Elige la representación de la [secuencia](applications.md#la-linea-de-tiempo):
 
-- **Doble** — Dos pistas independientes que muestran cada secuencia.
-- **Mono** — Una sola pista separada por el centro, una mitad para cada secuencia.
+- **Separada** — Dos pistas independientes que muestran cada secuencia.
+- **Combinada** — Una sola pista, como una pista de aterrizaje, un lado para cada secuencia.
 
 ### Idioma de la interfaz
 
@@ -79,7 +79,7 @@ Se crea un archivo nuevo **cada día**, y los registros de más de **7 días** s
 
 Crea un archivo **`zip`** que contiene todos tus registros **y** tu configuración, necesarios para el soporte.
 
-### Restablecer la aplicación
+## Restablecer la aplicación
 
 Borra **todos tus perfiles y ajustes** y vuelve a empezar de cero, como recién instalada.<br>
 **Se pide una confirmación explícita.**
