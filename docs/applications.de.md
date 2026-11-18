@@ -189,7 +189,7 @@ Sie erscheint, sobald mindestens eine Anwendung auf automatischen Start gestellt
 
 Sie zeigt die Anwendungen des Profils **Gemeinsam** und die des aktiven Profils gemeinsam.
 
-Jeder Block steht für einen Startzeitpunkt und enthält die Symbole der betroffenen Anwendungen.<br>
+Jeder Block steht für einen Startzeitpunkt und enthält die Symbole der betroffenen Anwendungen, alphabetisch sortiert.<br>
 Fahren Sie mit der Maus über einen Block, um die Namen und ihren Status zu sehen.
 
 Da die beiden Auslöser voneinander unabhängig sind, zeigt die Zeitleiste **zwei Spuren**:
@@ -270,7 +270,7 @@ Diese Einstellungen ändern **nur die Anzeige** und wirken sich weder auf die St
 
 ![Filtern und sortieren](assets/app-filters.png)
 
-Rechts in der Leiste wählen :material-view-grid-outline: **Karten** und :material-view-agenda-outline: **Kompakte Liste** die Darstellung der Anwendungen: Die kompakte Liste zeigt jede in einer einzigen Zeile, mit denselben Steuerelementen. Die Wahl bleibt über Neustarts hinweg erhalten.
+Rechts in der Leiste wählen :material-view-grid-outline: **Karten** und :material-view-agenda-outline: **Kompakte Liste** die Darstellung der Anwendungen: Die kompakte Liste zeigt jede in einer einzigen Zeile, mit denselben Steuerelementen, in zwei Spalten, sobald das Fenster breit genug ist. Die Wahl bleibt über Neustarts hinweg erhalten.
 
 ![Die kompakte Liste](assets/compact-list.png)
 

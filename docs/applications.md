@@ -188,7 +188,7 @@ It appears as soon as at least one application has auto start.
 
 It shows the applications of the **Shared** profile and those of the active profile together.
 
-Each block represents a start moment, with the icons of the applications concerned.<br>
+Each block represents a start moment, with the icons of the applications concerned, in name order.<br>
 Hover a block to see their names and statuses.
 
 Because the two triggers are independent, the timeline shows **two tracks**:
@@ -269,7 +269,7 @@ These settings change **the display only**; they affect neither the launch seque
 
 ![Filter and sort](assets/app-filters.png)
 
-On the right of the bar, :material-view-grid-outline: **Cards** and :material-view-agenda-outline: **Compact list** choose how the applications are shown: the compact list puts each one on a single line, with the same controls. The choice is kept across restarts.
+On the right of the bar, :material-view-grid-outline: **Cards** and :material-view-agenda-outline: **Compact list** choose how the applications are shown: the compact list puts each one on a single line, with the same controls, in two columns once the window is wide enough. The choice is kept across restarts.
 
 ![The compact list](assets/compact-list.png)
 

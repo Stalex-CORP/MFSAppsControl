@@ -189,7 +189,7 @@ Aparece en cuanto hay al menos una aplicación con inicio automático.
 
 Reúne las aplicaciones del perfil **Compartido** y las del perfil activo.
 
-Cada bloque representa un instante de arranque, con los iconos de las aplicaciones implicadas.<br>
+Cada bloque representa un instante de arranque, con los iconos de las aplicaciones implicadas, por orden alfabético.<br>
 Pasa el cursor por un bloque para ver los nombres y su estado.
 
 Como los dos disparadores son independientes, la línea de tiempo muestra **dos pistas**:
@@ -270,7 +270,7 @@ Estos ajustes solo cambian **la visualización** y no afectan ni a la secuencia 
 
 ![Filtrar y ordenar](assets/app-filters.png)
 
-A la derecha de la barra, :material-view-grid-outline: **Tarjetas** y :material-view-agenda-outline: **Lista compacta** eligen cómo se muestran las aplicaciones: la lista compacta pone cada una en una sola línea, con los mismos controles. La elección se conserva entre reinicios.
+A la derecha de la barra, :material-view-grid-outline: **Tarjetas** y :material-view-agenda-outline: **Lista compacta** eligen cómo se muestran las aplicaciones: la lista compacta pone cada una en una sola línea, con los mismos controles, en dos columnas en cuanto la ventana es lo bastante ancha. La elección se conserva entre reinicios.
 
 ![La lista compacta](assets/compact-list.png)
 

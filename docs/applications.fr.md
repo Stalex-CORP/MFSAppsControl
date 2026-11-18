@@ -188,7 +188,7 @@ Elle apparaît dès qu'au moins une application est en démarrage automatique.
 
 Elle réunit les applications du profil **Partagé** et celles du profil actif.
 
-Chaque bloc représente un instant de départ, avec les icônes des applications concernées.<br>
+Chaque bloc représente un instant de départ, avec les icônes des applications concernées, par ordre alphabétique.<br>
 Survolez un bloc pour voir les noms et leur statut.
 
 Comme les deux déclencheurs sont indépendants, la timeline montre **deux pistes** :
@@ -269,7 +269,7 @@ Ces réglages ne changent **que l'affichage** et n'impacte pas la séquence de l
 
 ![Filtrer et trier](assets/app-filters.png)
 
-À droite de la barre, :material-view-grid-outline: **Cartes** et :material-view-agenda-outline: **Liste compacte** choisissent l'affichage des applications : la liste compacte met chacune sur une seule ligne, avec les mêmes contrôles. Le choix est conservé d'un lancement à l'autre.
+À droite de la barre, :material-view-grid-outline: **Cartes** et :material-view-agenda-outline: **Liste compacte** choisissent l'affichage des applications : la liste compacte met chacune sur une seule ligne, avec les mêmes contrôles, sur deux colonnes dès que la fenêtre est assez large. Le choix est conservé d'un lancement à l'autre.
 
 ![La liste compacte](assets/compact-list.png)
 

@@ -189,7 +189,7 @@ Aparece assim que pelo menos uma aplicação tiver arranque automático.
 
 Reúne as aplicações do perfil **Compartilhado** e as do perfil ativo.
 
-Cada bloco representa um momento de arranque, com os ícones das aplicações em causa.<br>
+Cada bloco representa um momento de arranque, com os ícones das aplicações em causa, por ordem alfabética.<br>
 Passe o rato sobre um bloco para ver os nomes e o respetivo estado.
 
 Como os dois acionadores são independentes, a linha temporal mostra **duas faixas**:
@@ -270,7 +270,7 @@ Estas definições alteram **apenas a visualização** e não afetam nem a sequ�
 
 ![Filtrar e ordenar](assets/app-filters.png)
 
-À direita da barra, :material-view-grid-outline: **Cartões** e :material-view-agenda-outline: **Lista compacta** escolhem como as aplicações são apresentadas: a lista compacta põe cada uma numa única linha, com os mesmos controlos. A escolha mantém-se entre reinícios.
+À direita da barra, :material-view-grid-outline: **Cartões** e :material-view-agenda-outline: **Lista compacta** escolhem como as aplicações são apresentadas: a lista compacta põe cada uma numa única linha, com os mesmos controlos, em duas colunas assim que a janela é suficientemente larga. A escolha mantém-se entre reinícios.
 
 ![A lista compacta](assets/compact-list.png)
 

@@ -189,7 +189,7 @@ Compare non appena almeno un'applicazione ha un avvio automatico.
 
 Riunisce le applicazioni del profilo **Condiviso** e quelle del profilo attivo.
 
-Ogni blocco rappresenta un istante di partenza, con le icone delle applicazioni interessate.<br>
+Ogni blocco rappresenta un istante di partenza, con le icone delle applicazioni interessate, in ordine alfabetico.<br>
 Passa il mouse su un blocco per vederne i nomi e lo stato.
 
 Poiché i due attivatori sono indipendenti, la timeline mostra **due piste**:
@@ -270,7 +270,7 @@ Queste impostazioni cambiano **solo la visualizzazione** e non hanno effetto né
 
 ![Filtrare e ordinare](assets/app-filters.png)
 
-A destra della barra, :material-view-grid-outline: **Schede** e :material-view-agenda-outline: **Elenco compatto** scelgono come mostrare le applicazioni: l'elenco compatto mette ognuna su una sola riga, con gli stessi controlli. La scelta resta tra un avvio e l'altro.
+A destra della barra, :material-view-grid-outline: **Schede** e :material-view-agenda-outline: **Elenco compatto** scelgono come mostrare le applicazioni: l'elenco compatto mette ognuna su una sola riga, con gli stessi controlli, su due colonne non appena la finestra è abbastanza larga. La scelta resta tra un avvio e l'altro.
 
 ![L'elenco compatto](assets/compact-list.png)
 
