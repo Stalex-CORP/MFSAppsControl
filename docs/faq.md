@@ -47,12 +47,9 @@
     2. Is the :material-airplane: button active on the card (and not :material-play:)?
     3. Have you already flown in this session? The "ready to fly" applications only launch **once per simulator session** — they don't relaunch between two flights, unless you change profile.
 
+    They launch as soon as the "Ready to fly" screen appears, after loading. To launch one later, add a **delay** on its card.
+
     To check everything again without flying, use the **Test** button: it simulates SimConnect after 10 seconds.
-
-??? question "My 'ready to fly' applications start too early"
-    This is the expected behavior. The trigger fires as soon as the "Ready to fly" screen appears, after loading.
-
-    Add a **delay** on the card to push its launch back by that many seconds after this moment.
 
 ??? question "The application asks for administrator rights (UAC)"
     Some applications (Active Sky, REX Atmos…) require administrator. To launch
@@ -86,22 +83,9 @@
 
     If the application requires administrator rights, MFSAppsControl also has to be elevated to stop it (see above).
 
-??? question "An application shows as 'RUNNING' even though I didn't launch it from MFSAppsControl"
-    This is normal: MFSAppsControl regularly checks which processes are actually
-    running, and **adopts** those that match your configured applications. This keeps the display accurate, whether you launch your
-    applications from MFSAppsControl or by hand.
-
-    Hover the badge to see the **PID** of the process in question.
-
 ??? question "Nothing launches or stops with the simulator any more"
     The **automatic sequence** is probably switched off: the **Auto sequence** switch above **Test** is gray, and the notification area icon shows a **red** dot.<br>
     Turn it back on from the switch or from the icon's menu. While it is off, nothing is launched or stopped with the simulator, and no profile is activated by an aircraft.
-
-??? question "The notification area icon shows an orange dot"
-    Something needs a look: hover the icon to read what.
-
-    - **An application could not be launched**: its card is in error. Hover its badge for the cause, and see *An application doesn't launch* above.
-    - **SimConnect is not responding**: the simulator has been running for a while without SimConnect. See *The SimConnect dot stays gray while MSFS is running* above.
 
 ??? question "My profile does not switch with the aircraft"
     - Check that the aircraft is **linked** to the profile: its name in the banner shows a green link icon.
@@ -115,54 +99,17 @@
     - It closes when MSFS **starts** while MFSAppsControl is already running: nothing is closed for a simulator that was already running.
     - It launches once MSFS has **closed** and the session's applications have stopped, then after its delay: its card counts down meanwhile.
 
-## Interface
-
-??? question "Why is the delay grayed out?"
-    Because no **auto start** is chosen for this application. Enable :material-play: or :material-airplane: and it becomes adjustable again.
-
-??? question "Why is a card locked with a padlock?"
-    Its delay is **counting down**: the launch already uses its settings, so they are locked until it starts.<br>
-    Cancel the countdown with the **✕** next to the badge to edit the card. Apart from that, nothing is locked, during a flight included.
-
-??? question "Why can't I turn off auto stop on a 'ready to fly' application?"
-    An application launched for the flight has no reason to outlive the simulator: auto stop is therefore **locked in the active position** for this trigger.<br>
-    Switch the card back to **Sim start** if you want to keep it open after the flight.
+## Data and maintenance
 
 ??? question "How do I really quit the application when it is in the notification area?"
     If the **Closing minimizes to system tray** option is enabled, the cross hides the window instead of quitting.<br>
     **Right-click the icon** in the notification area → **Quit**.<br>
     Otherwise, just use the window's close button to quit the application.
 
-??? question "The window opened off-screen / too small"
-    MFSAppsControl remembers the window position. In case of a display issue (for example after a monitor change), move or resize the window: the new position will be remembered.<br><br>
-    **Handy tip**<br>
-    Use "++windows++ + left arrow" or "++windows++ + right arrow" to move it across your screens.
-
-??? question "A block of the timeline shows +3"
-    When even the smallest icons do not fit, a very large block shows its first icons followed by **+n**, the number of applications left out. Hover the block: its tooltip lists them all. A wider window brings them back.
-
-??? question "MFSAppsControl asks me to rate it"
-    Once, after a few days of flying with it, MFSAppsControl invites you to leave a review on its flightsim.to page, never during a flight. **Later** asks again a day later, **No thanks** never again; closing the window counts as **Later**.
-
-## Data and maintenance
-
-??? question "Where are my profiles and settings stored?"
-    In a single file:
-    `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\settings.json`<br>
-    (that is, `C:\Users\<you>\AppData\Local\Stalex CORP\MFSAppsControl\`).
-
-    This file is **encrypted**: it cannot be edited directly. To back it up,
-    copy it as-is.
-    → [Back up your profiles](profiles.md)
-
 ??? question "Where are the logs?"
     In `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (One file per day, kept for **7 days**.)<br>
     **To send them to support:**<br>
     **Options → Debugging → Export logs**, which produces a complete `.zip` (logs + configuration). → [Support](support.md)
-
-??? question "How do I start over from scratch?"
-    **Options → Reset the application** erases everything and returns the application to its freshly installed state.<br>
-    **This action is irreversible** — copy your `settings.json` first if needed.
 
 ??? question "Can I use MFSAppsControl with MSFS 2020?"
     Yes, both versions (2024 and 2020) are supported, including the

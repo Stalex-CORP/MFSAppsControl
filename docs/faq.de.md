@@ -48,12 +48,9 @@
     2. Ist auf der Karte wirklich die Schaltfläche :material-airplane: aktiv (und nicht :material-play:)?
     3. Sind Sie in dieser Sitzung bereits geflogen? Die „Startbereit“-Anwendungen starten **nur einmal pro Simulator-Sitzung** — sie werden zwischen zwei Flügen nicht erneut gestartet, außer nach einem Profilwechsel.
 
+    Sie starten, sobald nach dem Laden der Bildschirm „Startbereit“ erscheint. Um eine später zu starten, setzen Sie auf ihrer Karte eine **Verzögerung**.
+
     Um alles ohne Flug zu überprüfen, verwenden Sie die Schaltfläche **Testen**: Sie simuliert SimConnect nach 10 Sekunden.
-
-??? question "Meine „Startbereit“-Anwendungen starten zu früh"
-    Das ist das erwartete Verhalten. Ausgelöst wird, sobald nach dem Laden der Bildschirm „Startbereit“ erscheint.
-
-    Setzen Sie auf der Karte eine **Verzögerung**, um den Start um entsprechend viele Sekunden nach hinten zu schieben.
 
 ??? question "Die Anwendung verlangt Administratorrechte (UAC)"
     Manche Anwendungen (Active Sky, REX Atmos…) erfordern Administratorrechte. Um sie
@@ -89,22 +86,9 @@
 
     Wenn die Anwendung Administratorrechte benötigt, muss auch MFSAppsControl erhöht sein, um sie beenden zu können (siehe oben).
 
-??? question "Eine Anwendung erscheint als „LÄUFT“, obwohl ich sie nicht aus MFSAppsControl gestartet habe"
-    Das ist normal: MFSAppsControl prüft regelmäßig, welche Prozesse tatsächlich
-    laufen, und **übernimmt** diejenigen, die zu Ihren konfigurierten Anwendungen passen. So bleibt die Anzeige zuverlässig, ganz gleich ob Sie Ihre
-    Anwendungen aus MFSAppsControl oder von Hand starten.
-
-    Fahren Sie über den Badge, um die **PID** des betreffenden Prozesses zu sehen.
-
 ??? question "Mit dem Simulator wird nichts mehr gestartet oder beendet"
     Die **automatische Sequenz** ist vermutlich ausgeschaltet: Der Schalter **Auto-Sequenz** über **Testen** ist grau, und das Symbol im Infobereich zeigt einen **roten** Punkt.<br>
     Schalten Sie sie über den Schalter oder das Menü des Symbols wieder ein. Ist sie aus, wird mit dem Simulator nichts gestartet oder beendet, und kein Profil wird durch ein Flugzeug aktiviert.
-
-??? question "Das Symbol im Infobereich zeigt einen orangen Punkt"
-    Etwas braucht Ihre Aufmerksamkeit: Fahren Sie mit der Maus über das Symbol, um zu lesen, was.
-
-    - **Eine Anwendung konnte nicht gestartet werden**: Ihre Karte ist im Fehlerzustand. Fahren Sie über ihren Badge, um die Ursache zu lesen, und siehe *Eine Anwendung startet nicht* weiter oben.
-    - **SimConnect antwortet nicht**: Der Simulator läuft schon eine Weile ohne SimConnect. Siehe *Der SimConnect-Punkt bleibt grau, obwohl MSFS läuft* weiter oben.
 
 ??? question "Mein Profil wechselt nicht mit dem Flugzeug"
     - Prüfen Sie, ob das Flugzeug mit dem Profil **verknüpft** ist: Sein Name im Band zeigt ein grünes Verknüpfungssymbol.
@@ -118,54 +102,17 @@
     - Sie schließt sich, wenn MSFS **startet**, während MFSAppsControl bereits läuft: Für einen Simulator, der bereits lief, wird nichts geschlossen.
     - Sie startet, sobald MSFS **beendet** ist und die Anwendungen der Sitzung gestoppt sind, dann nach ihrer Verzögerung: Ihre Karte zeigt währenddessen den Countdown.
 
-## Oberfläche
-
-??? question "Warum ist die Verzögerung ausgegraut?"
-    Weil für diese Anwendung kein **automatischer Start** gewählt ist. Aktivieren Sie :material-play: oder :material-airplane:, und sie lässt sich wieder einstellen.
-
-??? question "Warum ist eine Karte mit einem Schloss gesperrt?"
-    Ihre Verzögerung **zählt gerade herunter**: Der Start verwendet ihre Einstellungen bereits, daher sind sie bis zum Start gesperrt.<br>
-    Brechen Sie den Countdown mit dem **✕** neben dem Badge ab, um die Karte zu bearbeiten. Ansonsten ist nichts gesperrt, auch nicht im Flug.
-
-??? question "Warum kann ich den Autostopp bei einer „Startbereit“-Anwendung nicht deaktivieren?"
-    Eine Anwendung, die für den Flug gestartet wurde, hat keinen Grund, den Simulator zu überleben: Der automatische Stopp ist bei diesem Auslöser deshalb **in aktiver Stellung gesperrt**.<br>
-    Stellen Sie die Karte auf **Simstart** zurück, wenn Sie sie nach dem Flug geöffnet lassen möchten.
+## Daten und Wartung
 
 ??? question "Wie beende ich die Anwendung wirklich, wenn sie im Infobereich liegt?"
     Wenn die Option **Beim Schließen in den Infobereich minimieren** aktiviert ist, blendet das Kreuz das Fenster aus, statt die Anwendung zu beenden.<br>
     Klicken Sie mit der **rechten Maustaste auf das Symbol** im Infobereich → **Beenden**.<br>
     Andernfalls schließen Sie die Anwendung einfach über das Kreuz des Fensters.
 
-??? question "Das Fenster hat sich außerhalb des Bildschirms / zu klein geöffnet"
-    MFSAppsControl merkt sich die Fensterposition. Bei Anzeigeproblemen (zum Beispiel nach einem Bildschirmwechsel) verschieben Sie das Fenster oder ändern seine Größe: Die neue Position wird gespeichert.<br><br>
-    **Praktischer Tipp**<br>
-    Verwenden Sie „ ++windows++ + Pfeiltaste links “ oder „ ++windows++ + Pfeiltaste rechts “, um es auf die Bereiche der Bildschirme zu verschieben.
-
-??? question "Ein Block der Zeitleiste zeigt +3"
-    Wenn selbst die kleinsten Symbole nicht passen, zeigt ein sehr großer Block seine ersten Symbole, gefolgt von **+n**, der Zahl der nicht gezeichneten Anwendungen. Fahren Sie über den Block: Sein Tooltip listet alle auf. Ein breiteres Fenster bringt sie zurück.
-
-??? question "MFSAppsControl bittet mich um eine Bewertung"
-    Einmalig, nach einigen Flugtagen, lädt MFSAppsControl Sie ein, auf seiner flightsim.to-Seite eine Bewertung abzugeben, nie während eines Flugs. **Später** fragt einen Tag später erneut, **Nein danke** nie wieder; das Fenster zu schließen gilt als **Später**.
-
-## Daten und Wartung
-
-??? question "Wo werden meine Profile und Einstellungen gespeichert?"
-    In einer einzigen Datei:
-    `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\settings.json`<br>
-    (also `C:\Users\<Sie>\AppData\Local\Stalex CORP\MFSAppsControl\`).
-
-    Diese Datei ist **verschlüsselt**: Sie lässt sich nicht direkt bearbeiten. Zum
-    Sichern kopieren Sie sie einfach so, wie sie ist.
-    → [Profile](profiles.md)
-
 ??? question "Wo sind die Protokolle (Logs)?"
     In `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Eine Datei pro Tag, **7 Tage** lang aufbewahrt.)<br>
     **Um sie an den Support zu übermitteln:**<br>
     **Optionen → Fehlersuche → Logs exportieren** erzeugt eine vollständige `.zip` (Protokolle + Konfiguration). → [Support](support.md)
-
-??? question "Wie fange ich wieder bei null an?"
-    **Optionen → Anwendung zurücksetzen** löscht alles und versetzt die Anwendung in den Zustand nach der Installation.<br>
-    **Diese Aktion ist unwiderruflich** — kopieren Sie bei Bedarf vorher Ihre `settings.json`.
 
 ??? question "Kann ich MFSAppsControl mit MSFS 2020 verwenden?"
     Ja, beide Versionen (2024 und 2020) werden unterstützt, einschließlich der

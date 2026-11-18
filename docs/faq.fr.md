@@ -48,12 +48,9 @@
     2. Le bouton :material-airplane: est-il bien actif sur la carte (et pas :material-play:) ?
     3. Avez-vous déjà volé dans cette session ? Les applications « prêt à voler » ne se lancent **qu'une fois par session de simulateur** — elles ne se relancent pas entre deux vols, sauf changement de profil.
 
+    Elles se lancent dès que l'écran "Prêt à voler" apparaît, après le chargement. Pour en lancer une plus tard, ajoutez un **délai** sur sa carte.
+
     Pour tout revalider sans voler, utilisez le bouton **Tester** : il simule simconnect après 10 secondes.
-
-??? question "Mes applications « prêt à voler » démarrent trop tôt"
-    C'est le comportement attendu. Le déclenchement se produit dès l'écran "Prêt à voler" apparaît, après le chargement.
-
-    Ajoutez un **délai** sur la carte pour repousser son lancement d'autant de secondes après ce moment.
 
 ??? question "L'application demande les droits administrateur (UAC)"
     Certaines applications (Active Sky, REX Atmos…) exigent l'administrateur. Pour les
@@ -88,22 +85,9 @@
 
     Si l'application nécessite les droits administrateur, MFSAppsControl doit aussi être élevé pour pouvoir l'arrêter (voir plus haut).
 
-??? question "Une application apparaît « EN COURS » alors que je ne l'ai pas lancée depuis MFSAppsControl"
-    C'est normal : MFSAppsControl vérifie régulièrement quels processus tournent
-    réellement, et **adopte** ceux qui correspondent à vos applications configurées. Cela permet à l'affichage de rester fidèle, que vous lanciez vos
-    applications depuis MFSAppsControl ou à la main.
-
-    Survolez le badge pour voir le **PID** du processus concerné.
-
 ??? question "Plus rien ne se lance ni ne s'arrête avec le simulateur"
     La **séquence automatique** est sans doute désactivée : l'interrupteur **Séquence auto** au-dessus de **Tester** est gris, et l'icône de la zone de notification porte une pastille **rouge**.<br>
     Réactivez-la depuis l'interrupteur ou le menu de l'icône. Désactivée, rien n'est lancé ni arrêté avec le simulateur, et aucun profil n'est activé par un avion.
-
-??? question "L'icône de la zone de notification porte une pastille orange"
-    Quelque chose demande votre attention : survolez l'icône pour lire quoi.
-
-    - **Une application n'a pas pu être lancée** : sa carte est en erreur. Survolez son badge pour en lire la cause, et voyez *Une application ne se lance pas* plus haut.
-    - **SimConnect ne répond pas** : le simulateur tourne depuis un moment sans SimConnect. Voyez *La pastille SimConnect reste grise alors que MFS tourne* plus haut.
 
 ??? question "Mon profil ne bascule pas avec l'avion"
     - Vérifiez que l'avion est **lié** au profil : son nom dans le bandeau affiche une icône de lien verte.
@@ -117,52 +101,17 @@
     - Elle se ferme quand MSFS **démarre** alors que MFSAppsControl tourne déjà : rien n'est fermé pour un simulateur qui tournait déjà.
     - Elle se lance une fois MSFS **fermé** et les applications de la session arrêtées, puis après son délai : sa carte affiche le décompte entre-temps.
 
-## Interface
-
-??? question "Pourquoi le délai est-il grisé ?"
-    Parce qu'aucun **démarrage automatique** n'est choisi pour cette application. Activez :material-play: ou :material-airplane: et il redevient réglable.
-
-??? question "Pourquoi une carte est-elle verrouillée par un cadenas ?"
-    Son délai est **en cours de décompte** : le lancement utilise déjà ses réglages, ils sont donc verrouillés jusqu'à son départ.<br>
-    Annulez le décompte avec la **✕** à côté du badge pour modifier la carte. En dehors de ce cas, rien n'est verrouillé, en vol compris.
-
-??? question "Pourquoi je ne peux pas désactiver l'arrêt auto sur une application « prêt à voler » ?"
-    Une application lancée pour le vol n'a aucune raison de survivre au simulateur : l'arrêt automatique est donc **verrouillé en position active** pour ce déclencheur.<br>
-    Repassez la carte en **Démarrage sim** si vous voulez la garder ouverte après le vol.
+## Données et maintenance
 
 ??? question "Comment quitter réellement l'application quand elle est dans la zone de notification ?"
     Si l'option **Fermer réduit dans la zone de notification** est activée, la croix masque la fenêtre au lieu de quitter.<br>
     Faites un **clic droit sur l'icône** dans la zone de notification → **Quitter**.<br>
     Sinon utilisez simplement la croix de la fenêtre pour fermer l'application.
 
-??? question "La fenêtre s'est ouverte hors de l'écran / trop petite"
-    MFSAppsControl mémorise la position de la fenêtre. En cas de souci d'affichage (par exemple après un changement d'écran), déplacez ou redimensionnez la fenêtre : la nouvelle position sera mémorisée.<br><br>
-    **Astuce pratique**<br>
-    Utilisez " ++windows++ + flèche de gauche " ou " ++windows++ + flèche de droite " pour la déplacer sur les zones des écrans.
-
-??? question "Un bloc de la timeline affiche +3"
-    Quand même les plus petites icônes ne tiennent pas, un très gros bloc montre ses premières icônes suivies de **+n**, le nombre d'applications non dessinées. Survolez le bloc : son infobulle les liste toutes. Une fenêtre plus large les fait revenir.
-
-??? question "MFSAppsControl me demande de le noter"
-    Une seule fois, après quelques jours de vol avec lui, MFSAppsControl vous invite à laisser un avis sur sa page flightsim.to, jamais pendant un vol. **Plus tard** repropose un jour plus tard, **Non merci** plus jamais ; fermer la fenêtre vaut **Plus tard**.
-
-## Données et maintenance
-
-??? question "Où sont enregistrés mes profils et réglages ?"
-    Dans un fichier unique :
-    `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\settings.json`<br>
-    (soit `C:\Users\<vous>\AppData\Local\Stalex CORP\MFSAppsControl\`).
-
-    Ce fichier est **chiffré** : il n'est pas modifiable directement.
-
 ??? question "Où sont les journaux (logs) ?"
     Dans `%LOCALAPPDATA%\Stalex CORP\MFSAppsControl\logs`. (Un fichier par jour, conservés **7 jours**).<br>
     **Pour les transmettre au support :**<br>
     **Options → Débogage → Exporter les logs**, qui produit un `.zip` complet (journaux + configuration). → [Support](support.md)
-
-??? question "Comment repartir de zéro ?"
-    **Options → Réinitialiser l'application** efface tous et remet l'application dans son état d'installation.<br>
-    **Cette action est irréversible** — copiez votre `settings.json` avant si besoin.
 
 ??? question "Puis-je utiliser MFSAppsControl avec MFS 2020 ?"
     Oui, les deux versions (2024 et 2020) sont prises en charge, y compris la
